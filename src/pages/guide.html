@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>사용 가이드 - 밴쿠버 한인 업체 목록</title>
+    <meta
+      name="description"
+      content="밴쿠버 한인 업체 목록 사용 가이드 - 밴쿠버 한인 업체를 쉽게 찾는 방법"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/guide.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="header-top">
+            <div class="logo">
+              <a href="./index.html">
+                <h1>밴쿠버 한인 업체 목록</h1>
+              </a>
+            </div>
+            <nav class="nav">
+              <a href="./index.html" class="nav-link">홈</a>
+              <a href="./directory.html" class="nav-link">업체 목록</a>
+              <a href="./map.html" class="nav-link">지도</a>
+              <a href="./board.html" class="nav-link">게시판</a>
+              <a href="./submit.html" class="nav-link">업체 등록</a>
+              <a href="./guide.html" class="nav-link active">가이드</a>
+              <a href="./about.html" class="nav-link">소개</a>
+            </nav>
+            <div class="header-controls">
+              <div class="language-toggle">
+                <button class="lang-btn active" data-lang="ko">KO</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+              </div>
+              <button class="theme-toggle" id="themeToggle">
+                <span id="themeIcon">🌙</span>
+              </button>
+            </div>
+          </div>
+          <nav class="nav mobile-nav">
+            <a href="./index.html" class="nav-link">홈</a>
+            <a href="./directory.html" class="nav-link">업체 목록</a>
+            <a href="./map.html" class="nav-link">지도</a>
+            <a href="./board.html" class="nav-link">게시판</a>
+            <a href="./submit.html" class="nav-link">업체 등록</a>
+            <a href="./guide.html" class="nav-link active">가이드</a>
+            <a href="./about.html" class="nav-link">소개</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Hero Section -->
+      <section class="hero guide-hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1 id="hero-title">사용 가이드</h1>
+            <p id="hero-subtitle">
+              밴쿠버 한인 업체 목록을 효과적으로 활용하는 방법을 알아보세요
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Guide Content -->
+      <section class="guide-content">
+        <div class="container">
+          <!-- Quick Start -->
+          <div class="guide-section">
+            <h2 id="quick-start-title">🚀 빠른 시작</h2>
+            <div class="guide-cards">
+              <div class="guide-card">
+                <div class="guide-icon">🏠</div>
+                <h3 id="search-title">업체 검색하기</h3>
+                <p id="search-desc">
+                  홈페이지의 검색바를 사용하여 원하는 업체를 빠르게 찾아보세요.
+                </p>
+                <ul>
+                  <li id="search-step1">
+                    업체명, 카테고리, 지역으로 검색 가능
+                  </li>
+                  <li id="search-step2">실시간 검색 결과 확인</li>
+                  <li id="search-step3">상세 정보 및 위치 확인</li>
+                </ul>
+              </div>
+
+              <div class="guide-card">
+                <div class="guide-icon">🗺️</div>
+                <h3 id="map-title">지도에서 보기</h3>
+                <p id="map-desc">
+                  지도 뷰에서 업체들의 위치를 한눈에 확인하고 경로를 찾아보세요.
+                </p>
+                <ul>
+                  <li id="map-step1">인터랙티브 지도에서 업체 위치 확인</li>
+                  <li id="map-step2">카테고리별 필터링</li>
+                  <li id="map-step3">내 위치 기반 검색</li>
+                </ul>
+              </div>
+
+              <div class="guide-card">
+                <div class="guide-icon">📝</div>
+                <h3 id="submit-title">업체 등록하기</h3>
+                <p id="submit-desc">
+                  새로운 한인 업체를 등록하여 커뮤니티에 기여해보세요.
+                </p>
+                <ul>
+                  <li id="submit-step1">간단한 폼 작성으로 등록</li>
+                  <li id="submit-step2">업체 정보 상세 입력</li>
+                  <li id="submit-step3">검토 후 사이트에 반영</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Features Guide -->
+          <div class="guide-section">
+            <h2 id="features-title">✨ 주요 기능</h2>
+
+            <div class="feature-guide">
+              <div class="feature-item">
+                <div class="feature-header">
+                  <h3 id="search-feature-title">🔍 검색 기능</h3>
+                </div>
+                <div class="feature-content">
+                  <div class="feature-demo">
+                    <div class="demo-search">
+                      <input
+                        type="text"
+                        placeholder="업체명, 카테고리, 지역으로 검색..."
+                        readonly
+                      />
+                      <button>검색</button>
+                    </div>
+                  </div>
+                  <div class="feature-tips">
+                    <h4 id="search-tips-title">검색 팁:</h4>
+                    <ul>
+                      <li id="search-tip1">
+                        • 업체명의 일부만 입력해도 검색됩니다
+                      </li>
+                      <li id="search-tip2">
+                        • 카테고리명으로 검색하면 해당 분야 업체들을 찾을 수
+                        있습니다
+                      </li>
+                      <li id="search-tip3">
+                        • 지역명(예: 리치몬드, 버나비)으로 검색해보세요
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <div class="feature-header">
+                  <h3 id="filter-title">🏷️ 필터 기능</h3>
+                </div>
+                <div class="feature-content">
+                  <div class="filter-demo">
+                    <div class="filter-chips">
+                      <span class="filter-chip active">전체</span>
+                      <span class="filter-chip">음식점</span>
+                      <span class="filter-chip">병원</span>
+                      <span class="filter-chip">미용실</span>
+                      <span class="filter-chip">기타</span>
+                    </div>
+                    <div class="filter-options">
+                      <select>
+                        <option>지역 선택</option>
+                        <option>리치몬드</option>
+                        <option>버나비</option>
+                      </select>
+                      <select>
+                        <option>정렬 기준</option>
+                        <option>이름순</option>
+                        <option>거리순</option>
+                        <option>최신순</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="feature-tips">
+                    <h4 id="filter-tips-title">필터 팁:</h4>
+                    <ul>
+                      <li id="filter-tip1">
+                        • 카테고리 칩을 클릭하여 원하는 업종만 보기
+                      </li>
+                      <li id="filter-tip2">
+                        • 지역별로 업체를 필터링할 수 있습니다
+                      </li>
+                      <li id="filter-tip3">
+                        • 정렬 옵션으로 원하는 순서로 정렬하세요
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="feature-item">
+                <div class="feature-header">
+                  <h3 id="map-feature-title">🗺️ 지도 기능</h3>
+                </div>
+                <div class="feature-content">
+                  <div class="map-demo">
+                    <div class="map-placeholder">
+                      <div class="map-mock">
+                        <div class="map-pin">📍</div>
+                        <div class="map-pin">📍</div>
+                        <div class="map-pin">📍</div>
+                        <p>인터랙티브 지도</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="feature-tips">
+                    <h4 id="map-feature-tips-title">지도 사용법:</h4>
+                    <ul>
+                      <li id="map-feature-tip1">
+                        • 지도를 드래그하여 원하는 지역으로 이동
+                      </li>
+                      <li id="map-feature-tip2">
+                        • 핀을 클릭하면 업체 정보를 확인할 수 있습니다
+                      </li>
+                      <li id="map-feature-tip3">
+                        • 내 위치 버튼으로 현재 위치 기준 검색
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tips & Tricks -->
+          <div class="guide-section">
+            <h2 id="tips-title">💡 활용 팁</h2>
+            <div class="tips-grid">
+              <div class="tip-card">
+                <div class="tip-icon">⭐</div>
+                <h3 id="tip1-title">추천 업체 활용</h3>
+                <p id="tip1-desc">
+                  홈페이지의 추천 업체 섹션에서 검증된 업체들을 확인해보세요.
+                </p>
+              </div>
+
+              <div class="tip-card">
+                <div class="tip-icon">🌙</div>
+                <h3 id="tip2-title">다크모드 사용</h3>
+                <p id="tip2-desc">
+                  우측 상단의 테마 버튼으로 다크모드를 켜고 끌 수 있습니다.
+                </p>
+              </div>
+
+              <div class="tip-card">
+                <div class="tip-icon">🌐</div>
+                <h3 id="tip3-title">언어 전환</h3>
+                <p id="tip3-desc">
+                  KO/EN 버튼으로 한국어와 영어를 자유롭게 전환하세요.
+                </p>
+              </div>
+
+              <div class="tip-card">
+                <div class="tip-icon">📱</div>
+                <h3 id="tip4-title">모바일 최적화</h3>
+                <p id="tip4-desc">
+                  모든 기능이 모바일에서도 완벽하게 작동합니다.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ -->
+          <div class="guide-section">
+            <h2 id="faq-title">❓ 자주 묻는 질문</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h3 id="faq1-q">
+                    업체 정보가 잘못되었어요. 어떻게 수정하나요?
+                  </h3>
+                  <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                  <p id="faq1-a">
+                    업체 등록 페이지에서 수정 요청을 제출하거나, 각 업체 상세
+                    페이지의 연락처로 직접 문의해주세요.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h3 id="faq2-q">새로운 업체를 등록하려면 어떻게 하나요?</h3>
+                  <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                  <p id="faq2-a">
+                    상단 메뉴의 '업체 등록'을 클릭하여 구글폼을 작성해주세요.
+                    검토 후 사이트에 반영됩니다.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h3 id="faq3-q">지도에서 내 위치가 정확하지 않아요.</h3>
+                  <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                  <p id="faq3-a">
+                    브라우저의 위치 권한을 허용해주세요. 정확한 위치를 위해
+                    GPS가 켜져있는지 확인해주세요.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <h3 id="faq4-q">업체 정보는 얼마나 자주 업데이트되나요?</h3>
+                  <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                  <p id="faq4-a">
+                    구글 시트와 연동되어 있어 실시간으로 업데이트됩니다.
+                    변경사항은 즉시 반영됩니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact -->
+          <div class="guide-section">
+            <h2 id="contact-title">📞 문의하기</h2>
+            <div class="contact-info">
+              <div class="contact-card">
+                <h3 id="contact-subtitle">궁금한 점이 있으시나요?</h3>
+                <p id="contact-desc">
+                  밴쿠버 한인 업체 목록에 대한 문의사항이나 개선 제안이 있으시면
+                  언제든 연락해주세요.
+                </p>
+                <div class="contact-methods">
+                  <a href="mailto:contact@vancouver-korean.com" class="contact-method">
+                    <span class="contact-icon">📧</span>
+                    <span>contact@vancouver-korean.com</span>
+                  </a>
+                  <a href="tel:+1-604-123-4567" class="contact-method">
+                    <span class="contact-icon">📞</span>
+                    <span>+1 (604) 123-4567</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" title="맨 위로 가기">
+      ↑
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>밴쿠버 한인 업체 목록</h3>
+            <p>밴쿠버 한인 커뮤니티를 위한 업체 정보 플랫폼</p>
+          </div>
+          <div class="footer-section">
+            <h4>메뉴</h4>
+            <ul>
+              <li><a href="./index.html">홈</a></li>
+              <li><a href="./directory.html">업체 목록</a></li>
+              <li><a href="./map.html">지도</a></li>
+              <li><a href="./submit.html">업체 등록</a></li>
+              <li><a href="./guide.html">가이드</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>지원</h4>
+            <ul>
+              <li><a href="./guide.html">사용 가이드</a></li>
+              <li><a href="mailto:contact@vancouver-korean.com">문의하기</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 밴쿠버 한인 업체 목록. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Language and theme texts
+      const texts = {
+        ko: {
+          // Navigation
+          home: "홈",
+          directory: "업체 목록",
+          map: "지도",
+          submit: "업체 등록",
+          guide: "가이드",
+
+          // Hero
+          "hero-title": "사용 가이드",
+          "hero-subtitle":
+            "밴쿠버 한인 업체 목록을 효과적으로 활용하는 방법을 알아보세요",
+
+          // Quick Start
+          "quick-start-title": "🚀 빠른 시작",
+          "search-title": "업체 검색하기",
+          "search-desc":
+            "홈페이지의 검색바를 사용하여 원하는 업체를 빠르게 찾아보세요.",
+          "search-step1": "업체명, 카테고리, 지역으로 검색 가능",
+          "search-step2": "실시간 검색 결과 확인",
+          "search-step3": "상세 정보 및 위치 확인",
+
+          "map-title": "지도에서 보기",
+          "map-desc":
+            "지도 뷰에서 업체들의 위치를 한눈에 확인하고 경로를 찾아보세요.",
+          "map-step1": "인터랙티브 지도에서 업체 위치 확인",
+          "map-step2": "카테고리별 필터링",
+          "map-step3": "내 위치 기반 검색",
+
+          "submit-title": "업체 등록하기",
+          "submit-desc": "새로운 한인 업체를 등록하여 커뮤니티에 기여해보세요.",
+          "submit-step1": "간단한 폼 작성으로 등록",
+          "submit-step2": "업체 정보 상세 입력",
+          "submit-step3": "검토 후 사이트에 반영",
+
+          // Features
+          "features-title": "✨ 주요 기능",
+          "search-feature-title": "🔍 검색 기능",
+          "search-tips-title": "검색 팁:",
+          "search-tip1": "• 업체명의 일부만 입력해도 검색됩니다",
+          "search-tip2":
+            "• 카테고리명으로 검색하면 해당 분야 업체들을 찾을 수 있습니다",
+          "search-tip3": "• 지역명(예: 리치몬드, 버나비)으로 검색해보세요",
+
+          "filter-title": "🏷️ 필터 기능",
+          "filter-tips-title": "필터 팁:",
+          "filter-tip1": "• 카테고리 칩을 클릭하여 원하는 업종만 보기",
+          "filter-tip2": "• 지역별로 업체를 필터링할 수 있습니다",
+          "filter-tip3": "• 정렬 옵션으로 원하는 순서로 정렬하세요",
+
+          "map-feature-title": "🗺️ 지도 기능",
+          "map-feature-tips-title": "지도 사용법:",
+          "map-feature-tip1": "• 지도를 드래그하여 원하는 지역으로 이동",
+          "map-feature-tip2": "• 핀을 클릭하면 업체 정보를 확인할 수 있습니다",
+          "map-feature-tip3": "• 내 위치 버튼으로 현재 위치 기준 검색",
+
+          // Tips
+          "tips-title": "💡 활용 팁",
+          "tip1-title": "추천 업체 활용",
+          "tip1-desc":
+            "홈페이지의 추천 업체 섹션에서 검증된 업체들을 확인해보세요.",
+          "tip2-title": "다크모드 사용",
+          "tip2-desc":
+            "우측 상단의 테마 버튼으로 다크모드를 켜고 끌 수 있습니다.",
+          "tip3-title": "언어 전환",
+          "tip3-desc": "KO/EN 버튼으로 한국어와 영어를 자유롭게 전환하세요.",
+          "tip4-title": "모바일 최적화",
+          "tip4-desc": "모든 기능이 모바일에서도 완벽하게 작동합니다.",
+
+          // FAQ
+          "faq-title": "❓ 자주 묻는 질문",
+          "faq1-q": "업체 정보가 잘못되었어요. 어떻게 수정하나요?",
+          "faq1-a":
+            "업체 등록 페이지에서 수정 요청을 제출하거나, 각 업체 상세 페이지의 연락처로 직접 문의해주세요.",
+          "faq2-q": "새로운 업체를 등록하려면 어떻게 하나요?",
+          "faq2-a":
+            "상단 메뉴의 '업체 등록'을 클릭하여 구글폼을 작성해주세요. 검토 후 사이트에 반영됩니다.",
+          "faq3-q": "지도에서 내 위치가 정확하지 않아요.",
+          "faq3-a":
+            "브라우저의 위치 권한을 허용해주세요. 정확한 위치를 위해 GPS가 켜져있는지 확인해주세요.",
+          "faq4-q": "업체 정보는 얼마나 자주 업데이트되나요?",
+          "faq4-a":
+            "구글 시트와 연동되어 있어 실시간으로 업데이트됩니다. 변경사항은 즉시 반영됩니다.",
+
+          // Contact
+          "contact-title": "📞 문의하기",
+          "contact-subtitle": "궁금한 점이 있으시나요?",
+          "contact-desc":
+            "밴쿠버 한인 업체 목록에 대한 문의사항이나 개선 제안이 있으시면 언제든 연락해주세요.",
+        },
+        en: {
+          // Navigation
+          home: "Home",
+          directory: "Directory",
+          map: "Map",
+          submit: "Submit",
+          guide: "Guide",
+
+          // Hero
+          "hero-title": "User Guide",
+          "hero-subtitle":
+            "Learn how to effectively use the 밴쿠버 한인 업체 목록",
+
+          // Quick Start
+          "quick-start-title": "🚀 Quick Start",
+          "search-title": "Search Businesses",
+          "search-desc":
+            "Use the search bar on the homepage to quickly find the businesses you're looking for.",
+          "search-step1": "Search by business name, category, or location",
+          "search-step2": "View real-time search results",
+          "search-step3": "Check detailed information and location",
+
+          "map-title": "View on Map",
+          "map-desc":
+            "See business locations at a glance on the map view and find directions.",
+          "map-step1": "View business locations on interactive map",
+          "map-step2": "Filter by category",
+          "map-step3": "Search based on your location",
+
+          "submit-title": "Submit Business",
+          "submit-desc":
+            "Contribute to the community by registering new Korean businesses.",
+          "submit-step1": "Simple form registration",
+          "submit-step2": "Enter detailed business information",
+          "submit-step3": "Review and reflect on the site",
+
+          // Features
+          "features-title": "✨ Key Features",
+          "search-feature-title": "🔍 Search Function",
+          "search-tips-title": "Search Tips:",
+          "search-tip1": "• Search with partial business names",
+          "search-tip2":
+            "• Search by category to find businesses in specific fields",
+          "search-tip3": "• Search by area names (e.g., Richmond, Burnaby)",
+
+          "filter-title": "🏷️ Filter Function",
+          "filter-tips-title": "Filter Tips:",
+          "filter-tip1":
+            "• Click category chips to view specific business types only",
+          "filter-tip2": "• Filter businesses by area",
+          "filter-tip3": "• Sort by your preferred order using sort options",
+
+          "map-feature-title": "🗺️ Map Function",
+          "map-feature-tips-title": "How to Use Map:",
+          "map-feature-tip1": "• Drag the map to move to desired areas",
+          "map-feature-tip2": "• Click pins to view business information",
+          "map-feature-tip3":
+            "• Use 'My Location' button for location-based search",
+
+          // Tips
+          "tips-title": "💡 Usage Tips",
+          "tip1-title": "Use Featured Businesses",
+          "tip1-desc":
+            "Check out verified businesses in the Featured Businesses section on the homepage.",
+          "tip2-title": "Use Dark Mode",
+          "tip2-desc":
+            "Toggle dark mode on and off using the theme button in the top right.",
+          "tip3-title": "Language Switch",
+          "tip3-desc":
+            "Switch between Korean and English freely using the KO/EN button.",
+          "tip4-title": "Mobile Optimized",
+          "tip4-desc": "All features work perfectly on mobile devices.",
+
+          // FAQ
+          "faq-title": "❓ Frequently Asked Questions",
+          "faq1-q": "The business information is incorrect. How can I fix it?",
+          "faq1-a":
+            "Submit a correction request through the business registration page or contact the business directly through their contact information on the detail page.",
+          "faq2-q": "How do I register a new business?",
+          "faq2-a":
+            "Click 'Submit Business' in the top menu and fill out the Google form. It will be reflected on the site after review.",
+          "faq3-q": "My location on the map is not accurate.",
+          "faq3-a":
+            "Please allow location permissions in your browser. Make sure GPS is enabled for accurate location.",
+          "faq4-q": "How often is business information updated?",
+          "faq4-a":
+            "It's connected to Google Sheets and updates in real-time. Changes are reflected immediately.",
+
+          // Contact
+          "contact-title": "📞 Contact Us",
+          "contact-subtitle": "Have any questions?",
+          "contact-desc":
+            "If you have any inquiries about the 밴쿠버 한인 업체 목록 or suggestions for improvement, please contact us anytime.",
+        },
+      };
+
+      // Dark mode functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const themeToggle = document.getElementById("themeToggle");
+        const langToggle = document.querySelector(".language-toggle");
+        const body = document.body;
+        const themeIcon = document.getElementById("themeIcon");
+
+        // Load saved theme and language
+        const savedTheme = localStorage.getItem("theme") || "light";
+        const savedLang = localStorage.getItem("language") || "ko";
+
+        body.setAttribute("data-theme", savedTheme);
+        body.setAttribute("lang", savedLang);
+        updateThemeIcon(savedTheme);
+        updateLanguageIcon(savedLang);
+        updateContent(savedLang);
+
+        // Theme toggle event listener
+        themeToggle.addEventListener("click", function () {
+          const currentTheme = body.getAttribute("data-theme");
+          const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+          body.setAttribute("data-theme", newTheme);
+          localStorage.setItem("theme", newTheme);
+          updateThemeIcon(newTheme);
+        });
+
+        // Language toggle event listener
+        langToggle.addEventListener("click", function (e) {
+          if (e.target.classList.contains("lang-btn")) {
+            const newLang = e.target.getAttribute("data-lang");
+
+            // Update active button
+            langToggle.querySelectorAll(".lang-btn").forEach((btn) => {
+              btn.classList.remove("active");
+            });
+            e.target.classList.add("active");
+
+            body.setAttribute("lang", newLang);
+            localStorage.setItem("language", newLang);
+            updateLanguageIcon(newLang);
+            updateContent(newLang);
+          }
+        });
+
+        function updateThemeIcon(theme) {
+          themeIcon.textContent = theme === "dark" ? "☀️" : "🌙";
+        }
+
+        function updateLanguageIcon(lang) {
+          langIcon.textContent = lang === "ko" ? "EN" : "KO";
+        }
+
+        function updateContent(lang) {
+          const currentTexts = texts[lang];
+
+          // Update navigation
+          document.querySelectorAll(".nav-link").forEach((link, index) => {
+            const keys = ["home", "directory", "map", "submit", "guide"];
+            if (keys[index]) {
+              link.textContent = currentTexts[keys[index]];
+            }
+          });
+
+          // Update all elements with IDs
+          Object.keys(currentTexts).forEach((key) => {
+            const element = document.getElementById(key);
+            if (element) {
+              element.textContent = currentTexts[key];
+            }
+          });
+        }
+
+        // FAQ toggle functionality
+        document.querySelectorAll(".faq-question").forEach((question) => {
+          question.addEventListener("click", function () {
+            const faqItem = this.parentElement;
+            const answer = faqItem.querySelector(".faq-answer");
+            const toggle = this.querySelector(".faq-toggle");
+
+            faqItem.classList.toggle("active");
+
+            if (faqItem.classList.contains("active")) {
+              answer.style.maxHeight = answer.scrollHeight + "px";
+              toggle.textContent = "−";
+            } else {
+              answer.style.maxHeight = "0";
+              toggle.textContent = "+";
+            }
+          });
+        });
+      });
+
+      // Scroll to top functionality
+      const scrollToTopBtn = document.getElementById("scrollToTop");
+
+      // Show/hide scroll to top button based on scroll position
+      window.addEventListener("scroll", function () {
+        if (window.pageYOffset > 300) {
+          scrollToTopBtn.classList.add("show");
+        } else {
+          scrollToTopBtn.classList.remove("show");
+        }
+      });
+
+      // Scroll to top when button is clicked
+      scrollToTopBtn.addEventListener("click", function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>

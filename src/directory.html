@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>업체 목록 - 밴쿠버 한인 업체 목록</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/directory.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="header-top">
+            <div class="logo">
+              <a href="./index.html">
+                <h1>밴쿠버 한인 업체 목록</h1>
+              </a>
+            </div>
+            <nav class="nav">
+              <a href="./index.html" class="nav-link">홈</a>
+              <a href="./directory.html" class="nav-link active">업체 목록</a>
+              <a href="./map.html" class="nav-link">지도</a>
+              <a href="./board.html" class="nav-link">게시판</a>
+              <a href="./submit.html" class="nav-link">업체 등록</a>
+              <a href="./guide.html" class="nav-link">가이드</a>
+              <a href="./about.html" class="nav-link">소개</a>
+            </nav>
+            <div class="header-controls">
+              <div class="language-toggle">
+                <button class="lang-btn active" data-lang="ko">KO</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+              </div>
+              <button class="theme-toggle" id="themeToggle">
+                <span id="themeIcon">🌙</span>
+              </button>
+            </div>
+          </div>
+          <nav class="nav mobile-nav">
+            <a href="./index.html" class="nav-link">홈</a>
+            <a href="./directory.html" class="nav-link active">업체 목록</a>
+            <a href="./map.html" class="nav-link">지도</a>
+            <a href="./board.html" class="nav-link">게시판</a>
+            <a href="./submit.html" class="nav-link">업체 등록</a>
+            <a href="./guide.html" class="nav-link">가이드</a>
+            <a href="./about.html" class="nav-link">소개</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Search & Filters Section -->
+    <section class="search-filters">
+      <div class="container">
+        <div class="search-section">
+          <div class="search-container">
+            <input
+              type="text"
+              class="search-input"
+              placeholder="업체명 · 업종 · 지역 검색"
+              id="mainSearch"
+            />
+            <button class="search-btn">검색</button>
+          </div>
+        </div>
+
+        <div class="filters-section">
+          <div class="filter-group">
+            <h4>카테고리</h4>
+            <div class="category-chips">
+              <button class="filter-chip active" data-category="all">
+                전체
+              </button>
+              <button class="filter-chip" data-category="restaurant">
+                🍜 음식점
+              </button>
+              <button class="filter-chip" data-category="grocery">
+                🛒 마트
+              </button>
+              <button class="filter-chip" data-category="medical">
+                🏥 병원
+              </button>
+              <button class="filter-chip" data-category="legal">
+                ⚖️ 법률/회계
+              </button>
+              <button class="filter-chip" data-category="realestate">
+                🏠 부동산
+              </button>
+              <button class="filter-chip" data-category="beauty">
+                💇 미용
+              </button>
+              <button class="filter-chip" data-category="education">
+                🎓 학원
+              </button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <div class="dropdown-filters">
+              <select class="filter-dropdown" id="areaFilter">
+                <option value="all">전체 지역</option>
+                <option value="downtown">다운타운</option>
+                <option value="burnaby">버나비</option>
+                <option value="coquitlam">코퀴틀람</option>
+                <option value="richmond">리치몬드</option>
+                <option value="surrey">서리</option>
+                <option value="vancouver">밴쿠버</option>
+              </select>
+
+              <select class="filter-dropdown" id="sortFilter">
+                <option value="latest">최신순</option>
+                <option value="popular">인기순</option>
+                <option value="rating">평점순</option>
+                <option value="name">가나다순</option>
+              </select>
+            </div>
+
+            <div class="toggle-filter">
+              <label class="toggle-label">
+                <input type="checkbox" id="openOnly" />
+                <span class="toggle-slider"></span>
+                영업중만 보기
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <div class="content-layout">
+          <!-- Sidebar (Desktop Only) -->
+          <aside class="sidebar">
+            <div class="sidebar-section">
+              <h4>카테고리 필터</h4>
+              <div class="checkbox-filters">
+                <label class="checkbox-label">
+                  <input type="checkbox" data-category="restaurant" checked />
+                  <span>🍜 음식점</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" data-category="grocery" checked />
+                  <span>🛒 마트</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" data-category="medical" checked />
+                  <span>🏥 병원</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" data-category="legal" checked />
+                  <span>⚖️ 법률/회계</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" data-category="realestate" checked />
+                  <span>🏠 부동산</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" data-category="beauty" checked />
+                  <span>💇 미용</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" data-category="education" checked />
+                  <span>🎓 학원</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="sidebar-section">
+              <h4>지역 필터</h4>
+              <div class="checkbox-filters">
+                <label class="checkbox-label">
+                  <input type="checkbox" data-area="downtown" checked />
+                  <span>다운타운</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" data-area="burnaby" checked />
+                  <span>버나비</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" data-area="coquitlam" checked />
+                  <span>코퀴틀람</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" data-area="richmond" checked />
+                  <span>리치몬드</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" data-area="surrey" checked />
+                  <span>서리</span>
+                </label>
+                <label class="checkbox-label">
+                  <input type="checkbox" data-area="vancouver" checked />
+                  <span>밴쿠버</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="sidebar-section">
+              <h4>추천 업체</h4>
+              <div class="recommended-business">
+                <img
+                  src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=150&h=100&fit=crop"
+                  alt="Recommended"
+                />
+                <div class="recommended-info">
+                  <h5>한솥도시락</h5>
+                  <p>🍜 음식점</p>
+                  <span class="rating">★4.5</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Business List -->
+          <section class="business-list">
+            <div class="list-header">
+              <h2>업체 목록</h2>
+              <span class="result-count"
+                >총 <span id="resultCount">24</span>개 업체</span
+              >
+            </div>
+
+            <div class="business-cards" id="businessCards">
+              <!-- Business cards will be populated by JavaScript -->
+            </div>
+
+            <div class="load-more">
+              <button class="load-more-btn">더 보기</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- Map Switch CTA -->
+    <button class="map-cta-btn" id="mapCtaBtn">
+      <span class="map-icon">📍</span>
+      <span>지도에서 보기</span>
+    </button>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" title="맨 위로 가기">
+      ↑
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>카테고리</h4>
+            <ul>
+              <li><a href="#">음식점</a></li>
+              <li><a href="#">마트</a></li>
+              <li><a href="#">병원</a></li>
+              <li><a href="#">부동산</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>가이드</h4>
+            <ul>
+              <li><a href="#">이민 가이드</a></li>
+              <li><a href="#">생활 팁</a></li>
+              <li><a href="#">법률 정보</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>회사</h4>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Submit Business</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>소셜</h4>
+            <div class="social-links">
+              <a href="#" class="social-link">📱</a>
+              <a href="#" class="social-link">📷</a>
+              <a href="#" class="social-link">📘</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 밴쿠버 한인 업체 목록. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/script.js"></script>
+    <script src="../scripts/directory.js"></script>
+    <script>
+      // Dark Mode Toggle
+      document.addEventListener("DOMContentLoaded", function () {
+        const themeToggle = document.getElementById("themeToggle");
+        const themeIcon = document.getElementById("themeIcon");
+        const body = document.body;
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem("theme") || "light";
+        body.setAttribute("data-theme", savedTheme);
+        updateThemeIcon(savedTheme);
+
+        themeToggle.addEventListener("click", function () {
+          const currentTheme = body.getAttribute("data-theme");
+          const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+          body.setAttribute("data-theme", newTheme);
+          localStorage.setItem("theme", newTheme);
+          updateThemeIcon(newTheme);
+        });
+
+        function updateThemeIcon(theme) {
+          themeIcon.textContent = theme === "dark" ? "☀️" : "🌙";
+        }
+
+        // Language toggle functionality
+        const langButtons = document.querySelectorAll(".lang-btn");
+
+        langButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            // Remove active class from all buttons
+            langButtons.forEach((btn) => btn.classList.remove("active"));
+            // Add active class to clicked button
+            this.classList.add("active");
+
+            const selectedLang = this.getAttribute("data-lang");
+            updateNavigation(selectedLang);
+          });
+        });
+
+        function updateNavigation(lang) {
+          const navLinks = document.querySelectorAll(".nav-link");
+          const navTexts = {
+            ko: [
+              "홈",
+              "업체 목록",
+              "지도",
+              "게시판",
+              "업체 등록",
+              "가이드",
+              "소개",
+            ],
+            en: [
+              "Home",
+              "Directory",
+              "Map",
+              "Board",
+              "Submit",
+              "Guides",
+              "About",
+            ],
+          };
+
+          navLinks.forEach((link, index) => {
+            if (navTexts[lang] && navTexts[lang][index]) {
+              link.textContent = navTexts[lang][index];
+            }
+          });
+
+          // Update section titles and content
+          updateSectionContent(lang);
+        }
+
+        function updateSectionContent(lang) {
+          const sectionTexts = {
+            ko: {
+              "search-title": "업체 검색",
+              "search-subtitle": "원하는 업체를 찾아보세요",
+              "search-placeholder": "업체명, 카테고리, 지역으로 검색...",
+              "search-button": "검색",
+              "filter-category": "카테고리",
+              "filter-area": "지역",
+              "filter-sort": "정렬",
+              "filter-open": "영업 중인 업체만",
+              "results-count": "개 업체를 찾았습니다",
+              "map-button": "지도에서 보기",
+            },
+            en: {
+              "search-title": "Business Search",
+              "search-subtitle": "Find the business you're looking for",
+              "search-placeholder": "Search by name, category, area...",
+              "search-button": "Search",
+              "filter-category": "Category",
+              "filter-area": "Area",
+              "filter-sort": "Sort",
+              "filter-open": "Open now only",
+              "results-count": "businesses found",
+              "map-button": "View on Map",
+            },
+          };
+
+          const texts = sectionTexts[lang];
+          if (!texts) return;
+
+          // Update search section
+          const searchTitle = document.querySelector(".search-section h2");
+          const searchSubtitle = document.querySelector(".search-section p");
+          const searchInput = document.querySelector(".search-input");
+          const searchButton = document.querySelector(".search-box .btn");
+          if (searchTitle) searchTitle.textContent = texts["search-title"];
+          if (searchSubtitle)
+            searchSubtitle.textContent = texts["search-subtitle"];
+          if (searchInput)
+            searchInput.placeholder = texts["search-placeholder"];
+          if (searchButton) searchButton.textContent = texts["search-button"];
+
+          // Update filters
+          const categoryFilter = document.querySelector(
+            ".filter-group label[for='categoryFilter']"
+          );
+          const areaFilter = document.querySelector(
+            ".filter-group label[for='areaFilter']"
+          );
+          const sortFilter = document.querySelector(
+            ".filter-group label[for='sortFilter']"
+          );
+          const openFilter = document.querySelector(
+            ".filter-group label[for='openOnly']"
+          );
+          if (categoryFilter)
+            categoryFilter.textContent = texts["filter-category"];
+          if (areaFilter) areaFilter.textContent = texts["filter-area"];
+          if (sortFilter) sortFilter.textContent = texts["filter-sort"];
+          if (openFilter) openFilter.textContent = texts["filter-open"];
+
+          // Update results count
+          const resultCount = document.querySelector("#resultCount");
+          if (resultCount) {
+            const currentCount = resultCount.textContent.match(/\d+/);
+            if (currentCount) {
+              resultCount.textContent = `${currentCount[0]} ${texts["results-count"]}`;
+            }
+          }
+
+          // Update map button
+          const mapButton = document.querySelector(
+            "#mapCtaBtn span:last-child"
+          );
+          if (mapButton) mapButton.textContent = texts["map-button"];
+        }
+
+        // Initialize with Korean
+        updateNavigation("ko");
+
+        // Scroll to top functionality
+        const scrollToTopBtn = document.getElementById("scrollToTop");
+
+        // Show/hide scroll to top button based on scroll position
+        window.addEventListener("scroll", function () {
+          if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.add("show");
+          } else {
+            scrollToTopBtn.classList.remove("show");
+          }
+        });
+
+        // Smooth scroll to top when button is clicked
+        scrollToTopBtn.addEventListener("click", function () {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
