@@ -25,6 +25,36 @@ body {
   padding: 0;
 }
 
+/* Kakao Link Styling */
+.kakao-link {
+  color: #3c1e1e !important;
+  background: linear-gradient(135deg, #fee500 0%, #ffeb3b 100%);
+  padding: 4px 8px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.kakao-link:hover {
+  background: linear-gradient(135deg, #ffeb3b 0%, #fee500 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+}
+
+/* Dark mode kakao link */
+[data-theme="dark"] .kakao-link {
+  color: #2c1e1e !important;
+  background: linear-gradient(135deg, #fee500 0%, #ffeb3b 100%);
+}
+
+[data-theme="dark"] .kakao-link:hover {
+  background: linear-gradient(135deg, #ffeb3b 0%, #fee500 100%);
+}
+
 /* Dark Mode Styles */
 [data-theme="dark"] {
   --bg-color: #1a1a1a;

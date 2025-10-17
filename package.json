@@ -2,12 +2,12 @@
   "name": "vancouver-korean-business-directory",
   "version": "1.0.0",
   "description": "밴쿠버 한인 커뮤니티를 위한 비즈니스 디렉토리 웹사이트",
-  "main": "src/pages/index.html",
+  "main": "index.html",
   "scripts": {
-    "dev": "live-server . --port=8080 --open=src/pages/index.html",
+    "dev": "live-server . --port=8080 --open=index.html",
     "build": "npm run copy-assets",
-    "copy-assets": "cp -r src/pages/* docs/ && cp -r src/styles docs/ && cp -r src/scripts docs/ && cp -r src/images docs/ && cp -r src/data docs/",
-    "deploy": "npm run build && git add docs/ && git commit -m 'Deploy to GitHub Pages' && git push"
+    "copy-assets": "echo 'No build step needed - files are already in root'",
+    "deploy": "git add . && git commit -m 'Deploy to GitHub Pages' && git push"
   },
   "repository": {
     "type": "git",
