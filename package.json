@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "dev": "live-server . --port=8080 --open=index.html",
-    "build": "npm run copy-assets",
+    "build": "echo 'No build step needed - files are already in root'",
     "copy-assets": "echo 'No build step needed - files are already in root'",
     "deploy": "git add . && git commit -m 'Deploy to GitHub Pages' && git push"
   },

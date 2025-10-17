@@ -336,15 +336,599 @@ h6 {
   font-size: 0.9rem;
 }
 
-/* Map Preview */
-.map-preview {
+/* Map and Instagram Section */
+.map-instagram-section {
   padding: 4rem 0;
   background: #f8f9fa;
 }
 
-.map-container {
-  max-width: 800px;
+.map-instagram-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
   margin: 0 auto;
+  align-items: start;
+}
+
+/* Map Preview */
+.map-preview {
+  background: transparent;
+  padding: 0;
+}
+
+/* Instagram Feed Styles */
+.instagram-feed {
+  background: transparent;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.instagram-container {
+  max-width: 100%;
+  margin: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.instagram-embed {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #dbdbdb;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.instagram-post-single {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #efefef;
+}
+
+.post-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-pic {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.username {
+  font-weight: 600;
+  font-size: 14px;
+  color: #262626;
+}
+
+.location {
+  font-size: 12px;
+  color: #8e8e8e;
+}
+
+.post-menu {
+  font-size: 18px;
+  color: #262626;
+  cursor: pointer;
+}
+
+.post-image-container {
+  width: 100%;
+  flex: 1;
+  min-height: 300px;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-image-main {
+  font-size: 48px;
+  color: #8e8e8e;
+}
+
+.post-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.action-btn {
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.action-btn:hover {
+  transform: scale(1.1);
+}
+
+.bookmark {
+  margin-left: auto;
+}
+
+.post-content {
+  padding: 0 16px 12px;
+}
+
+.post-content p {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #262626;
+}
+
+.post-time {
+  font-size: 12px;
+  color: #8e8e8e;
+  margin: 0;
+}
+
+.instagram-btn {
+  background: #0095f6;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 16px;
+  width: calc(100% - 32px);
+}
+
+.instagram-btn:hover {
+  background: #0081d4;
+  transform: translateY(-1px);
+}
+
+/* Map and Instagram Responsive */
+@media (max-width: 768px) {
+  .map-instagram-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+
+  .instagram-feed {
+    height: auto;
+  }
+
+  .post-image-container {
+    min-height: 250px;
+  }
+
+  /* Google Maps Mobile */
+  .google-map-embed {
+    height: 300px;
+  }
+
+  .map-info {
+    padding: 1.5rem;
+  }
+
+  .map-info h4 {
+    font-size: 1.3rem;
+  }
+
+  .map-info p {
+    font-size: 0.9rem;
+  }
+
+  .post-header {
+    padding: 10px 12px;
+  }
+
+  .post-actions {
+    padding: 6px 12px;
+  }
+
+  .post-content {
+    padding: 0 12px 10px;
+  }
+
+  .instagram-btn {
+    margin: 12px;
+    width: calc(100% - 24px);
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-instagram-grid {
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .post-image-container {
+    min-height: 200px;
+  }
+
+  /* Google Maps Small Mobile */
+  .google-map-embed {
+    height: 250px;
+  }
+
+  .map-info {
+    padding: 1rem;
+  }
+
+  .map-info h4 {
+    font-size: 1.1rem;
+  }
+
+  .map-info p {
+    font-size: 0.8rem;
+  }
+
+  .post-header {
+    padding: 8px 10px;
+  }
+
+  .profile-pic {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+
+  .username {
+    font-size: 13px;
+  }
+
+  .location {
+    font-size: 11px;
+  }
+
+  .post-actions {
+    padding: 4px 10px;
+  }
+
+  .action-btn {
+    font-size: 20px;
+  }
+
+  .post-content {
+    padding: 0 10px 8px;
+  }
+
+  .post-content p {
+    font-size: 13px;
+  }
+
+  .post-time {
+    font-size: 11px;
+  }
+
+  .instagram-btn {
+    margin: 10px;
+    width: calc(100% - 20px);
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  /* Advertisement Banner Mobile */
+  .ad-content {
+    padding: 1rem;
+  }
+
+  .ad-main {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+  }
+
+  .ad-cta {
+    justify-content: flex-start;
+  }
+
+  .ad-btn {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  /* Statistics Banner Mobile */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .stat-item {
+    padding: 0.8rem;
+  }
+
+  .stat-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 1.3rem;
+  }
+
+  .stat-number {
+    font-size: 1.1rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+  }
+}
+
+.map-container {
+  max-width: 100%;
+  margin: 0;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.google-map-embed {
+  width: 100%;
+  height: 400px;
+  border: none;
+  border-radius: 16px;
+}
+
+.map-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 16px;
+}
+
+.map-container:hover .map-overlay {
+  opacity: 1;
+}
+
+.map-info {
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  max-width: 300px;
+}
+
+.map-info h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.map-info p {
+  margin: 0 0 1.5rem 0;
+  font-size: 1rem;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+/* Advertisement Banner */
+.ad-banner {
+  margin-top: 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.ad-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.ad-content {
+  padding: 1.5rem;
+  color: white;
+}
+
+.ad-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.ad-label {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+}
+
+.ad-sponsor {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.ad-main {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ad-image {
+  font-size: 2.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.ad-text h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.ad-text p {
+  margin: 0 0 1rem 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+.ad-cta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.ad-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 0.5rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.ad-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Statistics Banner */
+.stats-banner {
+  margin-top: 1.5rem;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.stats-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
+}
+
+.stats-content {
+  padding: 1.5rem;
+  color: white;
+}
+
+.stats-header {
+  margin-bottom: 1rem;
+}
+
+.stats-label {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.stat-icon {
+  font-size: 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  opacity: 0.9;
+  margin-top: 0.25rem;
 }
 
 .map-placeholder {
@@ -1450,10 +2034,80 @@ h6 {
   color: var(--text-color);
 }
 
-/* Map Preview Dark Mode */
-[data-theme="dark"] .map-preview {
+/* Map and Instagram Section Dark Mode */
+[data-theme="dark"] .map-instagram-section {
   background: var(--bg-color) !important;
-  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .map-preview {
+  background: transparent;
+}
+
+/* Google Maps Dark Mode */
+[data-theme="dark"] .map-overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Advertisement Banner Dark Mode */
+[data-theme="dark"] .ad-banner {
+  background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+  box-shadow: 0 4px 15px rgba(74, 85, 104, 0.3);
+}
+
+[data-theme="dark"] .ad-banner:hover {
+  box-shadow: 0 6px 20px rgba(74, 85, 104, 0.4);
+}
+
+/* Statistics Banner Dark Mode */
+[data-theme="dark"] .stats-banner {
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+  box-shadow: 0 4px 15px rgba(45, 55, 72, 0.3);
+}
+
+[data-theme="dark"] .stats-banner:hover {
+  box-shadow: 0 6px 20px rgba(45, 55, 72, 0.4);
+}
+
+/* Instagram Feed Dark Mode */
+[data-theme="dark"] .instagram-feed {
+  background: transparent;
+}
+
+[data-theme="dark"] .instagram-embed {
+  background: #262626;
+  border-color: #363636;
+}
+
+[data-theme="dark"] .post-header {
+  border-bottom-color: #363636;
+}
+
+[data-theme="dark"] .username {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .location {
+  color: #a8a8a8;
+}
+
+[data-theme="dark"] .post-menu {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .post-image-container {
+  background: #1a1a1a;
+}
+
+[data-theme="dark"] .post-image-main {
+  color: #a8a8a8;
+}
+
+[data-theme="dark"] .post-content p {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .post-time {
+  color: #a8a8a8;
 }
 
 [data-theme="dark"] .map-preview h2,

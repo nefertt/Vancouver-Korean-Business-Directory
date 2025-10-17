@@ -99,16 +99,126 @@
       </div>
     </section>
 
-    <!-- Map Preview -->
-    <section class="map-preview">
+    <!-- Map and Instagram Section -->
+    <section class="map-instagram-section">
       <div class="container">
-        <h3 class="section-title">지도에서 보기</h3>
-        <div class="map-container">
-          <div class="map-placeholder">
-            <div class="map-content">
-              <div class="map-pin">📍</div>
-              <p>Google Map with Korean business locations</p>
-              <button class="map-btn">지도에서 보기</button>
+        <div class="map-instagram-grid">
+          <!-- Map Preview -->
+          <div class="map-preview">
+            <h3 class="section-title">지도에서 보기</h3>
+            <div class="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2603.123456789!2d-123.1207!3d49.2827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDE2JzU3LjciTiAxMjPCsDA3JzE0LjUiVw!5e0!3m2!1sko!2sca!4v1234567890123!5m2!1sko!2sca"
+                class="google-map-embed"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
+              <div class="map-overlay">
+                <div class="map-info">
+                  <h4>밴쿠버 한인 업체 위치</h4>
+                  <p>지도에서 한인 업체들을 찾아보세요</p>
+                  <button
+                    class="map-btn"
+                    onclick="window.open('https://www.google.com/maps', '_blank')"
+                  >
+                    전체 지도 보기
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Advertisement Banner -->
+            <div class="ad-banner">
+              <div class="ad-content">
+                <div class="ad-header">
+                  <span class="ad-label">광고</span>
+                </div>
+                <div class="ad-main">
+                  <div class="ad-image">🏢</div>
+                  <div class="ad-text">
+                    <h4>밴쿠버 한인 업체 홍보</h4>
+                    <p>여기에 여러분의 비즈니스를 홍보해보세요!</p>
+                    <div class="ad-cta">
+                      <button class="ad-btn">광고 문의하기</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Statistics Banner -->
+            <div class="stats-banner">
+              <div class="stats-content">
+                <div class="stats-header">
+                  <span class="stats-label">통계</span>
+                </div>
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <div class="stat-icon">🏪</div>
+                    <div class="stat-info">
+                      <span class="stat-number">150+</span>
+                      <span class="stat-label stat-businesses"
+                        >등록된 업체</span
+                      >
+                    </div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-info">
+                      <span class="stat-number">5,000+</span>
+                      <span class="stat-label stat-visitors">월 방문자</span>
+                    </div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-info">
+                      <span class="stat-number">4.8</span>
+                      <span class="stat-label stat-rating">평균 평점</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Instagram Feed -->
+          <div class="instagram-feed">
+            <div class="instagram-container">
+              <div class="instagram-embed">
+                <div class="instagram-post-single">
+                  <div class="post-header">
+                    <div class="post-profile">
+                      <div class="profile-pic">📷</div>
+                      <div class="profile-info">
+                        <span class="username">@밴쿠버한인비즈니스</span>
+                        <span class="location">Vancouver, BC</span>
+                      </div>
+                    </div>
+                    <div class="post-menu">⋯</div>
+                  </div>
+                  <div class="post-image-container">
+                    <div class="post-image-main">🖼️</div>
+                  </div>
+                  <div class="post-actions">
+                    <div class="action-buttons">
+                      <span class="action-btn">❤️</span>
+                      <span class="action-btn">💬</span>
+                      <span class="action-btn">📤</span>
+                    </div>
+                    <span class="action-btn bookmark">🔖</span>
+                  </div>
+                  <div class="post-content">
+                    <p>
+                      <strong>@밴쿠버한인비즈니스</strong> 밴쿠버 한인
+                      커뮤니티의 최신 소식을 만나보세요! 🏙️✨
+                    </p>
+                    <p class="post-time">2시간 전</p>
+                  </div>
+                </div>
+                <button class="instagram-btn">인스타그램에서 더 보기</button>
+              </div>
             </div>
           </div>
         </div>
@@ -167,9 +277,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <p>
-            &copy; 2025 밴쿠버 한인 업체 목록. All rights reserved.
-          </p>
+          <p>&copy; 2025 밴쿠버 한인 업체 목록. All rights reserved.</p>
         </div>
       </div>
     </footer>
@@ -266,6 +374,15 @@
               "map-title": "지도에서 보기",
               "map-description": "Google Map with Korean business locations",
               "map-button": "지도에서 보기",
+              "instagram-button": "인스타그램에서 더 보기",
+              "ad-label": "광고",
+              "ad-title": "밴쿠버 한인 업체 홍보",
+              "ad-description": "여기에 여러분의 비즈니스를 홍보해보세요!",
+              "ad-button": "광고 문의하기",
+              "stats-label": "통계",
+              "stat-businesses": "등록된 업체",
+              "stat-visitors": "월 방문자",
+              "stat-rating": "평균 평점",
               "footer-categories": "카테고리",
               "footer-popular": "인기",
               "footer-support": "지원",
@@ -302,6 +419,15 @@
               "map-title": "View on Map",
               "map-description": "Google Map with Korean business locations",
               "map-button": "View on Map",
+              "instagram-button": "View More on Instagram",
+              "ad-label": "Ad",
+              "ad-title": "Vancouver Korean Business Promotion",
+              "ad-description": "Promote your business here!",
+              "ad-button": "Contact for Ads",
+              "stats-label": "Statistics",
+              "stat-businesses": "Registered Businesses",
+              "stat-visitors": "Monthly Visitors",
+              "stat-rating": "Average Rating",
               "footer-categories": "Categories",
               "footer-popular": "Popular",
               "footer-support": "Support",
@@ -385,6 +511,33 @@
           if (mapDescription)
             mapDescription.textContent = texts["map-description"];
           if (mapButton) mapButton.textContent = texts["map-button"];
+
+          // Update Instagram section
+          const instagramButton = document.querySelector(".instagram-btn");
+          if (instagramButton)
+            instagramButton.textContent = texts["instagram-button"];
+
+          // Update Advertisement section
+          const adLabel = document.querySelector(".ad-label");
+          const adTitle = document.querySelector(".ad-text h4");
+          const adDescription = document.querySelector(".ad-text p");
+          const adButton = document.querySelector(".ad-btn");
+          if (adLabel) adLabel.textContent = texts["ad-label"];
+          if (adTitle) adTitle.textContent = texts["ad-title"];
+          if (adDescription)
+            adDescription.textContent = texts["ad-description"];
+          if (adButton) adButton.textContent = texts["ad-button"];
+
+          // Update Statistics section
+          const statsLabel = document.querySelector(".stats-label");
+          const statBusinesses = document.querySelector(".stat-businesses");
+          const statVisitors = document.querySelector(".stat-visitors");
+          const statRating = document.querySelector(".stat-rating");
+          if (statsLabel) statsLabel.textContent = texts["stats-label"];
+          if (statBusinesses)
+            statBusinesses.textContent = texts["stat-businesses"];
+          if (statVisitors) statVisitors.textContent = texts["stat-visitors"];
+          if (statRating) statRating.textContent = texts["stat-rating"];
 
           // Update categories section
           updateCategoriesSection(lang);
