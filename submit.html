@@ -45,26 +45,26 @@
       <main class="main-content">
         <div class="submit-container">
           <div class="submit-header">
-            <h2>업체 등록</h2>
-            <p>밴쿠버 한인 커뮤니티에 업체를 등록해보세요!</p>
+            <h2 data-ko="업체 등록" data-en="Business Registration">업체 등록</h2>
+            <p data-ko="밴쿠버 한인 커뮤니티에 업체를 등록해보세요!" data-en="Register your business with the Vancouver Korean community!">밴쿠버 한인 커뮤니티에 업체를 등록해보세요!</p>
           </div>
 
           <div class="submit-content">
             <div class="submit-info">
-              <h3>📋 등록 안내</h3>
+              <h3 data-ko="📋 등록 안내" data-en="📋 Registration Guide">📋 등록 안내</h3>
               <ul>
-                <li>
+                <li data-ko="✅ <strong>무료 등록</strong> - 비용 없이 업체를 등록할 수 있습니다" data-en="✅ <strong>Free Registration</strong> - Register your business at no cost">
                   ✅ <strong>무료 등록</strong> - 비용 없이 업체를 등록할 수
                   있습니다
                 </li>
-                <li>
+                <li data-ko="✅ <strong>빠른 승인</strong> - 24시간 내에 검토 후 승인됩니다" data-en="✅ <strong>Quick Approval</strong> - Reviewed and approved within 24 hours">
                   ✅ <strong>빠른 승인</strong> - 24시간 내에 검토 후 승인됩니다
                 </li>
-                <li>
+                <li data-ko="✅ <strong>실시간 업데이트</strong> - 승인 즉시 웹사이트에 반영됩니다" data-en="✅ <strong>Real-time Updates</strong> - Changes reflected on the website immediately after approval">
                   ✅ <strong>실시간 업데이트</strong> - 승인 즉시 웹사이트에
                   반영됩니다
                 </li>
-                <li>
+                <li data-ko="✅ <strong>지도 연동</strong> - 위치 정보가 지도에 자동으로 표시됩니다" data-en="✅ <strong>Map Integration</strong> - Location information automatically displayed on the map">
                   ✅ <strong>지도 연동</strong> - 위치 정보가 지도에 자동으로
                   표시됩니다
                 </li>
@@ -72,7 +72,7 @@
             </div>
 
             <div class="submit-form-container">
-              <h3>📝 업체 정보 입력</h3>
+              <h3 data-ko="📝 업체 정보 입력" data-en="📝 Business Information">📝 업체 정보 입력</h3>
               <div class="form-embed">
                 <!-- Google Forms 임베드 영역 -->
                 <div class="form-placeholder" style="display: none">
@@ -203,10 +203,16 @@
         const body = document.body;
         const themeIcon = themeToggle.querySelector("span");
 
-        // Load saved theme
+        // Load saved theme and language
         const savedTheme = localStorage.getItem("theme") || "light";
+        const savedLang = localStorage.getItem("language") || "ko";
+        
         body.setAttribute("data-theme", savedTheme);
+        body.setAttribute("lang", savedLang);
         updateThemeIcon(savedTheme);
+        updateLanguageIcon(savedLang);
+        updateNavigation(savedLang);
+        updateContent(savedLang);
 
         // Ensure iframe is visible
         const iframe = document.getElementById("googleForm");
@@ -252,6 +258,76 @@
 
         function updateThemeIcon(theme) {
           themeIcon.textContent = theme === "dark" ? "☀️" : "🌙";
+        }
+
+        // Language toggle functionality
+        const langButtons = document.querySelectorAll(".lang-btn");
+
+        langButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            // Remove active class from all buttons
+            langButtons.forEach((btn) => btn.classList.remove("active"));
+            // Add active class to clicked button
+            this.classList.add("active");
+
+            const selectedLang = this.getAttribute("data-lang");
+            body.setAttribute("lang", selectedLang);
+            localStorage.setItem("language", selectedLang);
+            updateNavigation(selectedLang);
+            updateContent(selectedLang);
+          });
+        });
+
+        function updateNavigation(lang) {
+          const navLinks = document.querySelectorAll(".nav-link");
+          const navTexts = {
+            ko: [
+              "홈",
+              "업체 목록",
+              "지도",
+              "게시판",
+              "업체 등록",
+              "가이드",
+              "소개",
+            ],
+            en: [
+              "Home",
+              "Directory",
+              "Map",
+              "Board",
+              "Submit",
+              "Guide",
+              "About",
+            ],
+          };
+
+          navLinks.forEach((link, index) => {
+            if (navTexts[lang] && navTexts[lang][index]) {
+              link.textContent = navTexts[lang][index];
+            }
+          });
+        }
+
+        function updateContent(lang) {
+          // Update elements with data-ko and data-en attributes
+          const elements = document.querySelectorAll('[data-ko][data-en]');
+          elements.forEach(element => {
+            if (lang === 'ko') {
+              element.innerHTML = element.getAttribute('data-ko');
+            } else if (lang === 'en') {
+              element.innerHTML = element.getAttribute('data-en');
+            }
+          });
+        }
+
+        function updateLanguageIcon(lang) {
+          const langButtons = document.querySelectorAll(".lang-btn");
+          langButtons.forEach((btn) => {
+            btn.classList.remove("active");
+            if (btn.getAttribute("data-lang") === lang) {
+              btn.classList.add("active");
+            }
+          });
         }
 
         // Scroll to top functionality

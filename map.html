@@ -213,9 +213,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <p>
-            &copy; 2025 밴쿠버 한인 업체 목록. All rights reserved.
-          </p>
+          <p>&copy; 2025 밴쿠버 한인 업체 목록. All rights reserved.</p>
         </div>
       </div>
     </footer>
@@ -251,6 +249,7 @@
         body.setAttribute("lang", savedLang);
         updateThemeIcon(savedTheme);
         updateLanguageIcon(savedLang);
+        updateNavigation(savedLang);
 
         // Theme toggle event listener
         themeToggle.addEventListener("click", function () {
@@ -276,6 +275,7 @@
             body.setAttribute("lang", newLang);
             localStorage.setItem("language", newLang);
             updateLanguageIcon(newLang);
+            updateNavigation(newLang);
           }
         });
 
@@ -289,6 +289,36 @@
             btn.classList.remove("active");
             if (btn.getAttribute("data-lang") === lang) {
               btn.classList.add("active");
+            }
+          });
+        }
+
+        function updateNavigation(lang) {
+          const navLinks = document.querySelectorAll(".nav-link");
+          const navTexts = {
+            ko: [
+              "홈",
+              "업체 목록",
+              "지도",
+              "게시판",
+              "업체 등록",
+              "가이드",
+              "소개",
+            ],
+            en: [
+              "Home",
+              "Directory",
+              "Map",
+              "Board",
+              "Submit",
+              "Guide",
+              "About",
+            ],
+          };
+
+          navLinks.forEach((link, index) => {
+            if (navTexts[lang] && navTexts[lang][index]) {
+              link.textContent = navTexts[lang][index];
             }
           });
         }

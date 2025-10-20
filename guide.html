@@ -433,8 +433,10 @@
           home: "홈",
           directory: "업체 목록",
           map: "지도",
+          board: "게시판",
           submit: "업체 등록",
           guide: "가이드",
+          about: "소개",
 
           // Hero
           "hero-title": "사용 가이드",
@@ -523,8 +525,10 @@
           home: "Home",
           directory: "Directory",
           map: "Map",
+          board: "Board",
           submit: "Submit",
           guide: "Guide",
+          about: "About",
 
           // Hero
           "hero-title": "User Guide",
@@ -664,7 +668,13 @@
         }
 
         function updateLanguageIcon(lang) {
-          langIcon.textContent = lang === "ko" ? "EN" : "KO";
+          // Update active button based on language
+          langToggle.querySelectorAll(".lang-btn").forEach((btn) => {
+            btn.classList.remove("active");
+            if (btn.getAttribute("data-lang") === lang) {
+              btn.classList.add("active");
+            }
+          });
         }
 
         function updateContent(lang) {
@@ -672,7 +682,15 @@
 
           // Update navigation
           document.querySelectorAll(".nav-link").forEach((link, index) => {
-            const keys = ["home", "directory", "map", "submit", "guide"];
+            const keys = [
+              "home",
+              "directory",
+              "map",
+              "board",
+              "submit",
+              "guide",
+              "about",
+            ];
             if (keys[index]) {
               link.textContent = currentTexts[keys[index]];
             }

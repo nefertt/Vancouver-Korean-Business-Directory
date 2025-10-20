@@ -288,13 +288,23 @@
       // Dark Mode Toggle
       document.addEventListener("DOMContentLoaded", function () {
         const themeToggle = document.getElementById("themeToggle");
+        const langToggle = document.querySelector(".language-toggle");
         const themeIcon = document.getElementById("themeIcon");
         const body = document.body;
 
-        // Load saved theme
+        // Load saved theme and language
         const savedTheme = localStorage.getItem("theme") || "light";
+        const savedLang = localStorage.getItem("language") || "ko";
+
         body.setAttribute("data-theme", savedTheme);
+        body.setAttribute("lang", savedLang);
         updateThemeIcon(savedTheme);
+        updateLanguageIcon(savedLang);
+
+        // Delay navigation update to ensure DOM is fully ready
+        setTimeout(() => {
+          updateNavigation(savedLang);
+        }, 10);
 
         themeToggle.addEventListener("click", function () {
           const currentTheme = body.getAttribute("data-theme");
@@ -309,23 +319,31 @@
           themeIcon.textContent = theme === "dark" ? "☀️" : "🌙";
         }
 
-        // Language toggle functionality
-        const langButtons = document.querySelectorAll(".lang-btn");
+        // Language toggle event listener
+        langToggle.addEventListener("click", function (e) {
+          if (e.target.classList.contains("lang-btn")) {
+            const newLang = e.target.getAttribute("data-lang");
 
-        langButtons.forEach((button) => {
-          button.addEventListener("click", function () {
-            // Remove active class from all buttons
-            langButtons.forEach((btn) => btn.classList.remove("active"));
-            // Add active class to clicked button
-            this.classList.add("active");
+            // Update active button
+            langToggle.querySelectorAll(".lang-btn").forEach((btn) => {
+              btn.classList.remove("active");
+            });
+            e.target.classList.add("active");
 
-            const selectedLang = this.getAttribute("data-lang");
-            updateNavigation(selectedLang);
-          });
+            body.setAttribute("lang", newLang);
+            localStorage.setItem("language", newLang);
+            updateLanguageIcon(newLang);
+            updateNavigation(newLang);
+          }
         });
 
         function updateNavigation(lang) {
           const navLinks = document.querySelectorAll(".nav-link");
+
+          // Check if DOM is ready
+          if (navLinks.length === 0) {
+            return;
+          }
           const navTexts = {
             ko: [
               "홈",
@@ -348,13 +366,25 @@
           };
 
           navLinks.forEach((link, index) => {
-            if (navTexts[lang] && navTexts[lang][index]) {
-              link.textContent = navTexts[lang][index];
+            // Calculate the correct index for navTexts (0-6 for 7 navigation items)
+            const navIndex = index % 7;
+            if (navTexts[lang] && navTexts[lang][navIndex]) {
+              link.textContent = navTexts[lang][navIndex];
             }
           });
 
           // Update section titles and content
           updateSectionContent(lang);
+        }
+
+        function updateLanguageIcon(lang) {
+          const langButtons = document.querySelectorAll(".lang-btn");
+          langButtons.forEach((btn) => {
+            btn.classList.remove("active");
+            if (btn.getAttribute("data-lang") === lang) {
+              btn.classList.add("active");
+            }
+          });
         }
 
         function updateSectionContent(lang) {

@@ -253,9 +253,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <p>
-            &copy; 2025 밴쿠버 한인 업체 목록. All rights reserved.
-          </p>
+          <p>&copy; 2025 밴쿠버 한인 업체 목록. All rights reserved.</p>
         </div>
       </div>
     </footer>
@@ -316,6 +314,7 @@
         body.setAttribute("data-theme", savedTheme);
         body.setAttribute("lang", savedLang);
         updateThemeIcon(savedTheme);
+        updateLanguageIcon(savedLang);
         updateContent(savedLang);
         updateNavigation(savedLang);
 
@@ -342,7 +341,9 @@
 
             body.setAttribute("lang", newLang);
             localStorage.setItem("language", newLang);
+            updateLanguageIcon(newLang);
             updateContent(newLang);
+            updateNavigation(newLang);
           }
         });
 
@@ -388,6 +389,16 @@
           navLinks.forEach((link, index) => {
             if (navTexts[lang] && navTexts[lang][index]) {
               link.textContent = navTexts[lang][index];
+            }
+          });
+        }
+
+        function updateLanguageIcon(lang) {
+          const langButtons = langToggle.querySelectorAll(".lang-btn");
+          langButtons.forEach((btn) => {
+            btn.classList.remove("active");
+            if (btn.getAttribute("data-lang") === lang) {
+              btn.classList.add("active");
             }
           });
         }
