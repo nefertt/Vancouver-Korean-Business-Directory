@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -61,12 +61,7 @@
       <div class="container">
         <div class="search-section">
           <div class="search-container">
-            <input
-              type="text"
-              class="search-input"
-              placeholder="업체명 · 업종 · 지역 검색"
-              id="mainSearch"
-            />
+            <input type="text" class="search-input" placeholder="업체명 · 업종 · 지역 검색" id="mainSearch" />
             <button class="search-btn" id="search-button">검색</button>
           </div>
         </div>
@@ -75,30 +70,14 @@
           <div class="filter-group">
             <h4 id="filter-category">카테고리</h4>
             <div class="category-chips">
-              <button class="filter-chip active" data-category="all">
-                전체
-              </button>
-              <button class="filter-chip" data-category="restaurant">
-                🍜 음식점
-              </button>
-              <button class="filter-chip" data-category="grocery">
-                🛒 마트
-              </button>
-              <button class="filter-chip" data-category="medical">
-                🏥 병원
-              </button>
-              <button class="filter-chip" data-category="legal">
-                ⚖️ 법률/회계
-              </button>
-              <button class="filter-chip" data-category="realestate">
-                🏠 부동산
-              </button>
-              <button class="filter-chip" data-category="beauty">
-                💇 미용
-              </button>
-              <button class="filter-chip" data-category="education">
-                🎓 학원
-              </button>
+              <button class="filter-chip active" data-category="all">전체</button>
+              <button class="filter-chip" data-category="restaurant">🍜 음식점</button>
+              <button class="filter-chip" data-category="grocery">🛒 마트</button>
+              <button class="filter-chip" data-category="medical">🏥 병원</button>
+              <button class="filter-chip" data-category="legal">⚖️ 법률/회계</button>
+              <button class="filter-chip" data-category="realestate">🏠 부동산</button>
+              <button class="filter-chip" data-category="beauty">💇 미용</button>
+              <button class="filter-chip" data-category="education">🎓 학원</button>
             </div>
           </div>
 
@@ -224,9 +203,7 @@
           <section class="business-list">
             <div class="list-header">
               <h2>업체 목록</h2>
-              <span class="result-count"
-                >총 <span id="resultCount">24</span>개 업체</span
-              >
+              <span class="result-count">총 <span id="resultCount">24</span>개 업체</span>
             </div>
 
             <div class="business-cards" id="businessCards">
@@ -248,9 +225,7 @@
     </button>
 
     <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTop" title="맨 위로 가기">
-      ↑
-    </button>
+    <button class="scroll-to-top" id="scrollToTop" title="맨 위로 가기">↑</button>
 
     <!-- Footer -->
     <footer class="footer">
@@ -302,44 +277,44 @@
       // Translation texts
       const texts = {
         ko: {
-          "hero-title": "업체 목록",
-          "hero-subtitle": "밴쿠버 한인 업체들을 카테고리별로 찾아보세요",
-          "search-placeholder": "업체명 또는 키워드로 검색...",
-          "filter-all": "전체",
-          "filter-restaurant": "음식점",
-          "filter-shopping": "쇼핑",
-          "filter-service": "서비스",
-          "filter-health": "건강/의료",
-          "filter-education": "교육",
-          "filter-other": "기타",
+          'hero-title': '업체 목록',
+          'hero-subtitle': '밴쿠버 한인 업체들을 카테고리별로 찾아보세요',
+          'search-placeholder': '업체명 또는 키워드로 검색...',
+          'filter-all': '전체',
+          'filter-restaurant': '음식점',
+          'filter-shopping': '쇼핑',
+          'filter-service': '서비스',
+          'filter-health': '건강/의료',
+          'filter-education': '교육',
+          'filter-other': '기타',
         },
         en: {
-          "hero-title": "Business Directory",
-          "hero-subtitle": "Find Vancouver Korean businesses by category",
-          "search-placeholder": "Search by business name or keyword...",
-          "filter-all": "All",
-          "filter-restaurant": "Restaurant",
-          "filter-shopping": "Shopping",
-          "filter-service": "Service",
-          "filter-health": "Health/Medical",
-          "filter-education": "Education",
-          "filter-other": "Other",
+          'hero-title': 'Business Directory',
+          'hero-subtitle': 'Find Vancouver Korean businesses by category',
+          'search-placeholder': 'Search by business name or keyword...',
+          'filter-all': 'All',
+          'filter-restaurant': 'Restaurant',
+          'filter-shopping': 'Shopping',
+          'filter-service': 'Service',
+          'filter-health': 'Health/Medical',
+          'filter-education': 'Education',
+          'filter-other': 'Other',
         },
       };
 
       // Dark Mode Toggle
-      document.addEventListener("DOMContentLoaded", function () {
-        const themeToggle = document.getElementById("themeToggle");
-        const langToggle = document.querySelector(".language-toggle");
-        const themeIcon = document.getElementById("themeIcon");
+      document.addEventListener('DOMContentLoaded', function () {
+        const themeToggle = document.getElementById('themeToggle');
+        const langToggle = document.querySelector('.language-toggle');
+        const themeIcon = document.getElementById('themeIcon');
         const body = document.body;
 
         // Load saved theme and language
-        const savedTheme = localStorage.getItem("theme") || "light";
-        const savedLang = localStorage.getItem("language") || "ko";
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        const savedLang = localStorage.getItem('language') || 'ko';
 
-        body.setAttribute("data-theme", savedTheme);
-        body.setAttribute("lang", savedLang);
+        body.setAttribute('data-theme', savedTheme);
+        body.setAttribute('lang', savedLang);
         updateThemeIcon(savedTheme);
         updateLanguageIcon(savedLang);
 
@@ -349,32 +324,32 @@
           updateSectionContent(savedLang);
         }, 10);
 
-        themeToggle.addEventListener("click", function () {
-          const currentTheme = body.getAttribute("data-theme");
-          const newTheme = currentTheme === "dark" ? "light" : "dark";
+        themeToggle.addEventListener('click', function () {
+          const currentTheme = body.getAttribute('data-theme');
+          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
-          body.setAttribute("data-theme", newTheme);
-          localStorage.setItem("theme", newTheme);
+          body.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
           updateThemeIcon(newTheme);
         });
 
         function updateThemeIcon(theme) {
-          themeIcon.textContent = theme === "dark" ? "☀️" : "🌙";
+          themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
         }
 
         // Language toggle event listener
-        langToggle.addEventListener("click", function (e) {
-          if (e.target.classList.contains("lang-btn")) {
-            const newLang = e.target.getAttribute("data-lang");
+        langToggle.addEventListener('click', function (e) {
+          if (e.target.classList.contains('lang-btn')) {
+            const newLang = e.target.getAttribute('data-lang');
 
             // Update active button
-            langToggle.querySelectorAll(".lang-btn").forEach((btn) => {
-              btn.classList.remove("active");
+            langToggle.querySelectorAll('.lang-btn').forEach((btn) => {
+              btn.classList.remove('active');
             });
-            e.target.classList.add("active");
+            e.target.classList.add('active');
 
-            body.setAttribute("lang", newLang);
-            localStorage.setItem("language", newLang);
+            body.setAttribute('lang', newLang);
+            localStorage.setItem('language', newLang);
             updateLanguageIcon(newLang);
             updateNavigation(newLang);
             updateSectionContent(newLang);
@@ -382,31 +357,15 @@
         });
 
         function updateNavigation(lang) {
-          const navLinks = document.querySelectorAll(".nav-link");
+          const navLinks = document.querySelectorAll('.nav-link');
 
           // Check if DOM is ready
           if (navLinks.length === 0) {
             return;
           }
           const navTexts = {
-            ko: [
-              "홈",
-              "업체 목록",
-              "지도",
-              "게시판",
-              "업체 등록",
-              "가이드",
-              "소개",
-            ],
-            en: [
-              "Home",
-              "Directory",
-              "Map",
-              "Board",
-              "Submit",
-              "Guides",
-              "About",
-            ],
+            ko: ['홈', '업체 목록', '지도', '게시판', '업체 등록', '가이드', '소개'],
+            en: ['Home', 'Directory', 'Map', 'Board', 'Submit', 'Guides', 'About'],
           };
 
           navLinks.forEach((link, index) => {
@@ -422,11 +381,11 @@
         }
 
         function updateLanguageIcon(lang) {
-          const langButtons = document.querySelectorAll(".lang-btn");
+          const langButtons = document.querySelectorAll('.lang-btn');
           langButtons.forEach((btn) => {
-            btn.classList.remove("active");
-            if (btn.getAttribute("data-lang") === lang) {
-              btn.classList.add("active");
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-lang') === lang) {
+              btn.classList.add('active');
             }
           });
         }
@@ -434,28 +393,28 @@
         function updateSectionContent(lang) {
           const sectionTexts = {
             ko: {
-              "search-title": "업체 검색",
-              "search-subtitle": "원하는 업체를 찾아보세요",
-              "search-placeholder": "업체명, 카테고리, 지역으로 검색...",
-              "search-button": "검색",
-              "filter-category": "카테고리",
-              "filter-area": "지역",
-              "filter-sort": "정렬",
-              "filter-open": "영업 중인 업체만",
-              "results-count": "개 업체를 찾았습니다",
-              "map-button": "지도에서 보기",
+              'search-title': '업체 검색',
+              'search-subtitle': '원하는 업체를 찾아보세요',
+              'search-placeholder': '업체명, 카테고리, 지역으로 검색...',
+              'search-button': '검색',
+              'filter-category': '카테고리',
+              'filter-area': '지역',
+              'filter-sort': '정렬',
+              'filter-open': '영업 중인 업체만',
+              'results-count': '개 업체를 찾았습니다',
+              'map-button': '지도에서 보기',
             },
             en: {
-              "search-title": "Business Search",
-              "search-subtitle": "Find the business you're looking for",
-              "search-placeholder": "Search by name, category, area...",
-              "search-button": "Search",
-              "filter-category": "Category",
-              "filter-area": "Area",
-              "filter-sort": "Sort",
-              "filter-open": "Open now only",
-              "results-count": "businesses found",
-              "map-button": "View on Map",
+              'search-title': 'Business Search',
+              'search-subtitle': "Find the business you're looking for",
+              'search-placeholder': 'Search by name, category, area...',
+              'search-button': 'Search',
+              'filter-category': 'Category',
+              'filter-area': 'Area',
+              'filter-sort': 'Sort',
+              'filter-open': 'Open now only',
+              'results-count': 'businesses found',
+              'map-button': 'View on Map',
             },
           };
 
@@ -463,72 +422,59 @@
           if (!texts) return;
 
           // Update search section
-          const searchTitle = document.querySelector(".search-section h2");
-          const searchSubtitle = document.querySelector(".search-section p");
-          const searchInput = document.querySelector(".search-input");
-          const searchButton = document.querySelector(".search-box .btn");
-          if (searchTitle) searchTitle.textContent = texts["search-title"];
-          if (searchSubtitle)
-            searchSubtitle.textContent = texts["search-subtitle"];
-          if (searchInput)
-            searchInput.placeholder = texts["search-placeholder"];
-          if (searchButton) searchButton.textContent = texts["search-button"];
+          const searchTitle = document.querySelector('.search-section h2');
+          const searchSubtitle = document.querySelector('.search-section p');
+          const searchInput = document.querySelector('.search-input');
+          const searchButton = document.querySelector('.search-box .btn');
+          if (searchTitle) searchTitle.textContent = texts['search-title'];
+          if (searchSubtitle) searchSubtitle.textContent = texts['search-subtitle'];
+          if (searchInput) searchInput.placeholder = texts['search-placeholder'];
+          if (searchButton) searchButton.textContent = texts['search-button'];
 
           // Update filters
-          const categoryFilter = document.querySelector(
-            ".filter-group label[for='categoryFilter']"
-          );
-          const areaFilter = document.querySelector(
-            ".filter-group label[for='areaFilter']"
-          );
-          const sortFilter = document.querySelector(
-            ".filter-group label[for='sortFilter']"
-          );
-          const openFilter = document.querySelector(
-            ".filter-group label[for='openOnly']"
-          );
-          if (categoryFilter)
-            categoryFilter.textContent = texts["filter-category"];
-          if (areaFilter) areaFilter.textContent = texts["filter-area"];
-          if (sortFilter) sortFilter.textContent = texts["filter-sort"];
-          if (openFilter) openFilter.textContent = texts["filter-open"];
+          const categoryFilter = document.querySelector(".filter-group label[for='categoryFilter']");
+          const areaFilter = document.querySelector(".filter-group label[for='areaFilter']");
+          const sortFilter = document.querySelector(".filter-group label[for='sortFilter']");
+          const openFilter = document.querySelector(".filter-group label[for='openOnly']");
+          if (categoryFilter) categoryFilter.textContent = texts['filter-category'];
+          if (areaFilter) areaFilter.textContent = texts['filter-area'];
+          if (sortFilter) sortFilter.textContent = texts['filter-sort'];
+          if (openFilter) openFilter.textContent = texts['filter-open'];
 
           // Update results count
-          const resultCount = document.querySelector("#resultCount");
+          const resultCount = document.querySelector('#resultCount');
           if (resultCount) {
             const currentCount = resultCount.textContent.match(/\d+/);
             if (currentCount) {
-              resultCount.textContent = `${currentCount[0]} ${texts["results-count"]}`;
+              resultCount.textContent = `${currentCount[0]} ${texts['results-count']}`;
             }
           }
 
           // Update map button
-          const mapButton = document.querySelector(
-            "#mapCtaBtn span:last-child"
-          );
-          if (mapButton) mapButton.textContent = texts["map-button"];
+          const mapButton = document.querySelector('#mapCtaBtn span:last-child');
+          if (mapButton) mapButton.textContent = texts['map-button'];
         }
 
         // Initialize with Korean
-        updateNavigation("ko");
+        updateNavigation('ko');
 
         // Scroll to top functionality
-        const scrollToTopBtn = document.getElementById("scrollToTop");
+        const scrollToTopBtn = document.getElementById('scrollToTop');
 
         // Show/hide scroll to top button based on scroll position
-        window.addEventListener("scroll", function () {
+        window.addEventListener('scroll', function () {
           if (window.pageYOffset > 300) {
-            scrollToTopBtn.classList.add("show");
+            scrollToTopBtn.classList.add('show');
           } else {
-            scrollToTopBtn.classList.remove("show");
+            scrollToTopBtn.classList.remove('show');
           }
         });
 
         // Smooth scroll to top when button is clicked
-        scrollToTopBtn.addEventListener("click", function () {
+        scrollToTopBtn.addEventListener('click', function () {
           window.scrollTo({
             top: 0,
-            behavior: "smooth",
+            behavior: 'smooth',
           });
         });
       });

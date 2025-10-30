@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -59,19 +59,10 @@
     <section class="hero">
       <div class="container">
         <div class="hero-content">
-          <h2 class="hero-title" id="hero-title">
-            밴쿠버 생활, 한 번에 찾는 한인 업체 목록
-          </h2>
-          <p class="hero-subtitle" id="hero-subtitle">
-            음식점, 마트, 병원, 부동산, 모든 생활 정보를 한 곳에서.
-          </p>
+          <h2 class="hero-title" id="hero-title">밴쿠버 생활, 한 번에 찾는 한인 업체 목록</h2>
+          <p class="hero-subtitle" id="hero-subtitle">음식점, 마트, 병원, 부동산, 모든 생활 정보를 한 곳에서.</p>
           <div class="search-container">
-            <input
-              type="text"
-              class="search-input"
-              id="search-input"
-              placeholder="업체명 · 업종 · 지역으로 검색"
-            />
+            <input type="text" class="search-input" id="search-input" placeholder="업체명 · 업종 · 지역으로 검색" />
             <button class="search-btn" id="search-btn">검색</button>
           </div>
           <button class="cta-btn" id="cta-btn">내 주변 한인 업체 보기</button>
@@ -119,10 +110,7 @@
                 <div class="map-info">
                   <h4>밴쿠버 한인 업체 위치</h4>
                   <p>지도에서 한인 업체들을 찾아보세요</p>
-                  <button
-                    class="map-btn"
-                    onclick="window.open('https://www.google.com/maps', '_blank')"
-                  >
+                  <button class="map-btn" onclick="window.open('https://www.google.com/maps', '_blank')">
                     전체 지도 보기
                   </button>
                 </div>
@@ -159,9 +147,7 @@
                     <div class="stat-icon">🏪</div>
                     <div class="stat-info">
                       <span class="stat-number">150+</span>
-                      <span class="stat-label stat-businesses"
-                        >등록된 업체</span
-                      >
+                      <span class="stat-label stat-businesses">등록된 업체</span>
                     </div>
                   </div>
                   <div class="stat-item">
@@ -210,10 +196,7 @@
                     <span class="action-btn bookmark">🔖</span>
                   </div>
                   <div class="post-content">
-                    <p>
-                      <strong>@밴쿠버한인비즈니스</strong> 밴쿠버 한인
-                      커뮤니티의 최신 소식을 만나보세요! 🏙️✨
-                    </p>
+                    <p><strong>@밴쿠버한인비즈니스</strong> 밴쿠버 한인 커뮤니티의 최신 소식을 만나보세요! 🏙️✨</p>
                     <p class="post-time">2시간 전</p>
                   </div>
                 </div>
@@ -226,9 +209,7 @@
     </section>
 
     <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTop" title="맨 위로 가기">
-      ↑
-    </button>
+    <button class="scroll-to-top" id="scrollToTop" title="맨 위로 가기">↑</button>
 
     <!-- Loading Overlay -->
     <div class="loading-overlay" id="loadingOverlay">
@@ -286,18 +267,18 @@
     <!-- <script src="scripts/script.js"></script> -->
     <script>
       // Dark Mode Toggle
-      document.addEventListener("DOMContentLoaded", function () {
-        const themeToggle = document.getElementById("themeToggle");
-        const langToggle = document.querySelector(".language-toggle");
-        const themeIcon = document.getElementById("themeIcon");
+      document.addEventListener('DOMContentLoaded', function () {
+        const themeToggle = document.getElementById('themeToggle');
+        const langToggle = document.querySelector('.language-toggle');
+        const themeIcon = document.getElementById('themeIcon');
         const body = document.body;
 
         // Load saved theme and language
-        const savedTheme = localStorage.getItem("theme") || "light";
-        const savedLang = localStorage.getItem("language") || "ko";
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        const savedLang = localStorage.getItem('language') || 'ko';
 
-        body.setAttribute("data-theme", savedTheme);
-        body.setAttribute("lang", savedLang);
+        body.setAttribute('data-theme', savedTheme);
+        body.setAttribute('lang', savedLang);
         updateThemeIcon(savedTheme);
         updateLanguageIcon(savedLang);
 
@@ -306,63 +287,47 @@
           updateNavigation(savedLang);
         }, 10);
 
-        themeToggle.addEventListener("click", function () {
-          const currentTheme = body.getAttribute("data-theme");
-          const newTheme = currentTheme === "dark" ? "light" : "dark";
+        themeToggle.addEventListener('click', function () {
+          const currentTheme = body.getAttribute('data-theme');
+          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
-          body.setAttribute("data-theme", newTheme);
-          localStorage.setItem("theme", newTheme);
+          body.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
           updateThemeIcon(newTheme);
         });
 
         function updateThemeIcon(theme) {
-          themeIcon.textContent = theme === "dark" ? "☀️" : "🌙";
+          themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
         }
 
         // Language toggle event listener
-        langToggle.addEventListener("click", function (e) {
-          if (e.target.classList.contains("lang-btn")) {
-            const newLang = e.target.getAttribute("data-lang");
+        langToggle.addEventListener('click', function (e) {
+          if (e.target.classList.contains('lang-btn')) {
+            const newLang = e.target.getAttribute('data-lang');
 
             // Update active button
-            langToggle.querySelectorAll(".lang-btn").forEach((btn) => {
-              btn.classList.remove("active");
+            langToggle.querySelectorAll('.lang-btn').forEach((btn) => {
+              btn.classList.remove('active');
             });
-            e.target.classList.add("active");
+            e.target.classList.add('active');
 
-            body.setAttribute("lang", newLang);
-            localStorage.setItem("language", newLang);
+            body.setAttribute('lang', newLang);
+            localStorage.setItem('language', newLang);
             updateLanguageIcon(newLang);
             updateNavigation(newLang);
           }
         });
 
         function updateNavigation(lang) {
-          const navLinks = document.querySelectorAll(".nav-link");
+          const navLinks = document.querySelectorAll('.nav-link');
 
           // Check if DOM is ready
           if (navLinks.length === 0) {
             return;
           }
           const navTexts = {
-            ko: [
-              "홈",
-              "업체 목록",
-              "지도",
-              "게시판",
-              "업체 등록",
-              "가이드",
-              "소개",
-            ],
-            en: [
-              "Home",
-              "Directory",
-              "Map",
-              "Board",
-              "Submit",
-              "Guides",
-              "About",
-            ],
+            ko: ['홈', '업체 목록', '지도', '게시판', '업체 등록', '가이드', '소개'],
+            en: ['Home', 'Directory', 'Map', 'Board', 'Submit', 'Guides', 'About'],
           };
 
           navLinks.forEach((link, index) => {
@@ -378,105 +343,101 @@
         }
 
         function updateLanguageIcon(lang) {
-          const langButtons = document.querySelectorAll(".lang-btn");
+          const langButtons = document.querySelectorAll('.lang-btn');
           langButtons.forEach((btn) => {
-            btn.classList.remove("active");
-            if (btn.getAttribute("data-lang") === lang) {
-              btn.classList.add("active");
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-lang') === lang) {
+              btn.classList.add('active');
             }
           });
         }
 
         function updateSectionContent(lang) {
-          console.log("🔄 Updating section content for language:", lang);
+          console.log('🔄 Updating section content for language:', lang);
           const sectionTexts = {
             ko: {
-              "hero-title": "밴쿠버 생활, 한 번에 찾는 한인 업체 목록",
-              "hero-subtitle":
-                "음식점, 마트, 병원, 부동산, 모든 생활 정보를 한 곳에서.",
-              "search-placeholder": "업체명 · 업종 · 지역으로 검색",
-              "search-btn": "검색",
-              "cta-btn": "내 주변 한인 업체 보기",
-              "categories-title": "카테고리별 찾기",
-              "categories-subtitle": "원하는 업종을 선택하여 업체를 찾아보세요",
-              "featured-title": "추천 업체",
-              "featured-subtitle": "인기 있는 한인 업체들을 만나보세요",
-              "map-title": "지도에서 보기",
-              "map-description": "Google Map with Korean business locations",
-              "map-button": "지도에서 보기",
-              "instagram-button": "인스타그램에서 더 보기",
-              "ad-label": "광고",
-              "ad-title": "밴쿠버 한인 업체 홍보",
-              "ad-description": "여기에 여러분의 비즈니스를 홍보해보세요!",
-              "ad-button": "광고 문의하기",
-              "stats-label": "통계",
-              "stat-businesses": "등록된 업체",
-              "stat-visitors": "월 방문자",
-              "stat-rating": "평균 평점",
-              "footer-categories": "카테고리",
-              "footer-popular": "인기",
-              "footer-support": "지원",
-              "footer-about": "소개",
-              "footer-copyright": "All rights reserved.",
-              "footer-restaurants": "음식점",
-              "footer-cafes": "카페",
-              "footer-markets": "마트",
-              "footer-services": "서비스",
-              "footer-featured": "추천",
-              "footer-new": "신규",
-              "footer-help": "도움말",
-              "footer-contact": "문의",
-              "footer-privacy": "개인정보처리방침",
-              "footer-terms": "이용약관",
-              "footer-company": "회사",
-              "footer-team": "팀 소개",
-              "footer-careers": "채용",
-              "footer-news": "뉴스",
+              'hero-title': '밴쿠버 생활, 한 번에 찾는 한인 업체 목록',
+              'hero-subtitle': '음식점, 마트, 병원, 부동산, 모든 생활 정보를 한 곳에서.',
+              'search-placeholder': '업체명 · 업종 · 지역으로 검색',
+              'search-btn': '검색',
+              'cta-btn': '내 주변 한인 업체 보기',
+              'categories-title': '카테고리별 찾기',
+              'categories-subtitle': '원하는 업종을 선택하여 업체를 찾아보세요',
+              'featured-title': '추천 업체',
+              'featured-subtitle': '인기 있는 한인 업체들을 만나보세요',
+              'map-title': '지도에서 보기',
+              'map-description': 'Google Map with Korean business locations',
+              'map-button': '지도에서 보기',
+              'instagram-button': '인스타그램에서 더 보기',
+              'ad-label': '광고',
+              'ad-title': '밴쿠버 한인 업체 홍보',
+              'ad-description': '여기에 여러분의 비즈니스를 홍보해보세요!',
+              'ad-button': '광고 문의하기',
+              'stats-label': '통계',
+              'stat-businesses': '등록된 업체',
+              'stat-visitors': '월 방문자',
+              'stat-rating': '평균 평점',
+              'footer-categories': '카테고리',
+              'footer-popular': '인기',
+              'footer-support': '지원',
+              'footer-about': '소개',
+              'footer-copyright': 'All rights reserved.',
+              'footer-restaurants': '음식점',
+              'footer-cafes': '카페',
+              'footer-markets': '마트',
+              'footer-services': '서비스',
+              'footer-featured': '추천',
+              'footer-new': '신규',
+              'footer-help': '도움말',
+              'footer-contact': '문의',
+              'footer-privacy': '개인정보처리방침',
+              'footer-terms': '이용약관',
+              'footer-company': '회사',
+              'footer-team': '팀 소개',
+              'footer-careers': '채용',
+              'footer-news': '뉴스',
             },
             en: {
-              "hero-title": "Vancouver Korean Business Directory",
-              "hero-subtitle":
-                "Find all Korean businesses in Vancouver in one place",
-              "search-placeholder":
-                "Search by business name, category, or area",
-              "search-btn": "Search",
-              "cta-btn": "Find Korean Businesses Near Me",
-              "categories-title": "Browse by Category",
-              "categories-subtitle":
-                "Select your preferred business type to find establishments",
-              "featured-title": "Featured Businesses",
-              "featured-subtitle": "Discover popular Korean businesses",
-              "map-title": "View on Map",
-              "map-description": "Google Map with Korean business locations",
-              "map-button": "View on Map",
-              "instagram-button": "View More on Instagram",
-              "ad-label": "Ad",
-              "ad-title": "Vancouver Korean Business Promotion",
-              "ad-description": "Promote your business here!",
-              "ad-button": "Contact for Ads",
-              "stats-label": "Statistics",
-              "stat-businesses": "Registered Businesses",
-              "stat-visitors": "Monthly Visitors",
-              "stat-rating": "Average Rating",
-              "footer-categories": "Categories",
-              "footer-popular": "Popular",
-              "footer-support": "Support",
-              "footer-about": "About",
-              "footer-copyright": "All rights reserved.",
-              "footer-restaurants": "Restaurants",
-              "footer-cafes": "Cafes",
-              "footer-markets": "Markets",
-              "footer-services": "Services",
-              "footer-featured": "Featured",
-              "footer-new": "New",
-              "footer-help": "Help Center",
-              "footer-contact": "Contact",
-              "footer-privacy": "Privacy Policy",
-              "footer-terms": "Terms of Service",
-              "footer-company": "Company",
-              "footer-team": "Our Team",
-              "footer-careers": "Careers",
-              "footer-news": "News",
+              'hero-title': 'Vancouver Korean Business Directory',
+              'hero-subtitle': 'Find all Korean businesses in Vancouver in one place',
+              'search-placeholder': 'Search by business name, category, or area',
+              'search-btn': 'Search',
+              'cta-btn': 'Find Korean Businesses Near Me',
+              'categories-title': 'Browse by Category',
+              'categories-subtitle': 'Select your preferred business type to find establishments',
+              'featured-title': 'Featured Businesses',
+              'featured-subtitle': 'Discover popular Korean businesses',
+              'map-title': 'View on Map',
+              'map-description': 'Google Map with Korean business locations',
+              'map-button': 'View on Map',
+              'instagram-button': 'View More on Instagram',
+              'ad-label': 'Ad',
+              'ad-title': 'Vancouver Korean Business Promotion',
+              'ad-description': 'Promote your business here!',
+              'ad-button': 'Contact for Ads',
+              'stats-label': 'Statistics',
+              'stat-businesses': 'Registered Businesses',
+              'stat-visitors': 'Monthly Visitors',
+              'stat-rating': 'Average Rating',
+              'footer-categories': 'Categories',
+              'footer-popular': 'Popular',
+              'footer-support': 'Support',
+              'footer-about': 'About',
+              'footer-copyright': 'All rights reserved.',
+              'footer-restaurants': 'Restaurants',
+              'footer-cafes': 'Cafes',
+              'footer-markets': 'Markets',
+              'footer-services': 'Services',
+              'footer-featured': 'Featured',
+              'footer-new': 'New',
+              'footer-help': 'Help Center',
+              'footer-contact': 'Contact',
+              'footer-privacy': 'Privacy Policy',
+              'footer-terms': 'Terms of Service',
+              'footer-company': 'Company',
+              'footer-team': 'Our Team',
+              'footer-careers': 'Careers',
+              'footer-news': 'News',
             },
           };
 
@@ -484,90 +445,76 @@
           if (!texts) return;
 
           // Update hero section
-          const heroTitle = document.getElementById("hero-title");
-          const heroSubtitle = document.getElementById("hero-subtitle");
-          const searchInput = document.getElementById("search-input");
-          const searchBtn = document.getElementById("search-btn");
-          const ctaBtn = document.getElementById("cta-btn");
+          const heroTitle = document.getElementById('hero-title');
+          const heroSubtitle = document.getElementById('hero-subtitle');
+          const searchInput = document.getElementById('search-input');
+          const searchBtn = document.getElementById('search-btn');
+          const ctaBtn = document.getElementById('cta-btn');
 
-          console.log("Hero title element:", heroTitle);
-          console.log("Hero subtitle element:", heroSubtitle);
+          console.log('Hero title element:', heroTitle);
+          console.log('Hero subtitle element:', heroSubtitle);
 
           if (heroTitle) {
-            heroTitle.textContent = texts["hero-title"];
-            console.log("Updated hero title to:", texts["hero-title"]);
+            heroTitle.textContent = texts['hero-title'];
+            console.log('Updated hero title to:', texts['hero-title']);
           }
           if (heroSubtitle) {
-            heroSubtitle.textContent = texts["hero-subtitle"];
-            console.log("Updated hero subtitle to:", texts["hero-subtitle"]);
+            heroSubtitle.textContent = texts['hero-subtitle'];
+            console.log('Updated hero subtitle to:', texts['hero-subtitle']);
           }
           if (searchInput) {
-            searchInput.placeholder = texts["search-placeholder"];
+            searchInput.placeholder = texts['search-placeholder'];
           }
           if (searchBtn) {
-            searchBtn.textContent = texts["search-btn"];
+            searchBtn.textContent = texts['search-btn'];
           }
           if (ctaBtn) {
-            ctaBtn.textContent = texts["cta-btn"];
+            ctaBtn.textContent = texts['cta-btn'];
           }
 
           // Update categories section
-          const categoriesTitle = document.querySelector(
-            ".categories .section-title"
-          );
-          const categoriesSubtitle = document.querySelector(".categories p");
-          if (categoriesTitle)
-            categoriesTitle.textContent = texts["categories-title"];
-          if (categoriesSubtitle)
-            categoriesSubtitle.textContent = texts["categories-subtitle"];
+          const categoriesTitle = document.querySelector('.categories .section-title');
+          const categoriesSubtitle = document.querySelector('.categories p');
+          if (categoriesTitle) categoriesTitle.textContent = texts['categories-title'];
+          if (categoriesSubtitle) categoriesSubtitle.textContent = texts['categories-subtitle'];
 
           // Update featured section
-          const featuredTitle = document.querySelector(
-            ".featured .section-title"
-          );
-          const featuredSubtitle = document.querySelector(".featured p");
-          if (featuredTitle)
-            featuredTitle.textContent = texts["featured-title"];
-          if (featuredSubtitle)
-            featuredSubtitle.textContent = texts["featured-subtitle"];
+          const featuredTitle = document.querySelector('.featured .section-title');
+          const featuredSubtitle = document.querySelector('.featured p');
+          if (featuredTitle) featuredTitle.textContent = texts['featured-title'];
+          if (featuredSubtitle) featuredSubtitle.textContent = texts['featured-subtitle'];
 
           // Update map section
-          const mapTitle = document.querySelector(
-            ".map-preview .section-title"
-          );
-          const mapDescription = document.querySelector(".map-content p");
-          const mapButton = document.querySelector(".map-btn");
-          if (mapTitle) mapTitle.textContent = texts["map-title"];
-          if (mapDescription)
-            mapDescription.textContent = texts["map-description"];
-          if (mapButton) mapButton.textContent = texts["map-button"];
+          const mapTitle = document.querySelector('.map-preview .section-title');
+          const mapDescription = document.querySelector('.map-content p');
+          const mapButton = document.querySelector('.map-btn');
+          if (mapTitle) mapTitle.textContent = texts['map-title'];
+          if (mapDescription) mapDescription.textContent = texts['map-description'];
+          if (mapButton) mapButton.textContent = texts['map-button'];
 
           // Update Instagram section
-          const instagramButton = document.querySelector(".instagram-btn");
-          if (instagramButton)
-            instagramButton.textContent = texts["instagram-button"];
+          const instagramButton = document.querySelector('.instagram-btn');
+          if (instagramButton) instagramButton.textContent = texts['instagram-button'];
 
           // Update Advertisement section
-          const adLabel = document.querySelector(".ad-label");
-          const adTitle = document.querySelector(".ad-text h4");
-          const adDescription = document.querySelector(".ad-text p");
-          const adButton = document.querySelector(".ad-btn");
-          if (adLabel) adLabel.textContent = texts["ad-label"];
-          if (adTitle) adTitle.textContent = texts["ad-title"];
-          if (adDescription)
-            adDescription.textContent = texts["ad-description"];
-          if (adButton) adButton.textContent = texts["ad-button"];
+          const adLabel = document.querySelector('.ad-label');
+          const adTitle = document.querySelector('.ad-text h4');
+          const adDescription = document.querySelector('.ad-text p');
+          const adButton = document.querySelector('.ad-btn');
+          if (adLabel) adLabel.textContent = texts['ad-label'];
+          if (adTitle) adTitle.textContent = texts['ad-title'];
+          if (adDescription) adDescription.textContent = texts['ad-description'];
+          if (adButton) adButton.textContent = texts['ad-button'];
 
           // Update Statistics section
-          const statsLabel = document.querySelector(".stats-label");
-          const statBusinesses = document.querySelector(".stat-businesses");
-          const statVisitors = document.querySelector(".stat-visitors");
-          const statRating = document.querySelector(".stat-rating");
-          if (statsLabel) statsLabel.textContent = texts["stats-label"];
-          if (statBusinesses)
-            statBusinesses.textContent = texts["stat-businesses"];
-          if (statVisitors) statVisitors.textContent = texts["stat-visitors"];
-          if (statRating) statRating.textContent = texts["stat-rating"];
+          const statsLabel = document.querySelector('.stats-label');
+          const statBusinesses = document.querySelector('.stat-businesses');
+          const statVisitors = document.querySelector('.stat-visitors');
+          const statRating = document.querySelector('.stat-rating');
+          if (statsLabel) statsLabel.textContent = texts['stats-label'];
+          if (statBusinesses) statBusinesses.textContent = texts['stat-businesses'];
+          if (statVisitors) statVisitors.textContent = texts['stat-visitors'];
+          if (statRating) statRating.textContent = texts['stat-rating'];
 
           // Update categories section
           updateCategoriesSection(lang);
@@ -582,40 +529,36 @@
         }
 
         function updateCategoriesSection(lang) {
-          const categoryCards = document.querySelectorAll(".category-card");
+          const categoryCards = document.querySelectorAll('.category-card');
 
           categoryCards.forEach((card) => {
-            const titleElement = card.querySelector("h4");
-            const subtitleElement = card.querySelector("p");
+            const titleElement = card.querySelector('h4');
+            const subtitleElement = card.querySelector('p');
 
             if (titleElement) {
               // Get the category data
               const categoryData = window.categoryData || [];
 
-              if (lang === "en") {
+              if (lang === 'en') {
                 // English: Show English category name as title, hide subtitle
                 const currentTitle = titleElement.textContent;
-                const category = categoryData.find(
-                  (cat) => cat.categoryDisplay === currentTitle
-                );
+                const category = categoryData.find((cat) => cat.categoryDisplay === currentTitle);
                 if (category) {
                   titleElement.textContent = category.category;
                 }
                 // Hide subtitle for English
                 if (subtitleElement) {
-                  subtitleElement.style.display = "none";
+                  subtitleElement.style.display = 'none';
                 }
               } else {
                 // Korean: Show Korean category name as title, English category name as subtitle
                 const currentTitle = titleElement.textContent;
-                const category = categoryData.find(
-                  (cat) => cat.category === currentTitle
-                );
+                const category = categoryData.find((cat) => cat.category === currentTitle);
                 if (category) {
                   titleElement.textContent = category.categoryDisplay;
                   if (subtitleElement) {
                     subtitleElement.textContent = category.category;
-                    subtitleElement.style.display = "block";
+                    subtitleElement.style.display = 'block';
                   }
                 }
               }
@@ -626,46 +569,46 @@
         function updateFooter(lang) {
           const footerTexts = {
             ko: {
-              "footer-categories": "카테고리",
-              "footer-popular": "인기",
-              "footer-support": "지원",
-              "footer-about": "소개",
-              "footer-copyright": "All rights reserved.",
-              "footer-restaurants": "음식점",
-              "footer-cafes": "카페",
-              "footer-markets": "마트",
-              "footer-services": "서비스",
-              "footer-featured": "추천",
-              "footer-new": "신규",
-              "footer-help": "도움말",
-              "footer-contact": "문의",
-              "footer-privacy": "개인정보처리방침",
-              "footer-terms": "이용약관",
-              "footer-company": "회사",
-              "footer-team": "팀 소개",
-              "footer-careers": "채용",
-              "footer-news": "뉴스",
+              'footer-categories': '카테고리',
+              'footer-popular': '인기',
+              'footer-support': '지원',
+              'footer-about': '소개',
+              'footer-copyright': 'All rights reserved.',
+              'footer-restaurants': '음식점',
+              'footer-cafes': '카페',
+              'footer-markets': '마트',
+              'footer-services': '서비스',
+              'footer-featured': '추천',
+              'footer-new': '신규',
+              'footer-help': '도움말',
+              'footer-contact': '문의',
+              'footer-privacy': '개인정보처리방침',
+              'footer-terms': '이용약관',
+              'footer-company': '회사',
+              'footer-team': '팀 소개',
+              'footer-careers': '채용',
+              'footer-news': '뉴스',
             },
             en: {
-              "footer-categories": "Categories",
-              "footer-popular": "Popular",
-              "footer-support": "Support",
-              "footer-about": "About",
-              "footer-copyright": "All rights reserved.",
-              "footer-restaurants": "Restaurants",
-              "footer-cafes": "Cafes",
-              "footer-markets": "Markets",
-              "footer-services": "Services",
-              "footer-featured": "Featured",
-              "footer-new": "New",
-              "footer-help": "Help Center",
-              "footer-contact": "Contact",
-              "footer-privacy": "Privacy Policy",
-              "footer-terms": "Terms of Service",
-              "footer-company": "Company",
-              "footer-team": "Our Team",
-              "footer-careers": "Careers",
-              "footer-news": "News",
+              'footer-categories': 'Categories',
+              'footer-popular': 'Popular',
+              'footer-support': 'Support',
+              'footer-about': 'About',
+              'footer-copyright': 'All rights reserved.',
+              'footer-restaurants': 'Restaurants',
+              'footer-cafes': 'Cafes',
+              'footer-markets': 'Markets',
+              'footer-services': 'Services',
+              'footer-featured': 'Featured',
+              'footer-new': 'New',
+              'footer-help': 'Help Center',
+              'footer-contact': 'Contact',
+              'footer-privacy': 'Privacy Policy',
+              'footer-terms': 'Terms of Service',
+              'footer-company': 'Company',
+              'footer-team': 'Our Team',
+              'footer-careers': 'Careers',
+              'footer-news': 'News',
             },
           };
 
@@ -673,51 +616,32 @@
           if (!texts) return;
 
           // Update footer section titles
-          const footerSections =
-            document.querySelectorAll(".footer-section h4");
-          if (footerSections[0])
-            footerSections[0].textContent = texts["footer-categories"];
-          if (footerSections[1])
-            footerSections[1].textContent = texts["footer-popular"];
-          if (footerSections[2])
-            footerSections[2].textContent = texts["footer-support"];
-          if (footerSections[3])
-            footerSections[3].textContent = texts["footer-about"];
+          const footerSections = document.querySelectorAll('.footer-section h4');
+          if (footerSections[0]) footerSections[0].textContent = texts['footer-categories'];
+          if (footerSections[1]) footerSections[1].textContent = texts['footer-popular'];
+          if (footerSections[2]) footerSections[2].textContent = texts['footer-support'];
+          if (footerSections[3]) footerSections[3].textContent = texts['footer-about'];
 
           // Update footer links
-          const footerLinks = document.querySelectorAll(
-            ".footer-section ul li a"
-          );
-          if (footerLinks[0])
-            footerLinks[0].textContent = texts["footer-restaurants"];
-          if (footerLinks[1])
-            footerLinks[1].textContent = texts["footer-cafes"];
-          if (footerLinks[2])
-            footerLinks[2].textContent = texts["footer-markets"];
-          if (footerLinks[3])
-            footerLinks[3].textContent = texts["footer-services"];
-          if (footerLinks[4])
-            footerLinks[4].textContent = texts["footer-featured"];
-          if (footerLinks[5]) footerLinks[5].textContent = texts["footer-new"];
-          if (footerLinks[6]) footerLinks[6].textContent = texts["footer-help"];
-          if (footerLinks[7])
-            footerLinks[7].textContent = texts["footer-contact"];
-          if (footerLinks[8])
-            footerLinks[8].textContent = texts["footer-privacy"];
-          if (footerLinks[9])
-            footerLinks[9].textContent = texts["footer-terms"];
-          if (footerLinks[10])
-            footerLinks[10].textContent = texts["footer-company"];
-          if (footerLinks[11])
-            footerLinks[11].textContent = texts["footer-team"];
-          if (footerLinks[12])
-            footerLinks[12].textContent = texts["footer-careers"];
-          if (footerLinks[13])
-            footerLinks[13].textContent = texts["footer-news"];
+          const footerLinks = document.querySelectorAll('.footer-section ul li a');
+          if (footerLinks[0]) footerLinks[0].textContent = texts['footer-restaurants'];
+          if (footerLinks[1]) footerLinks[1].textContent = texts['footer-cafes'];
+          if (footerLinks[2]) footerLinks[2].textContent = texts['footer-markets'];
+          if (footerLinks[3]) footerLinks[3].textContent = texts['footer-services'];
+          if (footerLinks[4]) footerLinks[4].textContent = texts['footer-featured'];
+          if (footerLinks[5]) footerLinks[5].textContent = texts['footer-new'];
+          if (footerLinks[6]) footerLinks[6].textContent = texts['footer-help'];
+          if (footerLinks[7]) footerLinks[7].textContent = texts['footer-contact'];
+          if (footerLinks[8]) footerLinks[8].textContent = texts['footer-privacy'];
+          if (footerLinks[9]) footerLinks[9].textContent = texts['footer-terms'];
+          if (footerLinks[10]) footerLinks[10].textContent = texts['footer-company'];
+          if (footerLinks[11]) footerLinks[11].textContent = texts['footer-team'];
+          if (footerLinks[12]) footerLinks[12].textContent = texts['footer-careers'];
+          if (footerLinks[13]) footerLinks[13].textContent = texts['footer-news'];
         }
 
         // Initialize with Korean
-        updateNavigation("ko");
+        updateNavigation('ko');
 
         // Load featured businesses from Google Sheets
         loadFeaturedBusinesses();
@@ -726,8 +650,8 @@
         loadCategories();
 
         // Google Sheets configuration
-        const SHEET_ID = "1VNJf3ffSD5nHVvH6D75a44qMbU2HWVfRMp7AvTcNThg";
-        const SHEET_NAME = "Sheet1";
+        const SHEET_ID = '1VNJf3ffSD5nHVvH6D75a44qMbU2HWVfRMp7AvTcNThg';
+        const SHEET_NAME = 'Sheet1';
 
         // Performance configuration
         const PERFORMANCE_LIMITS = {
@@ -739,116 +663,80 @@
 
         async function loadFeaturedBusinesses() {
           try {
-            console.log("🔄 Loading featured businesses from Google Sheets...");
-            console.log("📊 Sheet ID:", SHEET_ID);
-            console.log("📋 Sheet Name:", SHEET_NAME);
-            console.log("🕐 Timestamp:", new Date().toISOString());
+            console.log('🔄 Loading featured businesses from Google Sheets...');
+            console.log('📊 Sheet ID:', SHEET_ID);
+            console.log('📋 Sheet Name:', SHEET_NAME);
+            console.log('🕐 Timestamp:', new Date().toISOString());
 
             // Add timestamp to prevent browser caching
             const timestamp = new Date().getTime();
             const response = await fetch(
-              `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${SHEET_NAME}&_t=${timestamp}`
+              `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${SHEET_NAME}&_t=${timestamp}`,
             );
 
-            console.log("📡 Response status:", response.status);
-            console.log("📡 Response ok:", response.ok);
-            console.log(
-              "📡 Response headers:",
-              Object.fromEntries(response.headers.entries())
-            );
+            console.log('📡 Response status:', response.status);
+            console.log('📡 Response ok:', response.ok);
+            console.log('📡 Response headers:', Object.fromEntries(response.headers.entries()));
 
             if (!response.ok) {
-              throw new Error(
-                `HTTP error! status: ${response.status} - ${response.statusText}`
-              );
+              throw new Error(`HTTP error! status: ${response.status} - ${response.statusText}`);
             }
 
             const csvText = await response.text();
-            console.log("📄 CSV data length:", csvText.length);
+            console.log('📄 CSV data length:', csvText.length);
+            console.log('📄 CSV data received (first 200 chars):', csvText.substring(0, 200) + '...');
             console.log(
-              "📄 CSV data received (first 200 chars):",
-              csvText.substring(0, 200) + "..."
-            );
-            console.log(
-              "📄 CSV data received (last 200 chars):",
-              "..." + csvText.substring(Math.max(0, csvText.length - 200))
+              '📄 CSV data received (last 200 chars):',
+              '...' + csvText.substring(Math.max(0, csvText.length - 200)),
             );
 
             if (!csvText || csvText.trim().length === 0) {
-              throw new Error("CSV data is empty");
+              throw new Error('CSV data is empty');
             }
 
             const businesses = parseCSV(csvText);
-            console.log("📊 Parsed businesses count:", businesses.length);
-            console.log("📊 Parsed businesses:", businesses);
+            console.log('📊 Parsed businesses count:', businesses.length);
+            console.log('📊 Parsed businesses:', businesses);
 
             // Apply performance limits
-            const limitedBusinesses = businesses.slice(
-              0,
-              PERFORMANCE_LIMITS.MAX_BUSINESSES
-            );
+            const limitedBusinesses = businesses.slice(0, PERFORMANCE_LIMITS.MAX_BUSINESSES);
             if (businesses.length > PERFORMANCE_LIMITS.MAX_BUSINESSES) {
-              console.warn(
-                `⚠️ Limited to ${PERFORMANCE_LIMITS.MAX_BUSINESSES} businesses for performance`
-              );
+              console.warn(`⚠️ Limited to ${PERFORMANCE_LIMITS.MAX_BUSINESSES} businesses for performance`);
             }
 
             // Filter featured businesses - if no featured column, show first 6 businesses
             let featuredBusinesses;
-            const hasFeaturedColumn =
-              businesses.length > 0 && businesses[0].hasOwnProperty("featured");
+            const hasFeaturedColumn = businesses.length > 0 && businesses[0].hasOwnProperty('featured');
 
-            console.log("🔍 Has featured column:", hasFeaturedColumn);
-            console.log(
-              "📊 First business keys:",
-              businesses.length > 0 ? Object.keys(businesses[0]) : []
-            );
-            console.log(
-              "📊 Limited businesses count:",
-              limitedBusinesses.length
-            );
+            console.log('🔍 Has featured column:', hasFeaturedColumn);
+            console.log('📊 First business keys:', businesses.length > 0 ? Object.keys(businesses[0]) : []);
+            console.log('📊 Limited businesses count:', limitedBusinesses.length);
 
             if (hasFeaturedColumn) {
               // If featured column exists, filter by it
               const featuredFiltered = limitedBusinesses.filter(
-                (business) =>
-                  business.featured === "true" ||
-                  business.featured === "TRUE" ||
-                  business.featured === "1"
+                (business) => business.featured === 'true' || business.featured === 'TRUE' || business.featured === '1',
               );
-              console.log(
-                "⭐ Featured filtered count:",
-                featuredFiltered.length
-              );
-              featuredBusinesses = featuredFiltered.slice(
-                0,
-                PERFORMANCE_LIMITS.FEATURED_LIMIT
-              );
+              console.log('⭐ Featured filtered count:', featuredFiltered.length);
+              featuredBusinesses = featuredFiltered.slice(0, PERFORMANCE_LIMITS.FEATURED_LIMIT);
             } else {
               // If no featured column, show first N businesses
-              console.log(
-                "📋 No featured column, showing first",
-                PERFORMANCE_LIMITS.FEATURED_LIMIT,
-                "businesses"
-              );
-              featuredBusinesses = limitedBusinesses.slice(
-                0,
-                PERFORMANCE_LIMITS.FEATURED_LIMIT
-              );
+              console.log('📋 No featured column, showing first', PERFORMANCE_LIMITS.FEATURED_LIMIT, 'businesses');
+              featuredBusinesses = limitedBusinesses.slice(0, PERFORMANCE_LIMITS.FEATURED_LIMIT);
             }
 
-            console.log("📊 Total businesses:", businesses.length);
-            console.log("⭐ Featured businesses:", featuredBusinesses.length);
+            console.log('📊 Total businesses:', businesses.length);
+            console.log('⭐ Featured businesses:', featuredBusinesses.length);
 
-            console.log("✅ Featured businesses loaded:", featuredBusinesses);
+            console.log('✅ Featured businesses loaded:', featuredBusinesses);
             renderFeaturedBusinesses(featuredBusinesses);
           } catch (error) {
-            console.error("❌ Error loading featured businesses:", error);
-            console.error("❌ Error details:", error.message);
-            console.error("❌ Error stack:", error.stack);
+            console.error('❌ Error loading featured businesses:', error);
+            console.error('❌ Error details:', error.message);
+            console.error('❌ Error stack:', error.stack);
 
             // Show detailed error message for debugging
-            const featuredGrid = document.querySelector(".featured-grid");
+            const featuredGrid = document.querySelector('.featured-grid');
             if (featuredGrid) {
               featuredGrid.innerHTML = `
                 <div style="text-align: center; padding: 2rem; color: #666;">
@@ -861,23 +749,23 @@
             }
 
             // Also try to render static fallback
-            console.log("🔄 Attempting static fallback...");
+            console.log('🔄 Attempting static fallback...');
             renderStaticFeaturedBusinesses();
           }
         }
 
         function parseCSV(csvText) {
           try {
-            console.log("📄 Parsing CSV data...");
-            const lines = csvText.split("\n");
-            console.log("📄 CSV lines count:", lines.length);
+            console.log('📄 Parsing CSV data...');
+            const lines = csvText.split('\n');
+            console.log('📄 CSV lines count:', lines.length);
 
             if (lines.length < 2) {
-              throw new Error("CSV data is too short");
+              throw new Error('CSV data is too short');
             }
 
             const headers = parseCSVLine(lines[0]);
-            console.log("📄 Headers:", headers);
+            console.log('📄 Headers:', headers);
             const businesses = [];
 
             for (let i = 1; i < lines.length; i++) {
@@ -886,23 +774,21 @@
                 console.log(`📄 Row ${i} values:`, values);
 
                 if (values.length !== headers.length) {
-                  console.warn(
-                    `⚠️ Row ${i} has ${values.length} values but expected ${headers.length}`
-                  );
+                  console.warn(`⚠️ Row ${i} has ${values.length} values but expected ${headers.length}`);
                 }
 
                 const business = {};
                 headers.forEach((header, index) => {
-                  business[header] = values[index] || "";
+                  business[header] = values[index] || '';
                 });
                 businesses.push(business);
               }
             }
 
-            console.log("📄 Parsed businesses:", businesses);
+            console.log('📄 Parsed businesses:', businesses);
             return businesses;
           } catch (error) {
-            console.error("❌ CSV parsing error:", error);
+            console.error('❌ CSV parsing error:', error);
             throw error;
           }
         }
@@ -910,7 +796,7 @@
         function parseCSVLine(line) {
           try {
             const result = [];
-            let current = "";
+            let current = '';
             let inQuotes = false;
 
             for (let i = 0; i < line.length; i++) {
@@ -918,53 +804,47 @@
 
               if (char === '"') {
                 inQuotes = !inQuotes;
-              } else if (char === "," && !inQuotes) {
-                result.push(current.trim().replace(/^"|"$/g, ""));
-                current = "";
+              } else if (char === ',' && !inQuotes) {
+                result.push(current.trim().replace(/^"|"$/g, ''));
+                current = '';
               } else {
                 current += char;
               }
             }
 
-            result.push(current.trim().replace(/^"|"$/g, ""));
+            result.push(current.trim().replace(/^"|"$/g, ''));
             return result;
           } catch (error) {
-            console.error("❌ CSV line parsing error:", error);
-            console.error("❌ Problematic line:", line);
+            console.error('❌ CSV line parsing error:', error);
+            console.error('❌ Problematic line:', line);
             throw error;
           }
         }
 
         function renderFeaturedBusinesses(businesses) {
-          console.log("🎨 renderFeaturedBusinesses called with:", businesses);
+          console.log('🎨 renderFeaturedBusinesses called with:', businesses);
 
-          const featuredGrid = document.querySelector(".featured-grid");
+          const featuredGrid = document.querySelector('.featured-grid');
           if (!featuredGrid) {
-            console.error("❌ Featured grid not found!");
-            console.error(
-              "❌ Available elements with 'grid' in class:",
-              document.querySelectorAll('[class*="grid"]')
-            );
+            console.error('❌ Featured grid not found!');
+            console.error("❌ Available elements with 'grid' in class:", document.querySelectorAll('[class*="grid"]'));
             return;
           }
 
-          console.log("🎨 Rendering featured businesses...");
-          console.log("🎨 Featured grid element:", featuredGrid);
-          featuredGrid.innerHTML = "";
+          console.log('🎨 Rendering featured businesses...');
+          console.log('🎨 Featured grid element:', featuredGrid);
+          featuredGrid.innerHTML = '';
 
           if (!businesses || businesses.length === 0) {
-            console.warn("⚠️ No businesses to render");
-            featuredGrid.innerHTML = "<p>추천 업체가 없습니다.</p>";
+            console.warn('⚠️ No businesses to render');
+            featuredGrid.innerHTML = '<p>추천 업체가 없습니다.</p>';
             return;
           }
 
-          console.log("🎨 Rendering", businesses.length, "businesses");
+          console.log('🎨 Rendering', businesses.length, 'businesses');
 
           businesses.forEach((business, index) => {
-            console.log(
-              `📝 Creating card ${index + 1}:`,
-              business.name || business.nameEn || "Unknown"
-            );
+            console.log(`📝 Creating card ${index + 1}:`, business.name || business.nameEn || 'Unknown');
             try {
               const businessCard = createBusinessCard(business);
               featuredGrid.appendChild(businessCard);
@@ -974,62 +854,52 @@
             }
           });
 
-          console.log("✅ Featured businesses rendered successfully!");
-          console.log(
-            "✅ Final featured grid children count:",
-            featuredGrid.children.length
-          );
+          console.log('✅ Featured businesses rendered successfully!');
+          console.log('✅ Final featured grid children count:', featuredGrid.children.length);
         }
 
         function createBusinessCard(business) {
-          console.log("🔧 Creating business card for:", business);
+          console.log('🔧 Creating business card for:', business);
 
-          const card = document.createElement("div");
-          card.className = "business-card";
+          const card = document.createElement('div');
+          card.className = 'business-card';
 
           const categoryIcon = getCategoryIcon(business.category);
-          const categoryDisplay =
-            business.categoryDisplay || business.category || "업체";
+          const categoryDisplay = business.categoryDisplay || business.category || '업체';
 
-          console.log("🔧 Category icon:", categoryIcon);
-          console.log("🔧 Category display:", categoryDisplay);
+          console.log('🔧 Category icon:', categoryIcon);
+          console.log('🔧 Category display:', categoryDisplay);
 
           card.innerHTML = `
             <div class="business-image">
               <img
                 src="${
-                  business.image ||
-                  "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=300&h=200&fit=crop"
+                  business.image || 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=300&h=200&fit=crop'
                 }"
-                alt="${business.name || business.nameEn || "Business"}"
+                alt="${business.name || business.nameEn || 'Business'}"
                 onerror="this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=300&h=200&fit=crop'"
               />
             </div>
             <div class="business-info">
-              <h4>${business.name || business.nameEn || "업체명"}</h4>
+              <h4>${business.name || business.nameEn || '업체명'}</h4>
               <p class="business-category">${categoryIcon} ${categoryDisplay}</p>
-              <p class="business-location">${
-                business.address || "주소 정보 없음"
-              }</p>
+              <p class="business-location">${business.address || '주소 정보 없음'}</p>
             </div>
           `;
 
-          console.log(
-            "🔧 Card HTML created:",
-            card.outerHTML.substring(0, 200) + "..."
-          );
+          console.log('🔧 Card HTML created:', card.outerHTML.substring(0, 200) + '...');
           return card;
         }
 
         // Load categories from Google Sheets
-        async function loadCategories(lang = "ko") {
+        async function loadCategories(lang = 'ko') {
           try {
-            console.log("🔄 Loading categories from Google Sheets...");
+            console.log('🔄 Loading categories from Google Sheets...');
 
             // Add timestamp to prevent browser caching
             const timestamp = new Date().getTime();
             const response = await fetch(
-              `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${SHEET_NAME}&_t=${timestamp}`
+              `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${SHEET_NAME}&_t=${timestamp}`,
             );
 
             if (!response.ok) {
@@ -1055,14 +925,14 @@
             });
 
             const categories = Array.from(categoryMap.values());
-            console.log("📊 Categories loaded:", categories);
+            console.log('📊 Categories loaded:', categories);
 
             // Store categories globally for language switching
             window.categoryData = categories;
 
             renderCategories(categories, lang);
           } catch (error) {
-            console.error("❌ Error loading categories:", error);
+            console.error('❌ Error loading categories:', error);
             // Fallback to static categories
             renderStaticCategories(lang);
           }
@@ -1070,76 +940,76 @@
 
         function getCategoryIcon(category) {
           const iconMap = {
-            restaurant: "🍜",
-            grocery: "🛒",
-            medical: "🏥",
-            legal: "⚖️",
-            realestate: "🏠",
-            beauty: "💇",
-            automotive: "🚗",
-            education: "🎓",
-            음식점: "🍜",
-            마트: "🛒",
-            병원: "🏥",
-            법률: "⚖️",
-            부동산: "🏠",
-            미용: "💇",
-            자동차: "🚗",
-            교육: "🎓",
+            restaurant: '🍜',
+            grocery: '🛒',
+            medical: '🏥',
+            legal: '⚖️',
+            realestate: '🏠',
+            beauty: '💇',
+            automotive: '🚗',
+            education: '🎓',
+            음식점: '🍜',
+            마트: '🛒',
+            병원: '🏥',
+            법률: '⚖️',
+            부동산: '🏠',
+            미용: '💇',
+            자동차: '🚗',
+            교육: '🎓',
           };
 
-          return iconMap[category.toLowerCase()] || "📋";
+          return iconMap[category.toLowerCase()] || '📋';
         }
 
-        function renderCategories(categories, lang = "ko") {
-          const categoryGrid = document.querySelector(".category-grid");
+        function renderCategories(categories, lang = 'ko') {
+          const categoryGrid = document.querySelector('.category-grid');
           if (!categoryGrid) {
-            console.error("❌ Category grid not found!");
+            console.error('❌ Category grid not found!');
             return;
           }
 
-          console.log("🎨 Rendering categories...");
-          categoryGrid.innerHTML = "";
+          console.log('🎨 Rendering categories...');
+          categoryGrid.innerHTML = '';
 
           categories.forEach((category, index) => {
             const categoryCard = createCategoryCard(category, lang);
             categoryGrid.appendChild(categoryCard);
           });
 
-          console.log("✅ Categories rendered successfully!");
+          console.log('✅ Categories rendered successfully!');
         }
 
-        function createCategoryCard(category, lang = "ko") {
-          const card = document.createElement("div");
-          card.className = "category-card";
+        function createCategoryCard(category, lang = 'ko') {
+          const card = document.createElement('div');
+          card.className = 'category-card';
 
           // Get current language
-          const isKorean = lang === "ko";
+          const isKorean = lang === 'ko';
 
           card.innerHTML = `
             <div class="category-icon">${category.icon}</div>
             <h4>${isKorean ? category.categoryDisplay : category.category}</h4>
-            ${isKorean ? `<p>${category.category}</p>` : ""}
+            ${isKorean ? `<p>${category.category}</p>` : ''}
           `;
 
           return card;
         }
 
-        function renderStaticCategories(lang = "ko") {
+        function renderStaticCategories(lang = 'ko') {
           // Fallback static categories
           const staticCategories = [
-            { category: "Restaurants", categoryDisplay: "음식점", icon: "🍜" },
-            { category: "Grocery Stores", categoryDisplay: "마트", icon: "🛒" },
-            { category: "Medical", categoryDisplay: "병원", icon: "🏥" },
+            { category: 'Restaurants', categoryDisplay: '음식점', icon: '🍜' },
+            { category: 'Grocery Stores', categoryDisplay: '마트', icon: '🛒' },
+            { category: 'Medical', categoryDisplay: '병원', icon: '🏥' },
             {
-              category: "Legal/Accounting",
-              categoryDisplay: "법률/회계",
-              icon: "⚖️",
+              category: 'Legal/Accounting',
+              categoryDisplay: '법률/회계',
+              icon: '⚖️',
             },
-            { category: "Real Estate", categoryDisplay: "부동산", icon: "🏠" },
-            { category: "Beauty", categoryDisplay: "미용/뷰티", icon: "💇" },
-            { category: "Automotive", categoryDisplay: "자동차", icon: "🚗" },
-            { category: "Education", categoryDisplay: "교육", icon: "🎓" },
+            { category: 'Real Estate', categoryDisplay: '부동산', icon: '🏠' },
+            { category: 'Beauty', categoryDisplay: '미용/뷰티', icon: '💇' },
+            { category: 'Automotive', categoryDisplay: '자동차', icon: '🚗' },
+            { category: 'Education', categoryDisplay: '교육', icon: '🎓' },
           ];
 
           // Store categories globally for language switching
@@ -1152,50 +1022,48 @@
           // Fallback static featured businesses
           const staticBusinesses = [
             {
-              category: "restaurant",
-              categoryDisplay: "음식점",
-              name: "한솥도시락",
-              nameEn: "Honsot Dosirak",
-              description: "정통 한국 요리를 맛볼 수 있는 곳",
-              rating: "4.5",
-              address: "1234 Kingsway, Burnaby, BC",
-              image:
-                "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=300&h=200&fit=crop",
+              category: 'restaurant',
+              categoryDisplay: '음식점',
+              name: '한솥도시락',
+              nameEn: 'Honsot Dosirak',
+              description: '정통 한국 요리를 맛볼 수 있는 곳',
+              rating: '4.5',
+              address: '1234 Kingsway, Burnaby, BC',
+              image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=300&h=200&fit=crop',
             },
             {
-              category: "grocery",
-              categoryDisplay: "마트",
-              name: "한마음마트",
-              nameEn: "Hanmaeum Market",
-              description: "한국 식재료를 구할 수 있는 마트",
-              rating: "4.2",
-              address: "5678 Granville St, Vancouver, BC",
-              image:
-                "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300&h=200&fit=crop",
+              category: 'grocery',
+              categoryDisplay: '마트',
+              name: '한마음마트',
+              nameEn: 'Hanmaeum Market',
+              description: '한국 식재료를 구할 수 있는 마트',
+              rating: '4.2',
+              address: '5678 Granville St, Vancouver, BC',
+              image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300&h=200&fit=crop',
             },
           ];
 
-          console.log("🔄 Rendering static fallback businesses...");
+          console.log('🔄 Rendering static fallback businesses...');
           renderFeaturedBusinesses(staticBusinesses);
         }
 
         // Scroll to top functionality
-        const scrollToTopBtn = document.getElementById("scrollToTop");
+        const scrollToTopBtn = document.getElementById('scrollToTop');
 
         // Show/hide scroll to top button based on scroll position
-        window.addEventListener("scroll", function () {
+        window.addEventListener('scroll', function () {
           if (window.pageYOffset > 300) {
-            scrollToTopBtn.classList.add("show");
+            scrollToTopBtn.classList.add('show');
           } else {
-            scrollToTopBtn.classList.remove("show");
+            scrollToTopBtn.classList.remove('show');
           }
         });
 
         // Smooth scroll to top when button is clicked
-        scrollToTopBtn.addEventListener("click", function () {
+        scrollToTopBtn.addEventListener('click', function () {
           window.scrollTo({
             top: 0,
-            behavior: "smooth",
+            behavior: 'smooth',
           });
         });
       });

@@ -23,7 +23,8 @@
   "author": "nefertt",
   "license": "MIT",
   "devDependencies": {
-    "live-server": "^1.2.2"
+    "live-server": "^1.2.2",
+    "prettier": "^3.6.2"
   },
   "homepage": "https://nefertt.github.io/Vancouver-Korean-Business-Directory"
 }

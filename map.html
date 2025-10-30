@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -69,42 +69,21 @@
         <div class="controls-content">
           <div class="search-section">
             <div class="search-container">
-              <input
-                type="text"
-                class="search-input"
-                placeholder="업체명 · 업종 · 지역 검색"
-                id="mapSearch"
-              />
+              <input type="text" class="search-input" placeholder="업체명 · 업종 · 지역 검색" id="mapSearch" />
               <button class="search-btn">검색</button>
             </div>
           </div>
 
           <div class="filter-section">
             <div class="category-chips">
-              <button class="filter-chip active" data-category="all">
-                전체
-              </button>
-              <button class="filter-chip" data-category="restaurant">
-                🍜 음식점
-              </button>
-              <button class="filter-chip" data-category="grocery">
-                🛒 마트
-              </button>
-              <button class="filter-chip" data-category="medical">
-                🏥 병원
-              </button>
-              <button class="filter-chip" data-category="legal">
-                ⚖️ 법률/회계
-              </button>
-              <button class="filter-chip" data-category="realestate">
-                🏠 부동산
-              </button>
-              <button class="filter-chip" data-category="beauty">
-                💇 미용
-              </button>
-              <button class="filter-chip" data-category="education">
-                🎓 학원
-              </button>
+              <button class="filter-chip active" data-category="all">전체</button>
+              <button class="filter-chip" data-category="restaurant">🍜 음식점</button>
+              <button class="filter-chip" data-category="grocery">🛒 마트</button>
+              <button class="filter-chip" data-category="medical">🏥 병원</button>
+              <button class="filter-chip" data-category="legal">⚖️ 법률/회계</button>
+              <button class="filter-chip" data-category="realestate">🏠 부동산</button>
+              <button class="filter-chip" data-category="beauty">💇 미용</button>
+              <button class="filter-chip" data-category="education">🎓 학원</button>
             </div>
 
             <div class="control-buttons">
@@ -128,9 +107,7 @@
       <aside class="list-panel desktop-list" id="desktopListPanel">
         <div class="list-header">
           <h3>업체 목록</h3>
-          <span class="result-count"
-            >총 <span id="mapResultCount">8</span>개</span
-          >
+          <span class="result-count">총 <span id="mapResultCount">8</span>개</span>
         </div>
         <div class="list-content" id="desktopListContent">
           <!-- List items will be populated by JavaScript -->
@@ -147,9 +124,7 @@
         <div class="sheet-handle"></div>
         <div class="sheet-header">
           <h3>업체 목록</h3>
-          <span class="result-count"
-            >총 <span id="mobileResultCount">8</span>개</span
-          >
+          <span class="result-count">총 <span id="mobileResultCount">8</span>개</span>
         </div>
         <div class="sheet-content" id="mobileListContent">
           <!-- List items will be populated by JavaScript -->
@@ -173,17 +148,13 @@
           </div>
           <p class="popup-address"></p>
           <div class="popup-status"></div>
-          <button class="popup-btn" onclick="viewBusinessDetails()">
-            자세히 보기
-          </button>
+          <button class="popup-btn" onclick="viewBusinessDetails()">자세히 보기</button>
         </div>
       </div>
     </div>
 
     <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTop" title="맨 위로 가기">
-      ↑
-    </button>
+    <button class="scroll-to-top" id="scrollToTop" title="맨 위로 가기">↑</button>
 
     <!-- Footer -->
     <footer class="footer minimal-footer">
@@ -234,86 +205,70 @@
 
     <script>
       // Dark mode functionality
-      document.addEventListener("DOMContentLoaded", function () {
-        const themeToggle = document.getElementById("themeToggle");
-        const langToggle = document.getElementById("langToggle");
+      document.addEventListener('DOMContentLoaded', function () {
+        const themeToggle = document.getElementById('themeToggle');
+        const langToggle = document.getElementById('langToggle');
         const body = document.body;
-        const themeIcon = document.getElementById("themeIcon");
-        const langIcon = langToggle.querySelector("span");
+        const themeIcon = document.getElementById('themeIcon');
+        const langIcon = langToggle.querySelector('span');
 
         // Load saved theme and language
-        const savedTheme = localStorage.getItem("theme") || "light";
-        const savedLang = localStorage.getItem("language") || "ko";
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        const savedLang = localStorage.getItem('language') || 'ko';
 
-        body.setAttribute("data-theme", savedTheme);
-        body.setAttribute("lang", savedLang);
+        body.setAttribute('data-theme', savedTheme);
+        body.setAttribute('lang', savedLang);
         updateThemeIcon(savedTheme);
         updateLanguageIcon(savedLang);
         updateNavigation(savedLang);
 
         // Theme toggle event listener
-        themeToggle.addEventListener("click", function () {
-          const currentTheme = body.getAttribute("data-theme");
-          const newTheme = currentTheme === "dark" ? "light" : "dark";
+        themeToggle.addEventListener('click', function () {
+          const currentTheme = body.getAttribute('data-theme');
+          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
-          body.setAttribute("data-theme", newTheme);
-          localStorage.setItem("theme", newTheme);
+          body.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
           updateThemeIcon(newTheme);
         });
 
         // Language toggle event listener
-        langToggle.addEventListener("click", function (e) {
-          if (e.target.classList.contains("lang-btn")) {
-            const newLang = e.target.getAttribute("data-lang");
+        langToggle.addEventListener('click', function (e) {
+          if (e.target.classList.contains('lang-btn')) {
+            const newLang = e.target.getAttribute('data-lang');
 
             // Update active button
-            langToggle.querySelectorAll(".lang-btn").forEach((btn) => {
-              btn.classList.remove("active");
+            langToggle.querySelectorAll('.lang-btn').forEach((btn) => {
+              btn.classList.remove('active');
             });
-            e.target.classList.add("active");
+            e.target.classList.add('active');
 
-            body.setAttribute("lang", newLang);
-            localStorage.setItem("language", newLang);
+            body.setAttribute('lang', newLang);
+            localStorage.setItem('language', newLang);
             updateLanguageIcon(newLang);
             updateNavigation(newLang);
           }
         });
 
         function updateThemeIcon(theme) {
-          themeIcon.textContent = theme === "dark" ? "☀️" : "🌙";
+          themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
         }
 
         function updateLanguageIcon(lang) {
           // Update active button based on language
-          langToggle.querySelectorAll(".lang-btn").forEach((btn) => {
-            btn.classList.remove("active");
-            if (btn.getAttribute("data-lang") === lang) {
-              btn.classList.add("active");
+          langToggle.querySelectorAll('.lang-btn').forEach((btn) => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-lang') === lang) {
+              btn.classList.add('active');
             }
           });
         }
 
         function updateNavigation(lang) {
-          const navLinks = document.querySelectorAll(".nav-link");
+          const navLinks = document.querySelectorAll('.nav-link');
           const navTexts = {
-            ko: [
-              "홈",
-              "업체 목록",
-              "지도",
-              "게시판",
-              "업체 등록",
-              "가이드",
-              "소개",
-            ],
-            en: [
-              "Home",
-              "Directory",
-              "Map",
-              "Board",
-              "Submit",
-              "Guide",
-              "About",
-            ],
+            ko: ['홈', '업체 목록', '지도', '게시판', '업체 등록', '가이드', '소개'],
+            en: ['Home', 'Directory', 'Map', 'Board', 'Submit', 'Guide', 'About'],
           };
 
           navLinks.forEach((link, index) => {
@@ -324,20 +279,20 @@
         }
 
         // Scroll to top functionality
-        const scrollToTopBtn = document.getElementById("scrollToTop");
+        const scrollToTopBtn = document.getElementById('scrollToTop');
 
-        window.addEventListener("scroll", function () {
+        window.addEventListener('scroll', function () {
           if (window.pageYOffset > 300) {
-            scrollToTopBtn.classList.add("show");
+            scrollToTopBtn.classList.add('show');
           } else {
-            scrollToTopBtn.classList.remove("show");
+            scrollToTopBtn.classList.remove('show');
           }
         });
 
-        scrollToTopBtn.addEventListener("click", function () {
+        scrollToTopBtn.addEventListener('click', function () {
           window.scrollTo({
             top: 0,
-            behavior: "smooth",
+            behavior: 'smooth',
           });
         });
       });
