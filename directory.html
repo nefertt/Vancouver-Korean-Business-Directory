@@ -4,6 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>업체 목록 - 밴쿠버 한인 업체 목록</title>
+    <meta
+      name="description"
+      content="밴쿠버 한인 비즈니스 디렉토리의 전체 업체 목록. 카테고리별, 지역별로 검색하고 필터링할 수 있습니다."
+    />
+    <meta name="keywords" content="밴쿠버 한인업체, 업체목록, 한인마트, 한인음식점, 한인병원, 검색" />
+    <link rel="canonical" href="https://nefertt.github.io/Vancouver-Korean-Business-Directory/directory.html" />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nefertt.github.io/Vancouver-Korean-Business-Directory/directory.html" />
+    <meta property="og:title" content="업체 목록 - 밴쿠버 한인 업체 목록" />
+    <meta
+      property="og:description"
+      content="밴쿠버 한인 비즈니스 디렉토리의 전체 업체 목록. 카테고리별, 지역별로 검색하세요."
+    />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=630&fit=crop"
+    />
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="업체 목록 - 밴쿠버 한인 업체 목록" />
+    <meta
+      name="twitter:description"
+      content="밴쿠버 한인 비즈니스 디렉토리의 전체 업체 목록. 카테고리별, 지역별로 검색하세요."
+    />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏪</text></svg>"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,49 +43,22 @@
     />
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/directory.css" />
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-33EN2Y3FC9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-33EN2Y3FC9');
+    </script>
+    <!-- 공통 Navbar 로드 -->
+    <script src="scripts/loadNavbar.js"></script>
   </head>
   <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="container">
-        <div class="header-content">
-          <div class="header-top">
-            <div class="logo">
-              <a href="./index.html">
-                <h1>밴쿠버 한인 업체 목록</h1>
-              </a>
-            </div>
-            <nav class="nav">
-              <a href="./index.html" class="nav-link">홈</a>
-              <a href="./directory.html" class="nav-link active">업체 목록</a>
-              <a href="./map.html" class="nav-link">지도</a>
-              <a href="./board.html" class="nav-link">게시판</a>
-              <a href="./submit.html" class="nav-link">업체 등록</a>
-              <a href="./guide.html" class="nav-link">가이드</a>
-              <a href="./about.html" class="nav-link">소개</a>
-            </nav>
-            <div class="header-controls">
-              <div class="language-toggle">
-                <button class="lang-btn active" data-lang="ko">KO</button>
-                <button class="lang-btn" data-lang="en">EN</button>
-              </div>
-              <button class="theme-toggle" id="themeToggle">
-                <span id="themeIcon">🌙</span>
-              </button>
-            </div>
-          </div>
-          <nav class="nav mobile-nav">
-            <a href="./index.html" class="nav-link">홈</a>
-            <a href="./directory.html" class="nav-link active">업체 목록</a>
-            <a href="./map.html" class="nav-link">지도</a>
-            <a href="./board.html" class="nav-link">게시판</a>
-            <a href="./submit.html" class="nav-link">업체 등록</a>
-            <a href="./guide.html" class="nav-link">가이드</a>
-            <a href="./about.html" class="nav-link">소개</a>
-          </nav>
-        </div>
-      </div>
-    </header>
+    <!-- Navbar (동적으로 로드) -->
+    <div id="navbar-placeholder"></div>
 
     <!-- Search & Filters Section -->
     <section class="search-filters">
@@ -202,7 +206,7 @@
           <!-- Business List -->
           <section class="business-list">
             <div class="list-header">
-              <h2>업체 목록</h2>
+              <h2 id="list-title">업체 목록</h2>
               <span class="result-count">총 <span id="resultCount">24</span>개 업체</span>
             </div>
 
@@ -211,7 +215,7 @@
             </div>
 
             <div class="load-more">
-              <button class="load-more-btn">더 보기</button>
+              <button class="load-more-btn" id="load-more">더 보기</button>
             </div>
           </section>
         </div>
@@ -221,261 +225,44 @@
     <!-- Map Switch CTA -->
     <button class="map-cta-btn" id="mapCtaBtn">
       <span class="map-icon">📍</span>
-      <span>지도에서 보기</span>
+      <span id="map-cta">지도에서 보기</span>
     </button>
 
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTop" title="맨 위로 가기">↑</button>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h4>카테고리</h4>
-            <ul>
-              <li><a href="#">음식점</a></li>
-              <li><a href="#">마트</a></li>
-              <li><a href="#">병원</a></li>
-              <li><a href="#">부동산</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h4>가이드</h4>
-            <ul>
-              <li><a href="#">이민 가이드</a></li>
-              <li><a href="#">생활 팁</a></li>
-              <li><a href="#">법률 정보</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h4>회사</h4>
-            <ul>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Submit Business</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h4>소셜</h4>
-            <div class="social-links">
-              <a href="#" class="social-link">📱</a>
-              <a href="#" class="social-link">📷</a>
-              <a href="#" class="social-link">📘</a>
-            </div>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2025 밴쿠버 한인 업체 목록. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
+    <!-- Footer (동적으로 로드) -->
+    <div id="footer-placeholder"></div>
 
     <script src="scripts/script.js"></script>
     <script src="scripts/directory.js"></script>
+    <script src="scripts/i18n.js"></script>
+    <script src="scripts/pageInit.js"></script>
+    <!-- 공통 Theme 로드 -->
+    <script src="scripts/loadTheme.js"></script>
+    <!-- 공통 Footer 로드 -->
+    <script src="scripts/loadFooter.js"></script>
+    <!-- 공통 기능 (스크롤 to top 등) -->
+    <script src="scripts/initScrollToTop.js"></script>
     <script>
-      // Translation texts
-      const texts = {
-        ko: {
-          'hero-title': '업체 목록',
-          'hero-subtitle': '밴쿠버 한인 업체들을 카테고리별로 찾아보세요',
-          'search-placeholder': '업체명 또는 키워드로 검색...',
-          'filter-all': '전체',
-          'filter-restaurant': '음식점',
-          'filter-shopping': '쇼핑',
-          'filter-service': '서비스',
-          'filter-health': '건강/의료',
-          'filter-education': '교육',
-          'filter-other': '기타',
-        },
-        en: {
-          'hero-title': 'Business Directory',
-          'hero-subtitle': 'Find Vancouver Korean businesses by category',
-          'search-placeholder': 'Search by business name or keyword...',
-          'filter-all': 'All',
-          'filter-restaurant': 'Restaurant',
-          'filter-shopping': 'Shopping',
-          'filter-service': 'Service',
-          'filter-health': 'Health/Medical',
-          'filter-education': 'Education',
-          'filter-other': 'Other',
-        },
-      };
-
-      // Dark Mode Toggle
+      // directory 전용: placeholder 및 버튼 텍스트 동기화
       document.addEventListener('DOMContentLoaded', function () {
-        const themeToggle = document.getElementById('themeToggle');
-        const langToggle = document.querySelector('.language-toggle');
-        const themeIcon = document.getElementById('themeIcon');
-        const body = document.body;
+        function applyDirectoryTexts(lang) {
+          if (window.I18N && typeof window.I18N.applyPage === 'function') {
+            window.I18N.applyPage(lang, 'directory');
+          }
+          const searchInput = document.getElementById('mainSearch');
+          if (searchInput && window.I18N && typeof window.I18N.get === 'function') {
+            searchInput.placeholder =
+              window.I18N.get(lang, 'directory', 'search-placeholder') || searchInput.placeholder;
+          }
+        }
 
-        // Load saved theme and language
-        const savedTheme = localStorage.getItem('theme') || 'light';
         const savedLang = localStorage.getItem('language') || 'ko';
-
-        body.setAttribute('data-theme', savedTheme);
-        body.setAttribute('lang', savedLang);
-        updateThemeIcon(savedTheme);
-        updateLanguageIcon(savedLang);
-
-        // Delay navigation update to ensure DOM is fully ready
-        setTimeout(() => {
-          updateNavigation(savedLang);
-          updateSectionContent(savedLang);
-        }, 10);
-
-        themeToggle.addEventListener('click', function () {
-          const currentTheme = body.getAttribute('data-theme');
-          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-          body.setAttribute('data-theme', newTheme);
-          localStorage.setItem('theme', newTheme);
-          updateThemeIcon(newTheme);
-        });
-
-        function updateThemeIcon(theme) {
-          themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
-        }
-
-        // Language toggle event listener
-        langToggle.addEventListener('click', function (e) {
-          if (e.target.classList.contains('lang-btn')) {
-            const newLang = e.target.getAttribute('data-lang');
-
-            // Update active button
-            langToggle.querySelectorAll('.lang-btn').forEach((btn) => {
-              btn.classList.remove('active');
-            });
-            e.target.classList.add('active');
-
-            body.setAttribute('lang', newLang);
-            localStorage.setItem('language', newLang);
-            updateLanguageIcon(newLang);
-            updateNavigation(newLang);
-            updateSectionContent(newLang);
-          }
-        });
-
-        function updateNavigation(lang) {
-          const navLinks = document.querySelectorAll('.nav-link');
-
-          // Check if DOM is ready
-          if (navLinks.length === 0) {
-            return;
-          }
-          const navTexts = {
-            ko: ['홈', '업체 목록', '지도', '게시판', '업체 등록', '가이드', '소개'],
-            en: ['Home', 'Directory', 'Map', 'Board', 'Submit', 'Guides', 'About'],
-          };
-
-          navLinks.forEach((link, index) => {
-            // Calculate the correct index for navTexts (0-6 for 7 navigation items)
-            const navIndex = index % 7;
-            if (navTexts[lang] && navTexts[lang][navIndex]) {
-              link.textContent = navTexts[lang][navIndex];
-            }
-          });
-
-          // Update section titles and content
-          updateSectionContent(lang);
-        }
-
-        function updateLanguageIcon(lang) {
-          const langButtons = document.querySelectorAll('.lang-btn');
-          langButtons.forEach((btn) => {
-            btn.classList.remove('active');
-            if (btn.getAttribute('data-lang') === lang) {
-              btn.classList.add('active');
-            }
-          });
-        }
-
-        function updateSectionContent(lang) {
-          const sectionTexts = {
-            ko: {
-              'search-title': '업체 검색',
-              'search-subtitle': '원하는 업체를 찾아보세요',
-              'search-placeholder': '업체명, 카테고리, 지역으로 검색...',
-              'search-button': '검색',
-              'filter-category': '카테고리',
-              'filter-area': '지역',
-              'filter-sort': '정렬',
-              'filter-open': '영업 중인 업체만',
-              'results-count': '개 업체를 찾았습니다',
-              'map-button': '지도에서 보기',
-            },
-            en: {
-              'search-title': 'Business Search',
-              'search-subtitle': "Find the business you're looking for",
-              'search-placeholder': 'Search by name, category, area...',
-              'search-button': 'Search',
-              'filter-category': 'Category',
-              'filter-area': 'Area',
-              'filter-sort': 'Sort',
-              'filter-open': 'Open now only',
-              'results-count': 'businesses found',
-              'map-button': 'View on Map',
-            },
-          };
-
-          const texts = sectionTexts[lang];
-          if (!texts) return;
-
-          // Update search section
-          const searchTitle = document.querySelector('.search-section h2');
-          const searchSubtitle = document.querySelector('.search-section p');
-          const searchInput = document.querySelector('.search-input');
-          const searchButton = document.querySelector('.search-box .btn');
-          if (searchTitle) searchTitle.textContent = texts['search-title'];
-          if (searchSubtitle) searchSubtitle.textContent = texts['search-subtitle'];
-          if (searchInput) searchInput.placeholder = texts['search-placeholder'];
-          if (searchButton) searchButton.textContent = texts['search-button'];
-
-          // Update filters
-          const categoryFilter = document.querySelector(".filter-group label[for='categoryFilter']");
-          const areaFilter = document.querySelector(".filter-group label[for='areaFilter']");
-          const sortFilter = document.querySelector(".filter-group label[for='sortFilter']");
-          const openFilter = document.querySelector(".filter-group label[for='openOnly']");
-          if (categoryFilter) categoryFilter.textContent = texts['filter-category'];
-          if (areaFilter) areaFilter.textContent = texts['filter-area'];
-          if (sortFilter) sortFilter.textContent = texts['filter-sort'];
-          if (openFilter) openFilter.textContent = texts['filter-open'];
-
-          // Update results count
-          const resultCount = document.querySelector('#resultCount');
-          if (resultCount) {
-            const currentCount = resultCount.textContent.match(/\d+/);
-            if (currentCount) {
-              resultCount.textContent = `${currentCount[0]} ${texts['results-count']}`;
-            }
-          }
-
-          // Update map button
-          const mapButton = document.querySelector('#mapCtaBtn span:last-child');
-          if (mapButton) mapButton.textContent = texts['map-button'];
-        }
-
-        // Initialize with Korean
-        updateNavigation('ko');
-
-        // Scroll to top functionality
-        const scrollToTopBtn = document.getElementById('scrollToTop');
-
-        // Show/hide scroll to top button based on scroll position
-        window.addEventListener('scroll', function () {
-          if (window.pageYOffset > 300) {
-            scrollToTopBtn.classList.add('show');
-          } else {
-            scrollToTopBtn.classList.remove('show');
-          }
-        });
-
-        // Smooth scroll to top when button is clicked
-        scrollToTopBtn.addEventListener('click', function () {
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-          });
+        setTimeout(() => applyDirectoryTexts(savedLang), 100);
+        window.addEventListener('languagechange', function (e) {
+          const lang = (e && e.detail && e.detail.language) || localStorage.getItem('language') || 'ko';
+          setTimeout(() => applyDirectoryTexts(lang), 50);
         });
       });
     </script>

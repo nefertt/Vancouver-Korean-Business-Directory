@@ -4,6 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>지도 보기 - 밴쿠버 한인 업체 목록</title>
+    <meta
+      name="description"
+      content="밴쿠버 한인 업체들의 위치를 인터랙티브 지도에서 확인하세요. 카테고리별 마커로 쉽게 찾을 수 있습니다."
+    />
+    <meta name="keywords" content="밴쿠버 지도, 한인업체 위치, 한인마트, 한인음식점 위치" />
+    <link rel="canonical" href="https://nefertt.github.io/Vancouver-Korean-Business-Directory/map.html" />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nefertt.github.io/Vancouver-Korean-Business-Directory/map.html" />
+    <meta property="og:title" content="지도 보기 - 밴쿠버 한인 업체 목록" />
+    <meta property="og:description" content="밴쿠버 한인 업체들의 위치를 인터랙티브 지도에서 확인하세요." />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&h=630&fit=crop"
+    />
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="지도 보기 - 밴쿠버 한인 업체 목록" />
+    <meta name="twitter:description" content="밴쿠버 한인 업체들의 위치를 인터랙티브 지도에서 확인하세요." />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏪</text></svg>"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,56 +37,22 @@
     />
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/map.css" />
-    <!-- Leaflet CSS -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-      crossorigin=""
-    />
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-33EN2Y3FC9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-33EN2Y3FC9');
+    </script>
+    <!-- 공통 Navbar 로드 -->
+    <script src="scripts/loadNavbar.js"></script>
   </head>
   <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="container">
-        <div class="header-content">
-          <div class="header-top">
-            <div class="logo">
-              <a href="./index.html">
-                <h1>밴쿠버 한인 업체 목록</h1>
-              </a>
-            </div>
-            <nav class="nav">
-              <a href="./index.html" class="nav-link">홈</a>
-              <a href="./directory.html" class="nav-link">업체 목록</a>
-              <a href="./map.html" class="nav-link active">지도</a>
-              <a href="./board.html" class="nav-link">게시판</a>
-              <a href="./submit.html" class="nav-link">업체 등록</a>
-              <a href="./guide.html" class="nav-link">가이드</a>
-              <a href="./about.html" class="nav-link">소개</a>
-            </nav>
-            <div class="header-controls">
-              <div class="language-toggle" id="langToggle">
-                <button class="lang-btn active" data-lang="ko">KO</button>
-                <button class="lang-btn" data-lang="en">EN</button>
-              </div>
-              <button class="theme-toggle" id="themeToggle">
-                <span id="themeIcon">🌙</span>
-              </button>
-            </div>
-          </div>
-          <nav class="nav mobile-nav">
-            <a href="./index.html" class="nav-link">홈</a>
-            <a href="./directory.html" class="nav-link">업체 목록</a>
-            <a href="./map.html" class="nav-link active">지도</a>
-            <a href="./board.html" class="nav-link">게시판</a>
-            <a href="./submit.html" class="nav-link">업체 등록</a>
-            <a href="./guide.html" class="nav-link">가이드</a>
-            <a href="./about.html" class="nav-link">소개</a>
-          </nav>
-        </div>
-      </div>
-    </header>
+    <!-- Navbar (동적으로 로드) -->
+    <div id="navbar-placeholder"></div>
 
     <!-- Top Controls -->
     <section class="map-controls">
@@ -153,55 +144,22 @@
       </div>
     </div>
 
-    <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTop" title="맨 위로 가기">↑</button>
-
-    <!-- Footer -->
-    <footer class="footer minimal-footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h4>About</h4>
-            <ul>
-              <li><a href="#">우리 이야기</a></li>
-              <li><a href="#">연락처</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h4>Contact</h4>
-            <ul>
-              <li><a href="#">이메일</a></li>
-              <li><a href="#">전화</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h4>Social</h4>
-            <div class="social-links">
-              <a href="#" class="social-link">📱</a>
-              <a href="#" class="social-link">📷</a>
-              <a href="#" class="social-link">📘</a>
-            </div>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2025 밴쿠버 한인 업체 목록. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
+    <!-- Footer (동적으로 로드) -->
+    <div id="footer-placeholder"></div>
 
     <!-- Scroll to Top Button -->
-    <button id="scrollToTop" class="scroll-to-top">
-      <span>↑</span>
-    </button>
+    <button id="scrollToTop" class="scroll-to-top" title="맨 위로 가기">↑</button>
 
     <!-- Leaflet JS -->
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-      crossorigin=""
-    ></script>
+    <script src="https://unpkg.com/leaflet@2.0.0-alpha.1/dist/leaflet-global.js" crossorigin=""></script>
     <script src="scripts/script.js"></script>
     <script src="scripts/map.js"></script>
+    <!-- 공통 Theme 로드 -->
+    <script src="scripts/loadTheme.js"></script>
+    <!-- 공통 Footer 로드 -->
+    <script src="scripts/loadFooter.js"></script>
+    <!-- 공통 기능 (스크롤 to top 등) -->
+    <script src="scripts/initScrollToTop.js"></script>
 
     <script>
       // Dark mode functionality
@@ -216,43 +174,21 @@
         const savedTheme = localStorage.getItem('theme') || 'light';
         const savedLang = localStorage.getItem('language') || 'ko';
 
-        body.setAttribute('data-theme', savedTheme);
+        // Apply saved language (theme은 loadTheme.js에서 처리)
         body.setAttribute('lang', savedLang);
-        updateThemeIcon(savedTheme);
-        updateLanguageIcon(savedLang);
-        updateNavigation(savedLang);
 
-        // Theme toggle event listener
-        themeToggle.addEventListener('click', function () {
-          const currentTheme = body.getAttribute('data-theme');
-          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-          body.setAttribute('data-theme', newTheme);
-          localStorage.setItem('theme', newTheme);
-          updateThemeIcon(newTheme);
-        });
-
-        // Language toggle event listener
-        langToggle.addEventListener('click', function (e) {
-          if (e.target.classList.contains('lang-btn')) {
-            const newLang = e.target.getAttribute('data-lang');
-
-            // Update active button
-            langToggle.querySelectorAll('.lang-btn').forEach((btn) => {
-              btn.classList.remove('active');
-            });
-            e.target.classList.add('active');
-
-            body.setAttribute('lang', newLang);
-            localStorage.setItem('language', newLang);
-            updateLanguageIcon(newLang);
-            updateNavigation(newLang);
+        // navbar 로드 후 초기화
+        setTimeout(() => {
+          updateLanguageIcon(savedLang);
+          // Navigation은 loadNavbar.js에서 자동 처리됩니다
+          if (typeof window.updateFooter === 'function') {
+            window.updateFooter(savedLang);
           }
-        });
+        }, 100);
 
-        function updateThemeIcon(theme) {
-          themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
-        }
+        // Theme toggle은 loadTheme.js에서 처리합니다
+        // 언어 토글은 navbar의 setupLanguageToggle에서 처리합니다
+        // 개별 이벤트 리스너는 제거했습니다
 
         function updateLanguageIcon(lang) {
           // Update active button based on language
@@ -264,37 +200,11 @@
           });
         }
 
-        function updateNavigation(lang) {
-          const navLinks = document.querySelectorAll('.nav-link');
-          const navTexts = {
-            ko: ['홈', '업체 목록', '지도', '게시판', '업체 등록', '가이드', '소개'],
-            en: ['Home', 'Directory', 'Map', 'Board', 'Submit', 'Guide', 'About'],
-          };
+        // updateNavigation은 loadNavbar.js에서 처리합니다
 
-          navLinks.forEach((link, index) => {
-            if (navTexts[lang] && navTexts[lang][index]) {
-              link.textContent = navTexts[lang][index];
-            }
-          });
-        }
+        // updateFooter는 loadFooter.js에서 처리합니다
 
-        // Scroll to top functionality
-        const scrollToTopBtn = document.getElementById('scrollToTop');
-
-        window.addEventListener('scroll', function () {
-          if (window.pageYOffset > 300) {
-            scrollToTopBtn.classList.add('show');
-          } else {
-            scrollToTopBtn.classList.remove('show');
-          }
-        });
-
-        scrollToTopBtn.addEventListener('click', function () {
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-          });
-        });
+        // Scroll to top 기능은 scripts/common.js에서 처리합니다
       });
     </script>
   </body>

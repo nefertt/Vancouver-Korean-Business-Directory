@@ -4,128 +4,74 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>업체 등록 - 밴쿠버 한인 업체 목록</title>
+    <meta
+      name="description"
+      content="밴쿠버 한인 비즈니스 디렉토리에 귀사의 업체를 등록하세요. 150+ 한인 업체와 함께 커뮤니티를 성장시켜보세요."
+    />
+    <meta name="keywords" content="업체등록, 비즈니스등록, 한인업체, 밴쿠버" />
+    <link rel="canonical" href="https://nefertt.github.io/Vancouver-Korean-Business-Directory/submit.html" />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nefertt.github.io/Vancouver-Korean-Business-Directory/submit.html" />
+    <meta property="og:title" content="업체 등록 - 밴쿠버 한인 업체 목록" />
+    <meta property="og:description" content="밴쿠버 한인 비즈니스 디렉토리에 귀사의 업체를 등록하세요." />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=630&fit=crop"
+    />
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="업체 등록 - 밴쿠버 한인 업체 목록" />
+    <meta name="twitter:description" content="귀사의 업체를 밴쿠버 한인 비즈니스 디렉토리에 등록하세요." />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏪</text></svg>"
+    />
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/submit.css" />
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-33EN2Y3FC9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-33EN2Y3FC9');
+    </script>
+    <script src="scripts/loadNavbar.js"></script>
   </head>
   <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="container">
-        <div class="header-content">
-          <div class="header-top">
-            <div class="logo">
-              <a href="./index.html">
-                <h1>밴쿠버 한인 업체 목록</h1>
-              </a>
-            </div>
-            <nav class="nav">
-              <a href="./index.html" class="nav-link">홈</a>
-              <a href="./directory.html" class="nav-link">업체 목록</a>
-              <a href="./map.html" class="nav-link">지도</a>
-              <a href="./board.html" class="nav-link">게시판</a>
-              <a href="./submit.html" class="nav-link active">업체 등록</a>
-              <a href="./guide.html" class="nav-link">가이드</a>
-              <a href="./about.html" class="nav-link">소개</a>
-            </nav>
-            <div class="header-controls">
-              <div class="language-toggle">
-                <button class="lang-btn active" data-lang="ko">KO</button>
-                <button class="lang-btn" data-lang="en">EN</button>
-              </div>
-              <button class="theme-toggle" id="themeToggle">
-                <span id="themeIcon">🌙</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
+    <div id="navbar-placeholder"></div>
 
     <div class="container">
-      <!-- Main Content -->
       <main class="main-content">
         <div class="submit-container">
           <div class="submit-header">
-            <h2 data-ko="업체 등록" data-en="Business Registration">업체 등록</h2>
-            <p
-              data-ko="밴쿠버 한인 커뮤니티에 업체를 등록해보세요!"
-              data-en="Register your business with the Vancouver Korean community!"
-            >
-              밴쿠버 한인 커뮤니티에 업체를 등록해보세요!
-            </p>
+            <h2 id="submit-title">업체 등록</h2>
+            <p id="submit-subtitle">밴쿠버 한인 커뮤니티에 업체를 등록해보세요!</p>
           </div>
 
           <div class="submit-content">
             <div class="submit-info">
-              <h3 data-ko="📋 등록 안내" data-en="📋 Registration Guide">📋 등록 안내</h3>
-              <ul>
-                <li
-                  data-ko="✅ <strong>무료 등록</strong> - 비용 없이 업체를 등록할 수 있습니다"
-                  data-en="✅ <strong>Free Registration</strong> - Register your business at no cost"
-                >
-                  ✅ <strong>무료 등록</strong> - 비용 없이 업체를 등록할 수 있습니다
-                </li>
-                <li
-                  data-ko="✅ <strong>빠른 승인</strong> - 24시간 내에 검토 후 승인됩니다"
-                  data-en="✅ <strong>Quick Approval</strong> - Reviewed and approved within 24 hours"
-                >
-                  ✅ <strong>빠른 승인</strong> - 24시간 내에 검토 후 승인됩니다
-                </li>
-                <li
-                  data-ko="✅ <strong>실시간 업데이트</strong> - 승인 즉시 웹사이트에 반영됩니다"
-                  data-en="✅ <strong>Real-time Updates</strong> - Changes reflected on the website immediately after approval"
-                >
-                  ✅ <strong>실시간 업데이트</strong> - 승인 즉시 웹사이트에 반영됩니다
-                </li>
-                <li
-                  data-ko="✅ <strong>지도 연동</strong> - 위치 정보가 지도에 자동으로 표시됩니다"
-                  data-en="✅ <strong>Map Integration</strong> - Location information automatically displayed on the map"
-                >
-                  ✅ <strong>지도 연동</strong> - 위치 정보가 지도에 자동으로 표시됩니다
-                </li>
+              <h3 id="submit-info-title">📋 등록 안내</h3>
+              <ul id="submit-benefits">
+                <li>✅ <strong>무료 등록</strong> - 비용 없이 업체를 등록할 수 있습니다</li>
+                <li>✅ <strong>빠른 승인</strong> - 24시간 내에 검토 후 승인됩니다</li>
+                <li>✅ <strong>실시간 업데이트</strong> - 승인 즉시 웹사이트에 반영됩니다</li>
+                <li>✅ <strong>지도 연동</strong> - 위치 정보가 지도에 자동으로 표시됩니다</li>
               </ul>
             </div>
 
             <div class="submit-form-container">
-              <h3 data-ko="📝 업체 정보 입력" data-en="📝 Business Information">📝 업체 정보 입력</h3>
+              <h3 id="form-title">📝 업체 정보 입력</h3>
               <div class="form-embed">
-                <!-- Google Forms 임베드 영역 -->
                 <div class="form-placeholder" style="display: none">
                   <div class="form-error">
                     <h4>⚠️ 구글폼 연결 오류</h4>
-                    <p>현재 구글폼에 연결할 수 없습니다. 새로운 구글폼을 생성해주세요.</p>
-                    <div class="form-instructions">
-                      <h5>구글폼 생성 방법:</h5>
-                      <ol>
-                        <li><a href="https://forms.google.com" target="_blank">Google Forms</a>에 접속</li>
-                        <li>새 폼 생성</li>
-                        <li>필요한 필드 추가 (업체명, 주소, 전화번호, 카테고리 등)</li>
-                        <li>폼 설정에서 "응답 수집" → "링크 전송" 선택</li>
-                        <li>생성된 링크를 아래 iframe src에 업데이트</li>
-                      </ol>
-                    </div>
-                    <div class="form-link">
-                      <p><strong>새 구글폼 링크:</strong></p>
-                      <input
-                        type="text"
-                        id="newFormUrl"
-                        placeholder="새 구글폼 URL을 여기에 입력하세요"
-                        style="width: 100%; padding: 10px; margin: 10px 0"
-                      />
-                      <button
-                        onclick="updateFormUrl()"
-                        style="
-                          padding: 10px 20px;
-                          background: #1e4da1;
-                          color: white;
-                          border: none;
-                          border-radius: 5px;
-                          cursor: pointer;
-                        "
-                      >
-                        폼 업데이트
-                      </button>
-                    </div>
+                    <p>현재 구글폼에 연결할 수 없습니다. 관리자에게 문의 부탁드립니다.</p>
                   </div>
                 </div>
                 <iframe
@@ -142,7 +88,7 @@
             </div>
 
             <div class="submit-tips">
-              <h3>💡 등록 팁</h3>
+              <h3 id="tips-title">💡 등록 팁</h3>
               <div class="tips-grid">
                 <div class="tip-card">
                   <h4>📍 정확한 주소</h4>
@@ -164,8 +110,8 @@
             </div>
 
             <div class="submit-contact">
-              <h3>📞 문의사항</h3>
-              <p>등록 과정에서 문제가 있거나 도움이 필요하시면 언제든 연락주세요!</p>
+              <h3 id="contact-title">📞 문의사항</h3>
+              <p id="contact-desc">등록 과정에서 문제가 있거나 도움이 필요하시면 언제든 연락주세요!</p>
               <div class="contact-info">
                 <p>
                   📱 카카오톡:
@@ -177,178 +123,17 @@
         </div>
       </main>
 
-      <!-- Scroll to Top Button -->
       <button class="scroll-to-top" id="scrollToTop" title="맨 위로 가기">↑</button>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <p>&copy; 2025 밴쿠버 한인 업체 목록. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <script src="scripts/submit.js"></script>
-
-    <script>
-      // Dark mode functionality
-      document.addEventListener('DOMContentLoaded', function () {
-        const themeToggle = document.getElementById('themeToggle');
-        const body = document.body;
-        const themeIcon = themeToggle.querySelector('span');
-
-        // Load saved theme and language
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        const savedLang = localStorage.getItem('language') || 'ko';
-
-        body.setAttribute('data-theme', savedTheme);
-        body.setAttribute('lang', savedLang);
-        updateThemeIcon(savedTheme);
-        updateLanguageIcon(savedLang);
-        updateNavigation(savedLang);
-        updateContent(savedLang);
-
-        // Ensure iframe is visible
-        const iframe = document.getElementById('googleForm');
-        if (iframe) {
-          console.log('iframe found, setting styles...');
-          iframe.style.display = 'block';
-          iframe.style.visibility = 'visible';
-          iframe.style.opacity = '1';
-          console.log('iframe styles set:', {
-            display: iframe.style.display,
-            visibility: iframe.style.visibility,
-            opacity: iframe.style.opacity,
-          });
-        } else {
-          console.log('iframe not found!');
-        }
-
-        // Periodic check to ensure iframe stays visible
-        setInterval(function () {
-          const iframe = document.getElementById('googleForm');
-          if (
-            iframe &&
-            (iframe.style.display === 'none' || iframe.style.visibility === 'hidden' || iframe.style.opacity === '0')
-          ) {
-            console.log('iframe was hidden, restoring...');
-            iframe.style.display = 'block';
-            iframe.style.visibility = 'visible';
-            iframe.style.opacity = '1';
-          }
-        }, 1000);
-
-        // Theme toggle event listener
-        themeToggle.addEventListener('click', function () {
-          const currentTheme = body.getAttribute('data-theme');
-          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-          body.setAttribute('data-theme', newTheme);
-          localStorage.setItem('theme', newTheme);
-          updateThemeIcon(newTheme);
-        });
-
-        function updateThemeIcon(theme) {
-          themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
-        }
-
-        // Language toggle functionality
-        const langButtons = document.querySelectorAll('.lang-btn');
-
-        langButtons.forEach((button) => {
-          button.addEventListener('click', function () {
-            // Remove active class from all buttons
-            langButtons.forEach((btn) => btn.classList.remove('active'));
-            // Add active class to clicked button
-            this.classList.add('active');
-
-            const selectedLang = this.getAttribute('data-lang');
-            body.setAttribute('lang', selectedLang);
-            localStorage.setItem('language', selectedLang);
-            updateNavigation(selectedLang);
-            updateContent(selectedLang);
-          });
-        });
-
-        function updateNavigation(lang) {
-          const navLinks = document.querySelectorAll('.nav-link');
-          const navTexts = {
-            ko: ['홈', '업체 목록', '지도', '게시판', '업체 등록', '가이드', '소개'],
-            en: ['Home', 'Directory', 'Map', 'Board', 'Submit', 'Guide', 'About'],
-          };
-
-          navLinks.forEach((link, index) => {
-            if (navTexts[lang] && navTexts[lang][index]) {
-              link.textContent = navTexts[lang][index];
-            }
-          });
-        }
-
-        function updateContent(lang) {
-          // Update elements with data-ko and data-en attributes
-          const elements = document.querySelectorAll('[data-ko][data-en]');
-          elements.forEach((element) => {
-            if (lang === 'ko') {
-              element.innerHTML = element.getAttribute('data-ko');
-            } else if (lang === 'en') {
-              element.innerHTML = element.getAttribute('data-en');
-            }
-          });
-        }
-
-        function updateLanguageIcon(lang) {
-          const langButtons = document.querySelectorAll('.lang-btn');
-          langButtons.forEach((btn) => {
-            btn.classList.remove('active');
-            if (btn.getAttribute('data-lang') === lang) {
-              btn.classList.add('active');
-            }
-          });
-        }
-
-        // Scroll to top functionality
-        const scrollToTopBtn = document.getElementById('scrollToTop');
-
-        window.addEventListener('scroll', function () {
-          if (window.pageYOffset > 300) {
-            scrollToTopBtn.classList.add('show');
-          } else {
-            scrollToTopBtn.classList.remove('show');
-          }
-        });
-
-        scrollToTopBtn.addEventListener('click', function () {
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-          });
-        });
-      });
-
-      // Form URL update function
-      function updateFormUrl() {
-        const newUrl = document.getElementById('newFormUrl').value;
-        const iframe = document.getElementById('googleForm');
-        const placeholder = document.querySelector('.form-placeholder');
-
-        if (newUrl && newUrl.includes('docs.google.com/forms')) {
-          // Add embedded parameter if not present
-          let embedUrl = newUrl;
-          if (!embedUrl.includes('embedded=true')) {
-            embedUrl += (embedUrl.includes('?') ? '&' : '?') + 'embedded=true';
-          }
-
-          iframe.src = embedUrl;
-          iframe.style.display = 'block';
-          placeholder.style.display = 'none';
-
-          alert('구글폼이 성공적으로 업데이트되었습니다!');
-        } else {
-          alert('올바른 구글폼 URL을 입력해주세요.');
-        }
-      }
-    </script>
+    <script src="scripts/loadTheme.js"></script>
+    <script src="scripts/i18n.js"></script>
+    <script src="scripts/loadFooter.js"></script>
+    <script src="scripts/pageInit.js"></script>
+    <script src="scripts/initScrollToTop.js"></script>
+    <script src="scripts/googleForm.js"></script>
   </body>
 </html>

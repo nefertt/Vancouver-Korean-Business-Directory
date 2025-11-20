@@ -18,7 +18,7 @@
 }
 
 /* Dark Mode Styles */
-[data-theme="dark"] {
+[data-theme='dark'] {
   --bg-color: #1a1a1a;
   --text-color: #ffffff;
   --border-color: #333333;
@@ -27,109 +27,109 @@
   --hover-bg: #404040;
 }
 
-[data-theme="dark"] body {
+[data-theme='dark'] body {
   background-color: var(--bg-color) !important;
   color: var(--text-color) !important;
 }
 
-[data-theme="dark"] html {
+[data-theme='dark'] html {
   background-color: var(--bg-color) !important;
 }
 
-[data-theme="dark"] .map-controls {
+[data-theme='dark'] .map-controls {
   background: var(--card-bg);
   border-color: var(--border-color);
 }
 
-[data-theme="dark"] .map-search {
+[data-theme='dark'] .map-search {
   background: var(--input-bg);
   color: var(--text-color);
   border-color: var(--border-color);
 }
 
-[data-theme="dark"] .map-search::placeholder {
+[data-theme='dark'] .map-search::placeholder {
   color: #999;
 }
 
-[data-theme="dark"] .category-chips {
+[data-theme='dark'] .category-chips {
   background: var(--bg-color);
 }
 
-[data-theme="dark"] .category-chip {
+[data-theme='dark'] .category-chip {
   background: var(--card-bg);
   color: var(--text-color);
   border-color: var(--border-color);
 }
 
-[data-theme="dark"] .category-chip:hover,
-[data-theme="dark"] .category-chip.active {
+[data-theme='dark'] .category-chip:hover,
+[data-theme='dark'] .category-chip.active {
   background: var(--hover-bg);
   color: var(--text-color);
 }
 
-[data-theme="dark"] .map-actions {
+[data-theme='dark'] .map-actions {
   background: var(--card-bg);
   border-color: var(--border-color);
 }
 
-[data-theme="dark"] .map-actions button {
+[data-theme='dark'] .map-actions button {
   background: var(--input-bg);
   color: var(--text-color);
   border-color: var(--border-color);
 }
 
-[data-theme="dark"] .map-actions button:hover {
+[data-theme='dark'] .map-actions button:hover {
   background: var(--hover-bg);
 }
 
-[data-theme="dark"] .business-list {
+[data-theme='dark'] .business-list {
   background: var(--card-bg);
   border-color: var(--border-color);
 }
 
-[data-theme="dark"] .business-item {
+[data-theme='dark'] .business-item {
   background: var(--bg-color);
   border-color: var(--border-color);
   color: var(--text-color);
 }
 
-[data-theme="dark"] .business-item:hover {
+[data-theme='dark'] .business-item:hover {
   background: var(--hover-bg);
 }
 
-[data-theme="dark"] .business-item h4 {
+[data-theme='dark'] .business-item h4 {
   color: var(--text-color);
 }
 
-[data-theme="dark"] .business-item p {
+[data-theme='dark'] .business-item p {
   color: var(--text-color);
   opacity: 0.8;
 }
 
-[data-theme="dark"] .business-rating {
+[data-theme='dark'] .business-rating {
   color: #ffd700;
 }
 
-[data-theme="dark"] .business-address {
+[data-theme='dark'] .business-address {
   color: var(--text-color);
   opacity: 0.7;
 }
 
-[data-theme="dark"] .business-phone {
+[data-theme='dark'] .business-phone {
   color: var(--text-color);
   opacity: 0.7;
 }
 
-[data-theme="dark"] .map-footer {
+[data-theme='dark'] .map-footer {
   background: var(--card-bg);
   border-color: var(--border-color);
 }
 
-[data-theme="dark"] .map-footer h3 {
+[data-theme='dark'] .map-footer h3 {
   color: var(--text-color);
 }
 
-[data-theme="dark"] .map-footer p {
+[data-theme='dark'] .map-footer p {
   color: var(--text-color);
   opacity: 0.8;
 }
@@ -880,7 +880,7 @@
 }
 
 /* Dark Mode Styles */
-[data-theme="dark"] {
+[data-theme='dark'] {
   --bg-color: #1a1a1a;
   --text-color: #ffffff;
   --border-color: #333333;
@@ -889,230 +889,230 @@
   --hover-bg: #404040;
 }
 
-[data-theme="dark"] body {
+[data-theme='dark'] body {
   background-color: var(--bg-color) !important;
   color: var(--text-color) !important;
 }
 
-[data-theme="dark"] html {
+[data-theme='dark'] html {
   background-color: var(--bg-color) !important;
 }
 
-[data-theme="dark"] main {
+[data-theme='dark'] main {
   background-color: var(--bg-color) !important;
 }
 
-[data-theme="dark"] section {
+[data-theme='dark'] section {
   background-color: transparent;
 }
 
 /* Header and Footer Dark Mode */
-[data-theme="dark"] .header {
+[data-theme='dark'] .header {
   background: var(--card-bg) !important;
   border-bottom-color: var(--border-color);
 }
 
-[data-theme="dark"] .footer {
+[data-theme='dark'] .footer {
   background: var(--card-bg) !important;
   border-top-color: var(--border-color);
 }
 
-[data-theme="dark"] .header h1,
-[data-theme="dark"] .header .logo-subtitle {
+[data-theme='dark'] .header h1,
+[data-theme='dark'] .header .logo-subtitle {
   color: var(--text-color);
 }
 
-[data-theme="dark"] .nav-link {
+[data-theme='dark'] .nav-link {
   color: var(--text-color);
 }
 
-[data-theme="dark"] .nav-link:hover,
-[data-theme="dark"] .nav-link.active {
+[data-theme='dark'] .nav-link:hover,
+[data-theme='dark'] .nav-link.active {
   color: #2ec4b6;
 }
 
-[data-theme="dark"] .footer h3,
-[data-theme="dark"] .footer h4,
-[data-theme="dark"] .footer p,
-[data-theme="dark"] .footer a {
+[data-theme='dark'] .footer h3,
+[data-theme='dark'] .footer h4,
+[data-theme='dark'] .footer p,
+[data-theme='dark'] .footer a {
   color: var(--text-color);
 }
 
-[data-theme="dark"] .footer a:hover {
+[data-theme='dark'] .footer a:hover {
   color: #2ec4b6;
 }
 
 /* Map Controls Dark Mode */
-[data-theme="dark"] .map-controls {
+[data-theme='dark'] .map-controls {
   background: var(--card-bg);
   border-color: var(--border-color);
 }
 
-[data-theme="dark"] .map-search {
+[data-theme='dark'] .map-search {
   background: var(--input-bg);
   color: var(--text-color);
   border-color: var(--border-color);
 }
 
-[data-theme="dark"] .map-search::placeholder {
+[data-theme='dark'] .map-search::placeholder {
   color: #999;
 }
 
-[data-theme="dark"] .category-chips {
+[data-theme='dark'] .category-chips {
   background: var(--bg-color);
 }
 
-[data-theme="dark"] .category-chip {
+[data-theme='dark'] .category-chip {
   background: var(--card-bg);
   color: var(--text-color);
   border-color: var(--border-color);
 }
 
-[data-theme="dark"] .category-chip:hover,
-[data-theme="dark"] .category-chip.active {
+[data-theme='dark'] .category-chip:hover,
+[data-theme='dark'] .category-chip.active {
   background: var(--hover-bg);
   color: var(--text-color);
 }
 
-[data-theme="dark"] .filter-controls {
+[data-theme='dark'] .filter-controls {
   background: var(--card-bg);
   border-color: var(--border-color);
 }
 
-[data-theme="dark"] .filter-controls select {
+[data-theme='dark'] .filter-controls select {
   background: var(--input-bg);
   color: var(--text-color);
   border-color: var(--border-color);
 }
 
-[data-theme="dark"] .toggle-switch {
+[data-theme='dark'] .toggle-switch {
   background: var(--input-bg);
 }
 
-[data-theme="dark"] .toggle-switch.active {
+[data-theme='dark'] .toggle-switch.active {
   background: #2ec4b6;
 }
 
-[data-theme="dark"] .toggle-switch::before {
+[data-theme='dark'] .toggle-switch::before {
   background: var(--text-color);
 }
 
 /* Map Container Dark Mode */
-[data-theme="dark"] .map-container {
+[data-theme='dark'] .map-container {
   background: var(--bg-color);
 }
 
 /* Business List Dark Mode */
-[data-theme="dark"] .business-list {
+[data-theme='dark'] .business-list {
   background: var(--card-bg);
   border-color: var(--border-color);
 }
 
-[data-theme="dark"] .business-list h3 {
+[data-theme='dark'] .business-list h3 {
   color: var(--text-color);
   border-bottom-color: var(--border-color);
 }
 
-[data-theme="dark"] .business-item {
+[data-theme='dark'] .business-item {
   background: var(--bg-color);
   border-color: var(--border-color);
 }
 
-[data-theme="dark"] .business-item:hover {
+[data-theme='dark'] .business-item:hover {
   background: var(--hover-bg);
 }
 
-[data-theme="dark"] .business-item h4 {
+[data-theme='dark'] .business-item h4 {
   color: var(--text-color);
 }
 
-[data-theme="dark"] .business-item p {
+[data-theme='dark'] .business-item p {
   color: var(--text-color);
   opacity: 0.8;
 }
 
-[data-theme="dark"] .business-item .category {
+[data-theme='dark'] .business-item .category {
   background: var(--input-bg);
   color: var(--text-color);
 }
 
-[data-theme="dark"] .business-item .address {
+[data-theme='dark'] .business-item .address {
   color: var(--text-color);
   opacity: 0.7;
 }
 
-[data-theme="dark"] .business-item .phone {
+[data-theme='dark'] .business-item .phone {
   color: var(--text-color);
   opacity: 0.7;
 }
 
 /* Map Overlay Dark Mode */
-[data-theme="dark"] .map-overlay {
+[data-theme='dark'] .map-overlay {
   background: rgba(0, 0, 0, 0.8);
 }
 
-[data-theme="dark"] .map-overlay-content {
+[data-theme='dark'] .map-overlay-content {
   background: var(--card-bg);
   color: var(--text-color);
 }
 
-[data-theme="dark"] .map-overlay h3 {
+[data-theme='dark'] .map-overlay h3 {
   color: #2ec4b6;
 }
 
-[data-theme="dark"] .map-overlay p {
+[data-theme='dark'] .map-overlay p {
   color: var(--text-color);
   opacity: 0.8;
 }
 
-[data-theme="dark"] .map-overlay button {
+[data-theme='dark'] .map-overlay button {
   background: #2ec4b6;
   color: white;
 }
 
-[data-theme="dark"] .map-overlay button:hover {
+[data-theme='dark'] .map-overlay button:hover {
   background: #26a69a;
 }
 
 /* Scroll to Top Button Dark Mode */
-[data-theme="dark"] .scroll-to-top {
+[data-theme='dark'] .scroll-to-top {
   background: #1e4da1;
   color: white;
   box-shadow: 0 4px 15px rgba(30, 77, 161, 0.3);
 }
 
-[data-theme="dark"] .scroll-to-top:hover {
+[data-theme='dark'] .scroll-to-top:hover {
   background: #2c5aa0;
   box-shadow: 0 6px 20px rgba(30, 77, 161, 0.4);
 }
 
 /* General Dark Mode Text */
-[data-theme="dark"] h1,
-[data-theme="dark"] h2,
-[data-theme="dark"] h3,
-[data-theme="dark"] h4,
-[data-theme="dark"] h5,
-[data-theme="dark"] h6 {
+[data-theme='dark'] h1,
+[data-theme='dark'] h2,
+[data-theme='dark'] h3,
+[data-theme='dark'] h4,
+[data-theme='dark'] h5,
+[data-theme='dark'] h6 {
   color: var(--text-color) !important;
 }
 
-[data-theme="dark"] p,
-[data-theme="dark"] span,
-[data-theme="dark"] div {
+[data-theme='dark'] p,
+[data-theme='dark'] span,
+[data-theme='dark'] div {
   color: var(--text-color);
 }
 
 /* Mobile Dark Mode Adjustments */
 @media (max-width: 768px) {
-  [data-theme="dark"] .map-controls {
+  [data-theme='dark'] .map-controls {
     background: var(--card-bg);
   }
 
-  [data-theme="dark"] .business-list {
+  [data-theme='dark'] .business-list {
     background: var(--card-bg);
   }
 
-  [data-theme="dark"] .business-item {
+  [data-theme='dark'] .business-item {
     background: var(--bg-color);
   }
 

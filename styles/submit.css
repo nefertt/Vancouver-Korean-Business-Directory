@@ -19,7 +19,7 @@
 
 /* Basic body styles */
 body {
-  font-family: "Noto Sans KR", "Montserrat", sans-serif;
+  font-family: 'Noto Sans KR', 'Montserrat', sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -46,17 +46,17 @@ body {
 }
 
 /* Dark mode kakao link */
-[data-theme="dark"] .kakao-link {
+[data-theme='dark'] .kakao-link {
   color: #2c1e1e !important;
   background: linear-gradient(135deg, #fee500 0%, #ffeb3b 100%);
 }
 
-[data-theme="dark"] .kakao-link:hover {
+[data-theme='dark'] .kakao-link:hover {
   background: linear-gradient(135deg, #ffeb3b 0%, #fee500 100%);
 }
 
 /* Dark Mode Styles */
-[data-theme="dark"] {
+[data-theme='dark'] {
   --bg-color: #1a1a1a;
   --text-color: #ffffff;
   --border-color: #333333;
@@ -65,50 +65,50 @@ body {
   --hover-bg: #404040;
 }
 
-[data-theme="dark"] body {
+[data-theme='dark'] body {
   background-color: var(--bg-color) !important;
   color: var(--text-color) !important;
 }
 
-[data-theme="dark"] html {
+[data-theme='dark'] html {
   background-color: var(--bg-color) !important;
 }
 
-[data-theme="dark"] .submit-container {
+[data-theme='dark'] .submit-container {
   background: var(--bg-color);
 }
 
-[data-theme="dark"] .submit-header h1 {
+[data-theme='dark'] .submit-header h1 {
   color: var(--text-color);
 }
 
-[data-theme="dark"] .submit-header p {
+[data-theme='dark'] .submit-header p {
   color: var(--text-color);
   opacity: 0.8;
 }
 
-[data-theme="dark"] .form-section {
+[data-theme='dark'] .form-section {
   background: var(--card-bg);
   border-color: var(--border-color);
 }
 
-[data-theme="dark"] .form-section h2 {
+[data-theme='dark'] .form-section h2 {
   color: var(--text-color);
 }
 
-[data-theme="dark"] .form-section p {
+[data-theme='dark'] .form-section p {
   color: var(--text-color);
   opacity: 0.8;
 }
 
-[data-theme="dark"] .form-iframe {
+[data-theme='dark'] .form-iframe {
   background: var(--input-bg);
   border-color: var(--border-color);
 }
 
-[data-theme="dark"] .form-embed iframe,
-[data-theme="dark"] #googleForm,
-[data-theme="dark"] .google-form-iframe {
+[data-theme='dark'] .form-embed iframe,
+[data-theme='dark'] #googleForm,
+[data-theme='dark'] .google-form-iframe {
   border: none !important;
   width: 100% !important;
   min-height: 800px !important;
@@ -121,179 +121,179 @@ body {
   z-index: 1 !important;
 }
 
-[data-theme="dark"] .info-section {
+[data-theme='dark'] .info-section {
   background: var(--card-bg);
   border-color: var(--border-color);
 }
 
-[data-theme="dark"] .info-section h3 {
+[data-theme='dark'] .info-section h3 {
   color: var(--text-color);
 }
 
-[data-theme="dark"] .info-section p {
-  color: var(--text-color);
-  opacity: 0.8;
-}
-
-[data-theme="dark"] .info-section ul {
-  color: var(--text-color);
-}
-
-[data-theme="dark"] .info-section li {
+[data-theme='dark'] .info-section p {
   color: var(--text-color);
   opacity: 0.8;
 }
 
-[data-theme="dark"] .contact-section {
+[data-theme='dark'] .info-section ul {
+  color: var(--text-color);
+}
+
+[data-theme='dark'] .info-section li {
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+[data-theme='dark'] .contact-section {
   background: var(--card-bg);
   border-color: var(--border-color);
 }
 
-[data-theme="dark"] .contact-section h3 {
+[data-theme='dark'] .contact-section h3 {
   color: var(--text-color);
 }
 
-[data-theme="dark"] .contact-section p {
+[data-theme='dark'] .contact-section p {
   color: var(--text-color);
   opacity: 0.8;
 }
 
-[data-theme="dark"] .contact-section a {
+[data-theme='dark'] .contact-section a {
   color: #2ec4b6;
 }
 
-[data-theme="dark"] .contact-section a:hover {
+[data-theme='dark'] .contact-section a:hover {
   color: #26a69a;
 }
 
 /* Dark mode for tip cards */
-[data-theme="dark"] .tip-card {
+[data-theme='dark'] .tip-card {
   background: var(--card-bg);
   border-left-color: #3498db;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 
-[data-theme="dark"] .tip-card:hover {
+[data-theme='dark'] .tip-card:hover {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
-[data-theme="dark"] .tip-card h4 {
+[data-theme='dark'] .tip-card h4 {
   color: var(--text-color);
 }
 
-[data-theme="dark"] .tip-card p {
+[data-theme='dark'] .tip-card p {
   color: var(--text-color);
   opacity: 0.8;
 }
 
 /* Additional dark mode improvements */
-[data-theme="dark"] .submit-header {
+[data-theme='dark'] .submit-header {
   background: var(--bg-color);
 }
 
-[data-theme="dark"] .submit-header h1 {
+[data-theme='dark'] .submit-header h1 {
   color: var(--text-color);
 }
 
-[data-theme="dark"] .submit-header p {
-  color: var(--text-color);
-  opacity: 0.8;
-}
-
-[data-theme="dark"] .form-section h2 {
-  color: var(--text-color);
-}
-
-[data-theme="dark"] .form-section p {
+[data-theme='dark'] .submit-header p {
   color: var(--text-color);
   opacity: 0.8;
 }
 
-[data-theme="dark"] .info-section h3 {
+[data-theme='dark'] .form-section h2 {
   color: var(--text-color);
 }
 
-[data-theme="dark"] .info-section p {
-  color: var(--text-color);
-  opacity: 0.8;
-}
-
-[data-theme="dark"] .info-section ul {
-  color: var(--text-color);
-}
-
-[data-theme="dark"] .info-section li {
+[data-theme='dark'] .form-section p {
   color: var(--text-color);
   opacity: 0.8;
 }
 
-[data-theme="dark"] .contact-section h3 {
+[data-theme='dark'] .info-section h3 {
   color: var(--text-color);
 }
 
-[data-theme="dark"] .contact-section p {
+[data-theme='dark'] .info-section p {
   color: var(--text-color);
   opacity: 0.8;
 }
 
-[data-theme="dark"] .footer {
+[data-theme='dark'] .info-section ul {
+  color: var(--text-color);
+}
+
+[data-theme='dark'] .info-section li {
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+[data-theme='dark'] .contact-section h3 {
+  color: var(--text-color);
+}
+
+[data-theme='dark'] .contact-section p {
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+[data-theme='dark'] .footer {
   background: var(--card-bg);
   color: var(--text-color);
 }
 
-[data-theme="dark"] .footer p {
+[data-theme='dark'] .footer p {
   color: var(--text-color);
   opacity: 0.8;
 }
 
 /* Ensure all text elements are properly styled in dark mode */
-[data-theme="dark"] h1,
-[data-theme="dark"] h2,
-[data-theme="dark"] h3,
-[data-theme="dark"] h4,
-[data-theme="dark"] h5,
-[data-theme="dark"] h6 {
+[data-theme='dark'] h1,
+[data-theme='dark'] h2,
+[data-theme='dark'] h3,
+[data-theme='dark'] h4,
+[data-theme='dark'] h5,
+[data-theme='dark'] h6 {
   color: var(--text-color) !important;
 }
 
-[data-theme="dark"] p,
-[data-theme="dark"] span,
-[data-theme="dark"] div {
+[data-theme='dark'] p,
+[data-theme='dark'] span,
+[data-theme='dark'] div {
   color: var(--text-color);
 }
 
-[data-theme="dark"] .submit-container {
+[data-theme='dark'] .submit-container {
   background: var(--bg-color);
 }
 
-[data-theme="dark"] .submit-main {
+[data-theme='dark'] .submit-main {
   background: var(--bg-color);
 }
 
-[data-theme="dark"] .submit-sidebar {
+[data-theme='dark'] .submit-sidebar {
   background: var(--bg-color);
 }
 
 /* Dark mode for specific sections */
-[data-theme="dark"] .submit-tips h3 {
+[data-theme='dark'] .submit-tips h3 {
   color: var(--text-color) !important;
 }
 
-[data-theme="dark"] .submit-form-container h3 {
+[data-theme='dark'] .submit-form-container h3 {
   color: var(--text-color) !important;
 }
 
-[data-theme="dark"] .submit-tips {
+[data-theme='dark'] .submit-tips {
   background: var(--card-bg);
   border-color: var(--border-color);
 }
 
-[data-theme="dark"] .submit-form-container {
+[data-theme='dark'] .submit-form-container {
   background: var(--card-bg);
   border-color: var(--border-color);
 }
 
-[data-theme="dark"] .footer-content {
+[data-theme='dark'] .footer-content {
   background: var(--card-bg);
   color: var(--text-color);
 }
@@ -301,21 +301,21 @@ body {
 /* Header and footer will inherit from main styles.css */
 
 /* Additional dark mode fixes */
-[data-theme="dark"] .submit-tips {
+[data-theme='dark'] .submit-tips {
   background: var(--card-bg) !important;
   color: var(--text-color);
 }
 
-[data-theme="dark"] .submit-form-container {
+[data-theme='dark'] .submit-form-container {
   background: var(--card-bg) !important;
   color: var(--text-color);
 }
 
-[data-theme="dark"] .tips-grid {
+[data-theme='dark'] .tips-grid {
   background: transparent;
 }
 
-[data-theme="dark"] .form-embed {
+[data-theme='dark'] .form-embed {
   background: var(--input-bg);
   border-radius: 10px;
   padding: 1rem;
@@ -381,39 +381,39 @@ body {
 }
 
 /* Dark mode for form error */
-[data-theme="dark"] .form-placeholder {
+[data-theme='dark'] .form-placeholder {
   background: var(--card-bg);
   border-color: var(--border-color);
 }
 
-[data-theme="dark"] .form-error h4 {
+[data-theme='dark'] .form-error h4 {
   color: #ff6b6b;
 }
 
-[data-theme="dark"] .form-error p {
+[data-theme='dark'] .form-error p {
   color: var(--text-color);
   opacity: 0.8;
 }
 
-[data-theme="dark"] .form-instructions {
+[data-theme='dark'] .form-instructions {
   background: var(--input-bg);
   border-color: var(--border-color);
 }
 
-[data-theme="dark"] .form-instructions h5 {
+[data-theme='dark'] .form-instructions h5 {
   color: var(--text-color);
 }
 
-[data-theme="dark"] .form-instructions ol {
+[data-theme='dark'] .form-instructions ol {
   color: var(--text-color);
   opacity: 0.8;
 }
 
-[data-theme="dark"] .form-link {
+[data-theme='dark'] .form-link {
   background: var(--input-bg);
 }
 
-[data-theme="dark"] .form-link p {
+[data-theme='dark'] .form-link p {
   color: var(--text-color);
 }
 
@@ -455,12 +455,12 @@ body {
 }
 
 /* Dark mode scroll to top button */
-[data-theme="dark"] .scroll-to-top {
+[data-theme='dark'] .scroll-to-top {
   background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
   box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
 }
 
-[data-theme="dark"] .scroll-to-top:hover {
+[data-theme='dark'] .scroll-to-top:hover {
   background: linear-gradient(135deg, #2980b9 0%, #1f4e79 100%);
   box-shadow: 0 6px 20px rgba(52, 152, 219, 0.5);
 }
@@ -591,7 +591,9 @@ body {
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   border-left: 4px solid #3498db;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .tip-card:hover {

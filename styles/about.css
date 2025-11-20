@@ -30,7 +30,7 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .about-hero p {
@@ -52,13 +52,28 @@
   margin-bottom: 3rem;
 }
 
+/* Desktop: 3 columns with the 4th card centered on the next row */
+@media (min-width: 1024px) {
+  .about-grid {
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+    justify-items: stretch;
+  }
+
+  .about-grid .about-card:nth-child(4) {
+    grid-column: 2;
+  }
+}
+
 .about-card {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 2rem;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .about-card:hover {
@@ -76,7 +91,7 @@
   font-weight: 600;
   margin-bottom: 1rem;
   color: var(--text-color);
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .about-card p {
@@ -99,7 +114,7 @@
 }
 
 .about-card li::before {
-  content: "✓";
+  content: '✓';
   position: absolute;
   left: 0;
   color: #1e4da1;
@@ -134,7 +149,7 @@
   font-weight: 600;
   margin-bottom: 2rem;
   color: var(--text-color);
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .stats-grid {
@@ -151,6 +166,7 @@
   background: var(--card-bg);
   border-radius: 12px;
   border: 1px solid var(--border-color);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
 }
 
 .stat-number {
@@ -158,7 +174,7 @@
   font-weight: 700;
   color: #1e4da1;
   margin-bottom: 0.5rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .stat-label {
@@ -199,38 +215,38 @@
 }
 
 /* Dark Mode */
-[data-theme="dark"] .about-hero {
+[data-theme='dark'] .about-hero {
   background: linear-gradient(135deg, #1a3d8a 0%, #2a4a8f 100%);
 }
 
-[data-theme="dark"] .about-card {
+[data-theme='dark'] .about-card {
   background: var(--card-bg);
   border-color: var(--border-color);
 }
 
-[data-theme="dark"] .about-card h3 {
+[data-theme='dark'] .about-card h3 {
   color: var(--text-color);
 }
 
-[data-theme="dark"] .about-card p,
-[data-theme="dark"] .about-card li {
+[data-theme='dark'] .about-card p,
+[data-theme='dark'] .about-card li {
   color: var(--text-secondary);
 }
 
-[data-theme="dark"] .stats-section {
+[data-theme='dark'] .stats-section {
   background: var(--bg-secondary);
 }
 
-[data-theme="dark"] .stats-section h3 {
+[data-theme='dark'] .stats-section h3 {
   color: var(--text-color);
 }
 
-[data-theme="dark"] .stat-item {
+[data-theme='dark'] .stat-item {
   background: var(--card-bg);
   border-color: var(--border-color);
 }
 
-[data-theme="dark"] .stat-label {
+[data-theme='dark'] .stat-label {
   color: var(--text-secondary);
 }
 

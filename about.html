@@ -4,6 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>소개 - 밴쿠버 한인 업체 목록</title>
+    <meta
+      name="description"
+      content="밴쿠버 한인 비즈니스 디렉토리에 대해 알아보세요. 밴쿠버 한인 커뮤니티를 위한 종합 정보 서비스입니다."
+    />
+    <meta name="keywords" content="밴쿠버, 한인커뮤니티, 비즈니스디렉토리, 한인업체" />
+    <link rel="canonical" href="https://nefertt.github.io/Vancouver-Korean-Business-Directory/about.html" />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nefertt.github.io/Vancouver-Korean-Business-Directory/about.html" />
+    <meta property="og:title" content="소개 - 밴쿠버 한인 업체 목록" />
+    <meta property="og:description" content="밴쿠버 한인 비즈니스 디렉토리에 대해 알아보세요." />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=630&fit=crop"
+    />
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="소개 - 밴쿠버 한인 업체 목록" />
+    <meta name="twitter:description" content="밴쿠버 한인 비즈니스 디렉토리에 대해 알아보세요." />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏪</text></svg>"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,53 +37,22 @@
     />
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/about.css" />
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-33EN2Y3FC9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-33EN2Y3FC9');
+    </script>
+    <script src="scripts/loadNavbar.js"></script>
   </head>
   <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="container">
-        <div class="header-content">
-          <div class="header-top">
-            <div class="logo">
-              <a href="./index.html">
-                <h1>밴쿠버 한인 업체 목록</h1>
-              </a>
-            </div>
-            <nav class="nav">
-              <a href="./index.html" class="nav-link">홈</a>
-              <a href="./directory.html" class="nav-link">업체 목록</a>
-              <a href="./map.html" class="nav-link">지도</a>
-              <a href="./board.html" class="nav-link">게시판</a>
-              <a href="./submit.html" class="nav-link">업체 등록</a>
-              <a href="./guide.html" class="nav-link">가이드</a>
-              <a href="./about.html" class="nav-link active">소개</a>
-            </nav>
-            <div class="header-controls">
-              <div class="language-toggle">
-                <button class="lang-btn active" data-lang="ko">KO</button>
-                <button class="lang-btn" data-lang="en">EN</button>
-              </div>
-              <button class="theme-toggle" id="themeToggle">
-                <span id="themeIcon">🌙</span>
-              </button>
-            </div>
-          </div>
-          <nav class="nav mobile-nav">
-            <a href="./index.html" class="nav-link">홈</a>
-            <a href="./directory.html" class="nav-link">업체 목록</a>
-            <a href="./map.html" class="nav-link">지도</a>
-            <a href="./board.html" class="nav-link">게시판</a>
-            <a href="./submit.html" class="nav-link">업체 등록</a>
-            <a href="./guide.html" class="nav-link">가이드</a>
-            <a href="./about.html" class="nav-link active">소개</a>
-          </nav>
-        </div>
-      </div>
-    </header>
+    <div id="navbar-placeholder"></div>
 
-    <!-- Main Content -->
     <main>
-      <!-- Hero Section -->
       <section class="about-hero">
         <div class="container">
           <h2 id="hero-title">소개</h2>
@@ -66,11 +60,9 @@
         </div>
       </section>
 
-      <!-- About Content -->
       <section class="about-content">
         <div class="container">
           <div class="about-grid">
-            <!-- Mission -->
             <div class="about-card">
               <div class="about-icon">🎯</div>
               <h3 id="mission-title">미션</h3>
@@ -79,7 +71,6 @@
               </p>
             </div>
 
-            <!-- Vision -->
             <div class="about-card">
               <div class="about-icon">👁️</div>
               <h3 id="vision-title">비전</h3>
@@ -88,7 +79,6 @@
               </p>
             </div>
 
-            <!-- Features -->
             <div class="about-card">
               <div class="about-icon">✨</div>
               <h3 id="features-title">주요 기능</h3>
@@ -100,7 +90,6 @@
               </ul>
             </div>
 
-            <!-- Contact -->
             <div class="about-card">
               <div class="about-icon">📞</div>
               <h3 id="contact-title">문의하기</h3>
@@ -111,7 +100,6 @@
         </div>
       </section>
 
-      <!-- Stats Section -->
       <section class="stats-section">
         <div class="container">
           <h3 id="stats-title">밴쿠버 한인 업체 목록 현황</h3>
@@ -137,206 +125,14 @@
       </section>
     </main>
 
-    <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTop" title="맨 위로 가기">↑</button>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h4>밴쿠버 한인 업체 목록</h4>
-            <p>밴쿠버 한인 커뮤니티를 위한 종합 업체 정보 플랫폼</p>
-          </div>
-          <div class="footer-section">
-            <h4>빠른 링크</h4>
-            <ul>
-              <li><a href="./index.html">홈</a></li>
-              <li><a href="./directory.html">업체 목록</a></li>
-              <li><a href="./map.html">지도</a></li>
-              <li><a href="./submit.html">업체 등록</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h4>지원</h4>
-            <ul>
-              <li><a href="./guide.html">사용 가이드</a></li>
-              <li><a href="./about.html">소개</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2025 밴쿠버 한인 업체 목록. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
-    <script>
-      // Language and theme texts
-      const texts = {
-        ko: {
-          'hero-title': '소개',
-          'hero-subtitle': '밴쿠버 한인 커뮤니티를 위한 종합 업체 정보 플랫폼',
-          'mission-title': '미션',
-          'mission-desc': '밴쿠버 한인 커뮤니티가 필요로 하는 모든 업체 정보를 한 곳에서 쉽게 찾을 수 있도록 돕습니다.',
-          'vision-title': '비전',
-          'vision-desc': '밴쿠버 한인들의 일상생활을 더욱 편리하게 만들고, 지역 비즈니스의 성장을 지원합니다.',
-          'features-title': '주요 기능',
-          'features-list': ['업체 검색 및 필터링', '인터랙티브 지도 뷰', '카테고리별 분류', '실시간 정보 업데이트'],
-          'contact-title': '문의하기',
-          'contact-desc': '업체 등록, 정보 수정, 또는 기타 문의사항이 있으시면 언제든 연락주세요.',
-          'contact-btn': '업체 등록하기',
-          'stats-title': '밴쿠버 한인 업체 목록 현황',
-          'stat-businesses': '등록된 업체',
-          'stat-categories': '업종 카테고리',
-          'stat-areas': '서비스 지역',
-          'stat-users': '월간 사용자',
-        },
-        en: {
-          'hero-title': 'About',
-          'hero-subtitle': 'Comprehensive business information platform for Vancouver Korean community',
-          'mission-title': 'Mission',
-          'mission-desc':
-            'We help Vancouver Korean community easily find all the business information they need in one place.',
-          'vision-title': 'Vision',
-          'vision-desc': 'We make daily life more convenient for Vancouver Koreans and support local business growth.',
-          'features-title': 'Key Features',
-          'features-list': [
-            'Business search and filtering',
-            'Interactive map view',
-            'Category-based classification',
-            'Real-time information updates',
-          ],
-          'contact-title': 'Contact Us',
-          'contact-desc':
-            'For business registration, information updates, or any inquiries, please contact us anytime.',
-          'contact-btn': 'Register Business',
-          'stats-title': 'Statistics',
-          'stat-businesses': 'Registered Businesses',
-          'stat-categories': 'Business Categories',
-          'stat-areas': 'Service Areas',
-          'stat-users': 'Monthly Users',
-        },
-      };
-
-      // Dark mode functionality
-      document.addEventListener('DOMContentLoaded', function () {
-        const themeToggle = document.getElementById('themeToggle');
-        const langToggle = document.querySelector('.language-toggle');
-        const body = document.body;
-        const themeIcon = document.getElementById('themeIcon');
-
-        // Load saved theme and language
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        const savedLang = localStorage.getItem('language') || 'ko';
-
-        // Apply saved theme and language
-        body.setAttribute('data-theme', savedTheme);
-        body.setAttribute('lang', savedLang);
-        updateThemeIcon(savedTheme);
-        updateLanguageIcon(savedLang);
-        updateContent(savedLang);
-        updateNavigation(savedLang);
-
-        // Theme toggle event listener
-        themeToggle.addEventListener('click', function () {
-          const currentTheme = body.getAttribute('data-theme');
-          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-          body.setAttribute('data-theme', newTheme);
-          localStorage.setItem('theme', newTheme);
-          updateThemeIcon(newTheme);
-        });
-
-        // Language toggle event listener
-        langToggle.addEventListener('click', function (e) {
-          if (e.target.classList.contains('lang-btn')) {
-            const newLang = e.target.getAttribute('data-lang');
-
-            // Update active button
-            langToggle.querySelectorAll('.lang-btn').forEach((btn) => {
-              btn.classList.remove('active');
-            });
-            e.target.classList.add('active');
-
-            body.setAttribute('lang', newLang);
-            localStorage.setItem('language', newLang);
-            updateLanguageIcon(newLang);
-            updateContent(newLang);
-            updateNavigation(newLang);
-          }
-        });
-
-        function updateThemeIcon(theme) {
-          themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
-        }
-
-        function updateContent(lang) {
-          const currentTexts = texts[lang];
-
-          // Update text content
-          Object.keys(currentTexts).forEach((key) => {
-            const element = document.getElementById(key);
-            if (element) {
-              if (key === 'features-list') {
-                // Handle list items
-                const listItems = element.querySelectorAll('li');
-                listItems.forEach((item, index) => {
-                  if (currentTexts[key][index]) {
-                    item.textContent = currentTexts[key][index];
-                  }
-                });
-              } else {
-                element.textContent = currentTexts[key];
-              }
-            }
-          });
-        }
-
-        function updateNavigation(lang) {
-          const navLinks = document.querySelectorAll('.nav-link');
-          const navTexts = {
-            ko: ['홈', '업체 목록', '지도', '게시판', '업체 등록', '가이드', '소개'],
-            en: ['Home', 'Directory', 'Map', 'Board', 'Submit', 'Guides', 'About'],
-          };
-
-          navLinks.forEach((link, index) => {
-            if (navTexts[lang] && navTexts[lang][index]) {
-              link.textContent = navTexts[lang][index];
-            }
-          });
-        }
-
-        function updateLanguageIcon(lang) {
-          const langButtons = langToggle.querySelectorAll('.lang-btn');
-          langButtons.forEach((btn) => {
-            btn.classList.remove('active');
-            if (btn.getAttribute('data-lang') === lang) {
-              btn.classList.add('active');
-            }
-          });
-        }
-
-        // Scroll to top functionality
-        const scrollToTopBtn = document.getElementById('scrollToTop');
-
-        // Show/hide scroll to top button based on scroll position
-        window.addEventListener('scroll', function () {
-          if (window.pageYOffset > 300) {
-            scrollToTopBtn.classList.add('show');
-          } else {
-            scrollToTopBtn.classList.remove('show');
-          }
-        });
-
-        // Scroll to top when button is clicked
-        scrollToTopBtn.addEventListener('click', function () {
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-          });
-        });
-      });
-    </script>
+    <script src="scripts/loadTheme.js"></script>
+    <script src="scripts/loadFooter.js"></script>
+    <script src="scripts/i18n.js"></script>
+    <script src="scripts/pageInit.js"></script>
+    <script src="scripts/initScrollToTop.js"></script>
   </body>
 </html>

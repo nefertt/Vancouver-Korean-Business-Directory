@@ -4,6 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>게시판 - 밴쿠버 한인 업체 목록</title>
+    <meta name="description" content="밴쿠버 한인 커뮤니티 게시판. 지역 소식, 정보, 질문 등을 공유하는 공간입니다." />
+    <meta name="keywords" content="게시판, 커뮤니티, 밴쿠버, 한인, 정보공유" />
+    <link rel="canonical" href="https://nefertt.github.io/Vancouver-Korean-Business-Directory/board.html" />
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nefertt.github.io/Vancouver-Korean-Business-Directory/board.html" />
+    <meta property="og:title" content="게시판 - 밴쿠버 한인 업체 목록" />
+    <meta property="og:description" content="밴쿠버 한인 커뮤니티 게시판. 정보를 공유하세요." />
+    <meta
+      property="og:image"
+      content="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=630&fit=crop"
+    />
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="게시판 - 밴쿠버 한인 업체 목록" />
+    <meta name="twitter:description" content="밴쿠버 한인 커뮤니티 게시판. 정보를 공유하세요." />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏪</text></svg>"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,53 +34,22 @@
     />
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/board.css" />
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-33EN2Y3FC9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-33EN2Y3FC9');
+    </script>
+    <script src="scripts/loadNavbar.js"></script>
   </head>
   <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="container">
-        <div class="header-content">
-          <div class="header-top">
-            <div class="logo">
-              <a href="./index.html">
-                <h1>밴쿠버 한인 업체 목록</h1>
-              </a>
-            </div>
-            <nav class="nav">
-              <a href="./index.html" class="nav-link">홈</a>
-              <a href="./directory.html" class="nav-link">업체 목록</a>
-              <a href="./map.html" class="nav-link">지도</a>
-              <a href="./board.html" class="nav-link active">게시판</a>
-              <a href="./submit.html" class="nav-link">업체 등록</a>
-              <a href="./guide.html" class="nav-link">가이드</a>
-              <a href="./about.html" class="nav-link">소개</a>
-            </nav>
-            <div class="header-controls">
-              <div class="language-toggle">
-                <button class="lang-btn active" data-lang="ko">KO</button>
-                <button class="lang-btn" data-lang="en">EN</button>
-              </div>
-              <button class="theme-toggle" id="themeToggle">
-                <span id="themeIcon">🌙</span>
-              </button>
-            </div>
-          </div>
-          <nav class="nav mobile-nav">
-            <a href="./index.html" class="nav-link">홈</a>
-            <a href="./directory.html" class="nav-link">업체 목록</a>
-            <a href="./map.html" class="nav-link">지도</a>
-            <a href="./board.html" class="nav-link active">게시판</a>
-            <a href="./submit.html" class="nav-link">업체 등록</a>
-            <a href="./guide.html" class="nav-link">가이드</a>
-            <a href="./about.html" class="nav-link">소개</a>
-          </nav>
-        </div>
-      </div>
-    </header>
+    <div id="navbar-placeholder"></div>
 
-    <!-- Main Content -->
     <main>
-      <!-- Hero Section -->
       <section class="board-hero">
         <div class="container">
           <h2 id="hero-title">커뮤니티 게시판</h2>
@@ -66,10 +57,8 @@
         </div>
       </section>
 
-      <!-- Board Content -->
       <section class="board-content">
         <div class="container">
-          <!-- Board Controls -->
           <div class="board-controls">
             <div class="board-tabs">
               <button class="tab-btn active" data-tab="all" id="tab-all">전체</button>
@@ -81,7 +70,6 @@
             <button class="write-btn" id="write-btn">글쓰기</button>
           </div>
 
-          <!-- Board List -->
           <div class="board-list">
             <div class="board-header">
               <div class="col-number" id="col-number">번호</div>
@@ -93,7 +81,6 @@
             </div>
 
             <div class="board-items" id="board-items">
-              <!-- Sample posts -->
               <div class="board-item" data-category="notice">
                 <div class="col-number">1</div>
                 <div class="col-category">
@@ -187,7 +174,6 @@
             </div>
           </div>
 
-          <!-- Pagination -->
           <div class="pagination">
             <button class="page-btn prev" id="prev-btn">이전</button>
             <div class="page-numbers">
@@ -203,218 +189,38 @@
       </section>
     </main>
 
-    <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTop" title="맨 위로 가기">↑</button>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h4>밴쿠버 한인 업체 목록</h4>
-            <p>밴쿠버 한인 커뮤니티를 위한 종합 업체 정보 플랫폼</p>
-          </div>
-          <div class="footer-section">
-            <h4>빠른 링크</h4>
-            <ul>
-              <li><a href="./index.html">홈</a></li>
-              <li><a href="./directory.html">업체 목록</a></li>
-              <li><a href="./map.html">지도</a></li>
-              <li><a href="./board.html">게시판</a></li>
-              <li><a href="./submit.html">업체 등록</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h4>지원</h4>
-            <ul>
-              <li><a href="./guide.html">사용 가이드</a></li>
-              <li><a href="./about.html">소개</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2025 밴쿠버 한인 업체 목록. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
+    <script src="scripts/i18n.js"></script>
+    <script src="scripts/pageInit.js"></script>
+    <script src="scripts/loadTheme.js"></script>
+    <script src="scripts/loadFooter.js"></script>
+    <script src="scripts/initScrollToTop.js"></script>
     <script>
-      // Language and theme texts
-      const texts = {
-        ko: {
-          'hero-title': '커뮤니티 게시판',
-          'hero-subtitle': '밴쿠버 한인 커뮤니티 소통 공간',
-          'tab-all': '전체',
-          'tab-notice': '공지사항',
-          'tab-review': '업체 후기',
-          'tab-job': '구인/구직',
-          'tab-community': '자유게시판',
-          'write-btn': '글쓰기',
-          'col-number': '번호',
-          'col-category': '분류',
-          'col-title': '제목',
-          'col-author': '작성자',
-          'col-date': '작성일',
-          'col-views': '조회',
-          'prev-btn': '이전',
-          'next-btn': '다음',
-        },
-        en: {
-          'hero-title': 'Community Board',
-          'hero-subtitle': 'Communication space for Vancouver Korean community',
-          'tab-all': 'All',
-          'tab-notice': 'Notice',
-          'tab-review': 'Reviews',
-          'tab-job': 'Jobs',
-          'tab-community': 'Community',
-          'write-btn': 'Write',
-          'col-number': 'No.',
-          'col-category': 'Category',
-          'col-title': 'Title',
-          'col-author': 'Author',
-          'col-date': 'Date',
-          'col-views': 'Views',
-          'prev-btn': 'Prev',
-          'next-btn': 'Next',
-        },
-      };
-
-      // Dark mode functionality
+      // board 전용: 탭 필터와 글쓰기 버튼만 처리
       document.addEventListener('DOMContentLoaded', function () {
-        const themeToggle = document.getElementById('themeToggle');
-        const langToggle = document.querySelector('.language-toggle');
-        const body = document.body;
-        const themeIcon = document.getElementById('themeIcon');
-
-        // Load saved theme and language
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        const savedLang = localStorage.getItem('language') || 'ko';
-
-        // Apply saved theme and language
-        body.setAttribute('data-theme', savedTheme);
-        body.setAttribute('lang', savedLang);
-        updateThemeIcon(savedTheme);
-        updateLanguageIcon(savedLang);
-        updateContent(savedLang);
-        updateNavigation(savedLang);
-
-        // Theme toggle event listener
-        themeToggle.addEventListener('click', function () {
-          const currentTheme = body.getAttribute('data-theme');
-          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-          body.setAttribute('data-theme', newTheme);
-          localStorage.setItem('theme', newTheme);
-          updateThemeIcon(newTheme);
-        });
-
-        // Language toggle event listener
-        langToggle.addEventListener('click', function (e) {
-          if (e.target.classList.contains('lang-btn')) {
-            const newLang = e.target.getAttribute('data-lang');
-
-            // Update active button
-            langToggle.querySelectorAll('.lang-btn').forEach((btn) => {
-              btn.classList.remove('active');
-            });
-            e.target.classList.add('active');
-
-            body.setAttribute('lang', newLang);
-            localStorage.setItem('language', newLang);
-            updateLanguageIcon(newLang);
-            updateContent(newLang);
-            updateNavigation(newLang);
-          }
-        });
-
-        function updateThemeIcon(theme) {
-          themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
-        }
-
-        function updateContent(lang) {
-          const currentTexts = texts[lang];
-
-          // Update text content
-          Object.keys(currentTexts).forEach((key) => {
-            const element = document.getElementById(key);
-            if (element) {
-              element.textContent = currentTexts[key];
-            }
-          });
-        }
-
-        function updateNavigation(lang) {
-          const navLinks = document.querySelectorAll('.nav-link');
-          const navTexts = {
-            ko: ['홈', '업체 목록', '지도', '게시판', '업체 등록', '가이드', '소개'],
-            en: ['Home', 'Directory', 'Map', 'Board', 'Submit', 'Guides', 'About'],
-          };
-
-          navLinks.forEach((link, index) => {
-            if (navTexts[lang] && navTexts[lang][index]) {
-              link.textContent = navTexts[lang][index];
-            }
-          });
-        }
-
-        function updateLanguageIcon(lang) {
-          const langButtons = langToggle.querySelectorAll('.lang-btn');
-          langButtons.forEach((btn) => {
-            btn.classList.remove('active');
-            if (btn.getAttribute('data-lang') === lang) {
-              btn.classList.add('active');
-            }
-          });
-        }
-
-        // Tab functionality
         const tabBtns = document.querySelectorAll('.tab-btn');
         const boardItems = document.querySelectorAll('.board-item');
-
-        tabBtns.forEach((btn) => {
+        tabBtns.forEach(function (btn) {
           btn.addEventListener('click', function () {
             const tab = this.getAttribute('data-tab');
-
-            // Update active tab
-            tabBtns.forEach((b) => b.classList.remove('active'));
+            tabBtns.forEach(function (b) {
+              b.classList.remove('active');
+            });
             this.classList.add('active');
-
-            // Filter board items
-            boardItems.forEach((item) => {
-              if (tab === 'all' || item.getAttribute('data-category') === tab) {
-                item.style.display = 'flex';
-              } else {
-                item.style.display = 'none';
-              }
+            boardItems.forEach(function (item) {
+              item.style.display = tab === 'all' || item.getAttribute('data-category') === tab ? 'flex' : 'none';
             });
           });
         });
-
-        // Write button functionality
         const writeBtn = document.getElementById('write-btn');
-        writeBtn.addEventListener('click', function () {
-          alert('글쓰기 기능은 준비 중입니다.');
-        });
-
-        // Scroll to top functionality
-        const scrollToTopBtn = document.getElementById('scrollToTop');
-
-        // Show/hide scroll to top button based on scroll position
-        window.addEventListener('scroll', function () {
-          if (window.pageYOffset > 300) {
-            scrollToTopBtn.classList.add('show');
-          } else {
-            scrollToTopBtn.classList.remove('show');
-          }
-        });
-
-        // Scroll to top when button is clicked
-        scrollToTopBtn.addEventListener('click', function () {
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
+        if (writeBtn) {
+          writeBtn.addEventListener('click', function () {
+            alert('글쓰기 기능은 준비 중입니다.');
           });
-        });
+        }
       });
     </script>
   </body>
