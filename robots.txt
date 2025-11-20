@@ -1,0 +1,18 @@
+# Robots.txt for Vancouver Korean Business Directory
+# Allow all search engine bots to crawl the site
+
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /crawler/
+Disallow: /.git/
+Disallow: /.*\.env*
+
+# Sitemap location
+Sitemap: https://nefertt.github.io/Vancouver-Korean-Business-Directory/sitemap.xml
+
+# Crawl delay (in seconds) - Optional, helps reduce server load
+Crawl-delay: 2
+
+# Request rate (pages per second) - Optional
+Request-rate: 10/1s
